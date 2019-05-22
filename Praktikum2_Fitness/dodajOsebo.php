@@ -42,7 +42,7 @@ if (isset($_POST['dodaj'])) {
 }
 
 if (isset($_GET['action']) && $_GET['action'] == 'joined') {
-    $errMsg = 'Registracija je bila uspesna, lahko se vpisete <a href="index.php">login</a>';
+    $errMsg = 'Oseba bila uspešno shranjena v bazo <a href="index.php">na zaèetek</a>';
 }
 ?>
 
@@ -51,6 +51,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'joined') {
 <head>
 <title>Dodaj osebo</title>
 <script type="text/javascript" src="http://services.iperfect.net/js/IP_generalLib.js"></script>
+<meta http-equiv="content-type" content="text/html/php; charset=utf-8"></meta>	
 </head>
 <body>
 
@@ -74,17 +75,12 @@ if (isset($errMsg)) {
 				placeholder="Email"
 				value="<?php if(isset($_POST['email'])) echo $_POST['email'] ?>"
 				autocomplete="off" /><br />
-				
-			 <input  type="text" name="datum"
-				placeholder="Datum Rojstva"
-				value="<?php if(isset($_POST['datum'])) echo $_POST['datum'] ?>"
-				autocomplete="off" /><br />
+		
 				
 			 <input  type="text" name="spol"
 				placeholder="vaš spol"
 				value="<?php if(isset($_POST['spol'])) echo $_POST['spol'] ?>"
 				autocomplete="off" /><br />
-				<a href="index.php">Prijava</a>
 			 <input type="submit" name='dodaj' value="Dodaj"/><br />
 			 <input type="text" name="datum" id="date1" alt="date" class="IP_calendar" title="Y/m/d" 
 			 value="<?php if(isset($_POST['datum'])) echo $_POST['datum'] ?>" placeholder="Datum Rojstva">
