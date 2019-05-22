@@ -1,6 +1,7 @@
 
 <?php
 require 'baza.php';
+require 'sloutf.php';
 
 if (isset($_POST['izracun'])) {
     $errMsg = '';
@@ -30,7 +31,6 @@ if (isset($_POST['izracun'])) {
 <head>
 <title>Dodaj osebo</title>
 <script type="text/javascript" src="http://services.iperfect.net/js/IP_generalLib.js"></script>
-<meta http-equiv="content-type" content="text/html/php; charset=utf-8"></meta>	
 </head>
 <body>
 
