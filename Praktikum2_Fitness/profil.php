@@ -9,39 +9,43 @@ $q="select * from oseba where email='".$email."';";
 
 $r = mysqli_query ($connect, $q);
 
-while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
+// $stmt = $connect->prepare("select * from oseba where email='.$email .'LIMIT 1');");
+// $stmt->bind_param("ssssss");
+$row = mysqli_fetch_array ($r, MYSQLI_ASSOC);
+
+if ($row) {
 ?>
 
-<form method="POST" action="profil.php">
-	<table align="center">
+<form  action="profil.php"><!-- method="POST" -->
+	<table >
 
 		<tr>
 			<td align="right">Id:</td>
-			<td><input type="text" name="id" id="id" <?php echo $row['id'] ?>"></td>
+			<td><input type="text" name="id" id="id" <?php echo $row[':id'] ?>"></td>
 		</tr>
 		<tr>
 			<td align="right">Ime:</td>
-			<td><input type="text" name="ime" id="ime" <?php echo $row['ime'] ?>"></td>
+			<td><input type="text" name="ime" id="ime" <?php //echo $row[':ime'] ?>"></td>
 		</tr>
 		 
 		<tr>
 			<td align="right">Priimek:</td>
-			<td><input type="text" name="priimek" id="priimek"value="<?php echo $row['priimek'] ?>"></td>
+			<td><input type="text" name="priimek" id="priimek"value="<?php //echo $row[':priimek'] ?>"></td>
 		</tr>
 		
 		<tr>
 			<td align="right">email:</td>
-			<td><input type="text" name="email"  id="email"value="<?php echo $row['email'] ?>"></td>
+			<td><input type="text" name="email"  id="email"value="<?php //echo $row[':email'] ?>"></td>
 		</tr>
 		
 		<tr>
 			<td align="right">Datum:</td>
-			<td><input type="date" name="datum"  id="datum" value="<?php echo $row['datum'] ?>"></td>
+			<td><input type="date" name="datum"  id="datum" value="<?php //echo $row[':datum'] ?>"></td>
 		</tr>
 		
 		<tr>
 			<td align="right">Spol:</td>
-			<td><input type="text" name="spol"  id="spol" value="<?php echo $row['spol'] ?>"></td>
+			<td><input type="text" name="spol"  id="spol" value="<?php //echo $row[':spol'] ?>"></td>
 		</tr>
 		 
 		<tr></tr>
@@ -54,6 +58,7 @@ while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
 </form>
  <?php 
 }
+
 
 
 

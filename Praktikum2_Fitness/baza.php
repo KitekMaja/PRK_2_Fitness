@@ -16,6 +16,7 @@ catch(PDOException $e) {
 	echo $e->getMessage();
 }
 
+mysqli_set_charset($connect, 'utf8');
 ?>
 
 
