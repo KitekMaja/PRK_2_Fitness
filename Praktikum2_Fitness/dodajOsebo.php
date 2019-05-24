@@ -7,13 +7,13 @@ require 'sloutf.php';
 if (isset($_POST['dodaj'])) {
     $errMsg = '';
     
-    $ime = $_POST['ime'];
+    $naziv = $_POST['ime'];
     $priimek = $_POST['priimek'];
     $email = $_POST['email'];
-    $datum = $_POST['datum'];
-    $spol = $_POST['spol'];
+    $datumVnosa = $_POST['datum'];
+    $vsebina = $_POST['spol'];
     
-    if ($ime == '')
+    if ($naziv == '')
         $errMsg = 'Vnesite vaše ime';
     if ($priimek == '')
         $errMsg = 'Vnesite priimek';
@@ -29,11 +29,11 @@ if (isset($_POST['dodaj'])) {
             
             $stmt = $connect->prepare('INSERT INTO uporabnik (ime, priimek, email, datum, spol) VALUES (:ime, :priimek,:email,:datum,:spol)');
             $stmt->execute(array(
-                ':ime' => $ime,
+                ':ime' => $naziv,
                 ':priimek' => $priimek,
                 ':email' => $email,
-                ':datum' => $datum,
-                ':spol' => $spol
+                ':datum' => $datumVnosa,
+                ':spol' => $vsebina
             ));
             header('Location: dodajOsebo.php?action=joined');
             exit();
