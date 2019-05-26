@@ -96,8 +96,8 @@ if (isset($_POST['dodaj'])) {
         $uploadOk = 0;
     }
     $target_dir = "slike/";
+    
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $target_filee = basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     // Check if image file is a actual image or fake image
@@ -125,18 +125,18 @@ if (isset($_POST['dodaj'])) {
         // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+            echo "The file " . ($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+            
+           // PROBAJ echo "<img src=".$target_file." height=200 width=300 />";
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
     }
 
-    $imagee = addslashes(file_get_contents($target_file));
-    $query = "INSERT INTO objava (naziv, vsebina, datumVnosa, slika)
-  			  VALUES('$_POST[naziv]', '$_POST[vsebina]', '$_POST[datumVnosa]','$imagee')";
+   $query = "INSERT INTO objava (naziv, vsebina, datumVnosa, slika)
+			  VALUES('$_POST[naziv]', '$_POST[vsebina]', '$_POST[datumVnosa]','$target_file')";
 
-    mysqli_query($connect, $query);
-    // echo $query;
+   mysqli_query($connect, $query);
 }
 
 ?>
