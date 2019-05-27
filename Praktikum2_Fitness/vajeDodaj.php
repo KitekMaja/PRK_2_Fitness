@@ -41,14 +41,14 @@
 							placeholder="Vnesite naziv" name="naziv">
 					</div>
 				</div>
-					<div class="form-group">
+				<div class="form-group">
 					<label class="control-label col-sm-2" for="ime">Cas: </label>
 					<div class="col-sm-3">
-						<input type="time" class="form-control"
-							placeholder="Vnesite cas" name="cas">
+						<input type="time" class="form-control" placeholder="Vnesite cas"
+							name="cas">
 					</div>
 				</div>
-					<div class="form-group">
+				<div class="form-group">
 					<label class="control-label col-sm-2" for="ime">Kategorija: </label>
 					<div class="col-sm-3">
 						<input type="text" class="form-control"
@@ -56,19 +56,13 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="ime">Vsebina: </label>
+					<label class="control-label col-sm-2" for="opis">Vsebina: </label>
 					<div class="col-sm-3">
 						<input type="text" class="form-control"
-							placeholder="Vnesite vsebina" name="vsebina">
+							placeholder="Vnesite vsebino" name="opis">
 					</div>
 				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="ime">Datum vnosa: </label>
-					<div class="col-sm-3">
-						<input type="date" class="form-control"
-							placeholder="Vnesite datum" name="datumVnosa">
-					</div>
-				</div>
+
 
 				<div>
 
@@ -139,8 +133,8 @@ if (isset($_POST['dodaj'])) {
     }
 
     $imagee = addslashes(file_get_contents($target_file));
-    $query = "INSERT INTO objava (naziv, vsebina, datumVnosa, slika)
-  			  VALUES('$_POST[naziv]', '$_POST[vsebina]', '$_POST[datumVnosa]','$imagee')";
+    $query = "INSERT INTO vaje (naziv, cas, kategorija, slika, opis)
+  			  VALUES('$_POST[naziv]', '$_POST[cas]', '$_POST[kategorija]','$imagee', '$_POST[opis]')";
 
     mysqli_query($connect, $query);
     // echo $query;

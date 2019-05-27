@@ -23,7 +23,7 @@ class TableRows extends RecursiveIteratorIterator {
         if(parent::key() == 'id') { /* Check if parent::key is what you are looking for */
             $this->id = parent::current(); /* Assign parent::current to $this->id if true */
         }
-        return "<td style='width:150px;border:1px solid Silver ; bgcolor= #fdfdfd class='".parent::key()."'><a href='seznamObjav.php?id=". $this->id."'>".parent::current()."</a></td>";
+        //return "<td style='width:150px;border:1px solid Silver ; bgcolor= #fdfdfd class='".parent::key()."'><a href='seznamObjav.php?id=". $this->id."'>".parent::current()."</a></td>";
     }
     
     
