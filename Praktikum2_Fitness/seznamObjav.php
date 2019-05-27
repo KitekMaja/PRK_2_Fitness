@@ -4,7 +4,20 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="index.css">
+  <title>SeznamObjav</title>
+   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
 
 <?php
 echo "<div class='container'>";
@@ -30,7 +43,7 @@ class TableRows extends RecursiveIteratorIterator
         if (parent::key() == 'id') { /* Check if parent::key is what you are looking for */
             $this->id = parent::current(); /* Assign parent::current to $this->id if true */
         }
-        return "<td style='width:150px;border:1px solid Silver ; bgcolor= #fdfdfd class='" . parent::key() . "'><a href='objava.php?id=" . $this->id . "'>" . parent::current() . "</a></td>";
+        return "<td style='width:150px;border:1px solid Silver ; bgcolor= #fdfdfd class='".parent::key()."'><a href='objava.php?id=". $this->id."'>".parent::current()."</a></td>";
     }
 
     function beginChildren()
