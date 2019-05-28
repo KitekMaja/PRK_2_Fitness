@@ -23,33 +23,33 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900" rel="stylesheet">
 	
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="template/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="template/css/icomoon.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="template/css/bootstrap.css">
 
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="template/css/magnific-popup.css">
 
 	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="template/css/flexslider.css">
 
 	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="template/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="template/css/owl.theme.default.min.css">
 	
 	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+	<link rel="stylesheet" href="template/fonts/flaticon/font/flaticon.css">
 
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="template/css/style.css">
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="template/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
+	<script src="template/js/respond.min.js"></script>
 	<![endif]-->
 
 	</head>
@@ -93,7 +93,7 @@
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(images/img_bg_2.jpg);">
+			   	<li style="background-image: url(template/images/img_bg_2.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -106,7 +106,7 @@
 				   		</div>
 			   		</div>
 			   	</li>
-			   	<li style="background-image: url(images/img_bg_1.jpg);">
+			   	<li style="background-image: url(template/images/img_bg_1.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -119,7 +119,7 @@
 				   		</div>
 			   		</div>
 			   	</li>
-			   	<li style="background-image: url(images/img_bg_3.jpg);">
+			   	<li style="background-image: url(template/images/img_bg_3.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -132,7 +132,7 @@
 				   		</div>
 			   		</div>
 			   	</li>
-			   	<li style="background-image: url(images/img_bg_4.jpg);">
+			   	<li style="background-image: url(template/images/img_bg_4.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -154,21 +154,21 @@
 				<div class="row">
 					<div class="col-md-12 intro-wrap animate-box">
 						<div class="intro-flex">
-							<div class="one-third intro-img" style="background-image: url(images/intro-img-1.jpg)">
+							<div class="one-third intro-img" style="background-image: url(template/images/intro-img-1.jpg)">
 								<div class="desc">
 									<h3>Body Building</h3>
 									<p>Which roasted parts of sentences fly into your mouth.</p>
 									<span class="price text-center">$25.00<br><small>/month</small></span>
 								</div>
 							</div>
-							<div class="one-third intro-img" style="background-image: url(images/intro-img-2.jpg)">
+							<div class="one-third intro-img" style="background-image: url(template/images/intro-img-2.jpg)">
 								<div class="desc">
 									<h3>Yoga Program</h3>
 									<p>Which roasted parts of sentences fly into your mouth.</p>
 									<span class="price text-center">$25.00<br><small>/month</small></span>
 								</div>
 							</div>
-							<div class="one-third intro-img" style="background-image: url(images/intro-img-3.jpg)">
+							<div class="one-third intro-img" style="background-image: url(template/images/intro-img-3.jpg)">
 								<div class="desc">
 									<h3>Aerobics Classes</h3>
 									<p>Which roasted parts of sentences fly into your mouth.</p>
@@ -336,7 +336,7 @@
 												<span>Sophia Foster Loose 20LBS in just 2 months</span>
 												<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
 											</blockquote>
-											<div class="figure-img" style="background-image: url(images/person1.jpg);"></div>
+											<div class="figure-img" style="background-image: url(template/images/person1.jpg);"></div>
 										</div>
 									</div>
 								</div>
@@ -347,7 +347,7 @@
 												<span>John Collins</span>
 												<p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
 											</blockquote>
-											<div class="figure-img" style="background-image: url(images/person2.jpg);"></div>
+											<div class="figure-img" style="background-image: url(template/images/person2.jpg);"></div>
 										</div>
 									</div>
 								</div>
@@ -358,7 +358,7 @@
 												<span>Adam Ross</span>
 												<p>Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
 											</blockquote>
-											<div class="figure-img" style="background-image: url(images/person3.jpg);"></div>
+											<div class="figure-img" style="background-image: url(template/images/person3.jpg);"></div>
 										</div>
 									</div>
 								</div>
@@ -380,7 +380,7 @@
 				<div class="row">
 					<div class="col-md-3 col-sm-3 animate-box">
 						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(images/trainer-1.jpg)"></div>
+							<div class="trainer-img" style="background-image: url(template/images/trainer-1.jpg)"></div>
 							<div class="desc">
 								<h3>Diego Carter</h3>
 								<span>Body Building Trainer</span>
@@ -390,7 +390,7 @@
 
 					<div class="col-md-3 col-sm-3 animate-box">
 						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(images/trainer-2.jpg)"></div>
+							<div class="trainer-img" style="background-image: url(template/images/trainer-2.jpg)"></div>
 							<div class="desc">
 								<h3>Lea Young</h3>
 								<span>Body Building Trainer</span>
@@ -400,7 +400,7 @@
 
 					<div class="col-md-3 col-sm-3 animate-box">
 						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(images/trainer-3.jpg)"></div>
+							<div class="trainer-img" style="background-image: url(template/images/trainer-3.jpg)"></div>
 							<div class="desc">
 								<h3>Alysha Reed</h3>
 								<span>Body Building Trainer</span>
@@ -410,7 +410,7 @@
 
 					<div class="col-md-3 col-sm-3 animate-box">
 						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(images/trainer-4.jpg)"></div>
+							<div class="trainer-img" style="background-image: url(template/images/trainer-4.jpg)"></div>
 							<div class="desc">
 								<h3>George Cooper</h3>
 								<span>Body Building Trainer</span>
@@ -431,7 +431,7 @@
 				<div class="row">
 					<div class="col-md-4 animate-box">
 						<div class="classes">
-							<div class="classes-img" style="background-image: url(images/classes-1.jpg);">
+							<div class="classes-img" style="background-image: url(template/images/classes-1.jpg);">
 								<span class="price text-center">$25.00<br><small>/month</small></span>
 							</div>
 							<div class="desc">
@@ -443,7 +443,7 @@
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="classes">
-							<div class="classes-img" style="background-image: url(images/classes-2.jpg);">
+							<div class="classes-img" style="background-image: url(template/images/classes-2.jpg);">
 								<span class="price text-center">$25.00<br><small>/month</small></span>
 							</div>
 							<div class="desc">
@@ -455,7 +455,7 @@
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="classes">
-							<div class="classes-img" style="background-image: url(images/classes-3.jpg);">
+							<div class="classes-img" style="background-image: url(template/images/classes-3.jpg);">
 								<span class="price text-center">$25.00<br><small>/month</small></span>
 							</div>
 							<div class="desc">
@@ -531,7 +531,7 @@
 				<div class="row">
 					<div class="col-md-4 animate-box">
 						<article class="article-entry">
-							<a href="blog.html" class="blog-img" style="background-image: url(images/blog-1.jpg);">
+							<a href="blog.html" class="blog-img" style="background-image: url(template/images/blog-1.jpg);">
 								<p class="meta"><span class="day">18</span><span class="month">Apr</span></p>
 							</a>
 							<div class="desc">
@@ -543,7 +543,7 @@
 					</div>
 					<div class="col-md-4 animate-box">
 						<article class="article-entry">
-							<a href="blog.html" class="blog-img" style="background-image: url(images/blog-2.jpg);">
+							<a href="blog.html" class="blog-img" style="background-image: url(template/images/blog-2.jpg);">
 								<p class="meta"><span class="day">18</span><span class="month">Apr</span></p>
 							</a>
 							<div class="desc">
@@ -555,7 +555,7 @@
 					</div>
 					<div class="col-md-4 animate-box">
 						<article class="article-entry">
-							<a href="blog.html" class="blog-img" style="background-image: url(images/blog-3.jpg);">
+							<a href="blog.html" class="blog-img" style="background-image: url(template/images/blog-3.jpg);">
 								<p class="meta"><span class="day">18</span><span class="month">Apr</span></p>
 							</a>
 							<div class="desc">
@@ -570,7 +570,7 @@
 		</div>
 
 	
-		<div id="colorlib-subscribe" class="subs-img" style="background-image: url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+		<div id="colorlib-subscribe" class="subs-img" style="background-image: url(template/images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
@@ -633,7 +633,7 @@
 					<div class="col-md-3 colorlib-widget">
 						<h4>Recent Post</h4>
 						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(images/blog-1.jpg);">
+							<a href="blog.html" class="blog-img" style="background-image: url(template/images/blog-1.jpg);">
 							</a>
 							<div class="desc">
 								<h2><a href="blog.html">Tips for sexy body</a></h2>
@@ -641,7 +641,7 @@
 							</div>
 						</div>
 						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(images/blog-2.jpg);">
+							<a href="blog.html" class="blog-img" style="background-image: url(template/images/blog-2.jpg);">
 							</a>
 							<div class="desc">
 								<h2><a href="blog.html">Tips for sexy body</a></h2>
@@ -649,7 +649,7 @@
 							</div>
 						</div>
 						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(images/blog-3.jpg);">
+							<a href="blog.html" class="blog-img" style="background-image: url(template/images/blog-3.jpg);">
 							</a>
 							<div class="desc">
 								<h2><a href="blog.html">Tips for sexy body</a></h2>
@@ -691,26 +691,26 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</div>
 	
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="template/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="template/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="template/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="template/js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
+	<script src="template/js/jquery.stellar.min.js"></script>
 	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
+	<script src="template/js/jquery.flexslider-min.js"></script>
 	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
+	<script src="template/js/owl.carousel.min.js"></script>
 	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
+	<script src="template/js/jquery.magnific-popup.min.js"></script>
+	<script src="template/js/magnific-popup-options.js"></script>
 	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
+	<script src="template/js/jquery.countTo.js"></script>
 	<!-- Main -->
-	<script src="js/main.js"></script>
+	<script src="template/js/main.js"></script>
 
 	</body>
 </html>
