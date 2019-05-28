@@ -1,10 +1,10 @@
 <?php
-define('DB_SERVER', 'localhost:3306');
+require 'header.php';
+/*define('DB_SERVER', 'localhost:3306');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'dsr');
 
-/* Attempt to connect to MySQL database */
 $link = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 // Check connection
@@ -43,7 +43,7 @@ if (isset($_POST['uime']) && isset($_POST['geslo']) && isset($_POST['ime']) && i
         header("location: index.php");
     }
     mysqli_close($link);
-}
+}*/
 ?>
 <html>
 <head>
@@ -55,21 +55,20 @@ if (isset($_POST['uime']) && isset($_POST['geslo']) && isset($_POST['ime']) && i
 </head>
 <body>
 
-	<form class="modal-content animate" method="post">
-             <?php if(isset($obvestilo)){ ?><div style="color: red"> <?php echo $obvestilo; ?> </div><?php } ?>
+	<form class="modal-content animate" method="post" action="PHP_skripte/skripta_registracija.php">
    <div class="container">
    <br>
 			<div class="title">Registracija</div>
 
-			<br> <input type="text" placeholder="Vnesite ime" name="ime" required><br>
-			<br> <input type="text" placeholder="Vnesite priimek" name="priimek"
-				required><br> <br> <input type="text"
-				placeholder="Vnesite uporabnisko ime" name="uime" required><br> <br>
-			<input type="password" placeholder="Vnesite geslo" name="geslo"
-				required><br> <br> <input type="password" placeholder="Potrditev gesla"
-				name="pgeslo" required><br>
+			<br> <input type="text" placeholder="Vnesite ime" name="ime" required/> <br>
+			<br> <input type="text" placeholder="Vnesite priimek" name="priimek" required/> <br> 
+			<br> <input type="text" placeholder="Vnesite spol" name="spol" required/> <br> 
+			<br> <input type="text" placeholder="Vnesite tip uporabnika(trener/navadni)" name="tip_uporabnika" required/> <br> 
+			<br> <input type="text" placeholder="Vnesite email" name="email" required/> <br> 
+			<br> <input type="password" placeholder="Vnesite geslo" name="geslo" required/> <br>
+			<br> <input type="password" placeholder="Ponovno vnesite geslo" name="ponovljeno_geslo" required/> <br>
 
-			<button type="submit" name="Registracija">Registracija </button>
+			<button type="submit" name="signup-submit">Registracija </button>
 			<br><p>Ste ze registrirani? <a href="index.php"><i>Prijavi se</i></a></p>
 			
 		</div>
