@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Robust Template</title>
+	<title>Fitness/Zdravo</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -63,13 +63,13 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-2">
-							<div id="colorlib-logo"><a href="index.html">Robust</a></div>
+							<div id="colorlib-logo"><a href="index.html">Fitness</a></div>
 						</div>
 						<div class="col-md-10 text-right menu-1">
 							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
+								<li class="active"><a href="index.html">Doma</a></li>
 								<li class="has-dropdown">
-									<a href="classes.html">Classes</a>
+									<a href="classes.html">Razredi</a>
 									<ul class="dropdown">
 										<li><a href="classes-single.html">Classes Single</a></li>
 										<li><a href="#">Cardio Classes</a></li>
@@ -100,7 +100,7 @@
 				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h1>This is a Lifestyle There is no Finish Line</h1>
-				   					<p><a href="#" class="btn btn-primary btn-lg btn-learn">Join Classes</a></p>
+				   					<p><a href="dodajOsebo.php" class="btn btn-primary btn-lg btn-learn">Join Classes</a></p>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -113,7 +113,7 @@
 				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h1>Don't Stop When it Hurts, Stop When You're Done</h1>
-				   					<p><a href="#" class="btn btn-primary btn-lg btn-learn">Join Classes</a></p>
+				   					<p><a href="dodajOsebo.php" class="btn btn-primary btn-lg btn-learn">Join Classes</a></p>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -126,7 +126,7 @@
 				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h1>Stop Wishing, Start Doing</h1>
-				   					<p><a href="#" class="btn btn-primary btn-lg btn-learn">Join Classes</a></p>
+				   					<p><a href="dodajOsebo.php" class="btn btn-primary btn-lg btn-learn">Join Classes</a></p>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -139,7 +139,7 @@
 				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h1>Working Out is a Reward not a Punishment</h1>
-				   					<p><a href="#" class="btn btn-primary btn-lg btn-learn">Join Classes</a></p>
+				   					<p><a href="dodajOsebo.php" class="btn btn-primary btn-lg btn-learn">Join Classes</a></p>
 				   				</div>
 				   			</div>
 				   		</div>
