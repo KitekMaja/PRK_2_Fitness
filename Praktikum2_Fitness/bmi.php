@@ -1,6 +1,6 @@
 
 <?php
-require 'baza.php';
+require 'PHP_skripte/baza_handler.php';
 require 'sloutf.php';
 
 if (isset($_POST['izracun'])) {
@@ -29,7 +29,7 @@ if (isset($_POST['izracun'])) {
 <html>
 
 <head>
-<title>Dodaj osebo</title>
+<title>izracun bmi</title>
 <script type="text/javascript" src="http://services.iperfect.net/js/IP_generalLib.js"></script>
 </head>
 <body>

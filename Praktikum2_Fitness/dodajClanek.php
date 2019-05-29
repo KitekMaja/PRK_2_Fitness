@@ -1,5 +1,13 @@
+<?php 
 
+require 'header.php';
 
+if(isset($_SESSION['id_uporabnika']))
+    echo "vse ok";
+    else 
+        header('Location: index.html') ;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +36,7 @@ if(isset($_POST['dodajj']) && isset ($_POST['naziv'])){
     $naziv = $_POST['naziv'];
     $vsebina = $_POST['vsebina'];
     $datum = date("Y-m-d");
-    $up = 1;
+    $up = $_SESSION['idUporabnik'];
         $query = "INSERT INTO clanek (datumVnosa, naziv, vsebina,tk_clanek_uporabnik)
   			  VALUES('$datum', '$naziv', '$vsebina', '$up')";
         
