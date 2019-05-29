@@ -1,3 +1,21 @@
+<?php 
+// require 'PHP_skripte/baza_handler.php';
+
+$db_server = "localhost:3306";
+$db_username = "root";
+$db_password = "";
+$db_database = "baza";
+
+$connection = mysqli_connect($db_server, $db_username, $db_password, $db_database);
+
+mysqli_set_charset($connection, 'utf8');
+if (!$connection)
+{
+    die("Povezava ni uspela: " .mysqli_connect_error());
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +48,7 @@
 				method="POST">
 
 				<h4>
-					<b>Dodaj:</b>
+					<b>Dodaj vaje:</b>
 				</h4>
 				<br>
 
@@ -41,33 +59,42 @@
 							placeholder="Vnesite naziv" name="naziv">
 					</div>
 				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="ime">Cas: </label>
-					<div class="col-sm-3">
-						<input type="time" class="form-control" placeholder="Vnesite cas"
-							name="cas">
-					</div>
-				</div>
-				<div class="form-group">
+				
+				<!--<div class="form-group">
 					<label class="control-label col-sm-2" for="ime">Kategorija: </label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"
-							placeholder="Vnesite kategorija" name="kategorija">
-					</div>
+					<select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
+</select>
 				</div>
+				
+				-->
+				
+				
+				
+				
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="opis">Vsebina: </label>
+					<label class="control-label col-sm-2" for="opis">Opis: </label>
 					<div class="col-sm-3">
 						<input type="text" class="form-control"
 							placeholder="Vnesite vsebino" name="opis">
 					</div>
 				</div>
 
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="url">link: </label>
+					<div class="col-sm-3">
+						<input type="url" class="form-control" placeholder="Vnesite link"
+							name="url">
+					</div>
+				</div>
 
 				<div>
 
-					<label class="control-label col-sm-2" for="slika">Izberite sliko: </label>
-					<input type="file" name="fileToUpload" id="fileToUpload">
+					<!--<label class="control-label col-sm-2" for="slika">Izberite sliko: </label>
+					<input type="file" name="fileToUpload" id="fileToUpload">-->
 					<button type="submit" class="btn btn-default" name="dodaj">Dodaj</button>
 
 				</div>
@@ -83,61 +110,63 @@
 		</div>
 	</div>
 
+<!-- naziv opis url tk_uporabnika -->
 
 
 	
 <?php
-$host = "localhost:3306";
-$username = 'root';
-$password = '';
-$db = 'baza';
 
-$connect = mysqli_connect($host, $username, $password, $db) or die("Ni povezave do podatkovne baze");
 
 if (isset($_POST['dodaj'])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if ($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-    $target_dir = "slike/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $target_filee = basename($_FILES["fileToUpload"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    // Check if image file is a actual image or fake image
+//     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+//     if ($check !== false) {
+//         echo "File is an image - " . $check["mime"] . ".";
+//         $uploadOk = 1;
+//     } else {
+//         echo "File is not an image.";
+//         $uploadOk = 0;
+//     }
+//     $target_dir = "slike/";
+//     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+//     $target_filee = basename($_FILES["fileToUpload"]["name"]);
+//     $uploadOk = 1;
+//     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+//     // Check if image file is a actual image or fake image
 
-    // Check file size
-    if ($_FILES["fileToUpload"]["size"] > 50000000000) {
-        echo "Sorry, your file is too large.";
-        $uploadOk = 0;
-    }
-    // Allow certain file formats
-    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-        $uploadOk = 0;
-    }
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-        // if everything is ok, try to upload file
-    } else {
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
-        } else {
-            echo "Sorry, there was an error uploading your file.";
-        }
-    }
+//     // Check file size
+//     if ($_FILES["fileToUpload"]["size"] > 50000000000) {
+//         echo "Sorry, your file is too large.";
+//         $uploadOk = 0;
+//     }
+//     // Allow certain file formats
+//     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+//         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+//         $uploadOk = 0;
+//     }
+//     // Check if $uploadOk is set to 0 by an error
+//     if ($uploadOk == 0) {
+//         echo "Sorry, your file was not uploaded.";
+//         // if everything is ok, try to upload file
+//     } else {
+//         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+//             echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+//         } else {
+//             echo "Sorry, there was an error uploading your file.";
+//         }
+//     }
 
-    $imagee = addslashes(file_get_contents($target_file));
-    $query = "INSERT INTO vaje (naziv, cas, kategorija, slika, opis)
-  			  VALUES('$_POST[naziv]', '$_POST[cas]', '$_POST[kategorija]','$imagee', '$_POST[opis]')";
+//     $imagee = addslashes(file_get_contents($target_file));
 
-    mysqli_query($connect, $query);
-    // echo $query;
+    
+    
+
+    $query = "INSERT INTO vaje (naziv, opis, url, tk_meritve_uporabnik )
+  			  VALUES('$_POST[naziv]', '$_POST[opis]', '$_POST[url]', '1')";  //,'$imagee', '$_POST[opis]'
+
+    mysqli_query($connection, $query);
+    echo $query;
+    
+    $connection->close();
 }
 
 ?>
