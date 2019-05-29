@@ -34,14 +34,12 @@ session_start();
         <a class="nav-link" href="#">&#268;lanki</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Shop</a>
+        <a class="nav-link" href="trgovina.php">Shop</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Kontakt</a>
       </li>
     </ul>
-    
-   
    <?php 
    if (isset($_SESSION['id_uporabnika']))
    {
