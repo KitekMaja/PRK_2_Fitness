@@ -40,15 +40,29 @@ session_start();
         <a class="nav-link" href="#">Kontakt</a>
       </li>
     </ul>
-    <span class="navbar-text"> <!-- dva spana da imamo vpis in registracijo v eni liniji -->
-   		<a class="nav-link" href="vpis.php">Vpis</a>
-    </span>
-    <span class="navbar-text">
-    	<a class="nav-link" href="registracija.php">Izpis</a>
-    </span>
-    <span class="navbar-text">
-    	<a class="nav-link" href="registracija.php">Registracija</a>
-    </span>
+    
+   
+   <?php 
+   if (isset($_SESSION['id_uporabnika']))
+   {
+       echo '
+        <span class="navbar-text"> 
+            <form class="modal-content animate" method="post" action="PHP_skripte/skripta_izpis.php">
+              <button class="btn btn-primary-outline" type="submit" name="logout-submit">Izpis</button>
+            </form>
+        </span>';
+   }
+   else
+   {
+       echo '
+        <span class="navbar-text"> 
+   		   <a class="nav-link" href="vpis.php">Vpis</a>
+        </span>
+        <span class="navbar-text">
+    	   <a class="nav-link" href="registracija.php">Registracija</a>
+        </span>';
+   }
+   ?> 
   </div>
 </nav>
 </body>

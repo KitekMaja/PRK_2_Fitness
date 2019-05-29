@@ -20,8 +20,8 @@ require "header.php"
 			
 			<br> <input type="text" placeholder="Vnesite email" name="email" required/> <br> 
 			<br> <input type="password" placeholder="Vnesite geslo" name="geslo" required/> <br>
-			<button type="submit" name="signup-submit">Prijavi se </button>
-			<br><p>Ali ste pozabili<a href="index.php"><i>geslo?</i></a></p>
+			<button type="submit" name="login-submit">Prijavi se </button>
+			<br><p>Ali ste pozabili &nbsp<a href="index.php"><i>geslo?</i></a></p>
 			
 		</div>
 	</form>

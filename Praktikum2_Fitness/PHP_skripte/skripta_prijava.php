@@ -2,7 +2,7 @@
 if (isset($_POST['login-submit']))
 {
   require 'baza_handler.php';
-  $vpisne_informacije = $_POST['vpisne_informacije'];
+  $vpisne_informacije = $_POST['email'];
   $geslo = md5($_POST['geslo']);
   if (empty($vpisne_informacije) || empty($geslo))
   {
@@ -15,7 +15,7 @@ if (isset($_POST['login-submit']))
       $stmt = mysqli_stmt_init($connection);
       if(!mysqli_stmt_prepare($stmt, $sql))
       {
-        header("Location: ../index.php?error=sqlerror");
+        header("Location: ../domov.php?error=sqlerror");
         exit();
       }
       else
@@ -28,26 +28,26 @@ if (isset($_POST['login-submit']))
           $preverjenoGeslo = $vrstica['geslo'];
           if($preverjenoGeslo == false)
           {
-            header("Location: ../index.php?error=wrongpassword");
+            header("Location: ../domov.php?error=wrongpassword");
             exit();
           }
           else if ($preverjenoGeslo == true)
           {
-            session_start();
-            $_SESSION['id_uporabnika']=$vrstica['idUporabnik'];
-            $_SESSION['e_naslov']=$vrstica['email'];
-            header("Location: ../index.php?login=success");
+             session_start();
+             $_SESSION['id_uporabnika']=$vrstica['idUporabnik'];
+             $_SESSION['email_uporabnika']=$vrstica['email'];
+            header("Location: ../domov.php?login=success");
             exit();
           }
           else // èe je sluèajno string ali kaj druga
           {
-            header("Location: ../index.php?error=wrongpassword2");
+            header("Location: ../domov.php?error=wrongpassword2");
             exit();
           }
         }
         else
         {
-          header("Location: ../index.php?error=nouser");
+          header("Location: ../domov.php?error=nouser");
           exit();
         }
       }
@@ -55,7 +55,7 @@ if (isset($_POST['login-submit']))
 }
 else
 {
-    header("Location: ../index.php");
+    header("Location: ../domov.php");
     exit();
 }
  ?>

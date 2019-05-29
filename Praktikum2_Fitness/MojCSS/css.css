@@ -3,3 +3,9 @@
 	width:85px;
 	height:85px;	
 }
+
+.btn-primary-outline
+{
+	background-color: transparent;
+  	border-color: transparent;
+}
