@@ -1,5 +1,5 @@
 <?php
-require 'header.php';
+require 'head.php';
 /*define('DB_SERVER', 'localhost:3306');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
@@ -56,10 +56,8 @@ if (isset($_POST['uime']) && isset($_POST['geslo']) && isset($_POST['ime']) && i
 <body>
 
 	<form class="modal-content animate" method="post" action="PHP_skripte/skripta_registracija.php">
-   <div class="container">
-   <br>
-			<div class="title">Registracija</div>
 
+   <br>
 			<br> <input type="text" placeholder="Vnesite ime" name="ime" required/> <br>
 			<br> <input type="text" placeholder="Vnesite priimek" name="priimek" required/> <br> 
 			<br> <input type="text" placeholder="Vnesite spol" name="spol" required/> <br> 
@@ -71,5 +69,5 @@ if (isset($_POST['uime']) && isset($_POST['geslo']) && isset($_POST['ime']) && i
 			<button type="submit" name="signup-submit">Registracija </button>
 			<br><p>Ste ze registrirani? <a href="index.php"><i>Prijavi se</i></a></p>
 			
-		</div>
+
 	</form>
