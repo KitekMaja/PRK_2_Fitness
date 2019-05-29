@@ -44,6 +44,9 @@ session_start();
    		<a class="nav-link" href="vpis.php">Vpis</a>
     </span>
     <span class="navbar-text">
+    	<a class="nav-link" href="registracija.php">Izpis</a>
+    </span>
+    <span class="navbar-text">
     	<a class="nav-link" href="registracija.php">Registracija</a>
     </span>
   </div>
