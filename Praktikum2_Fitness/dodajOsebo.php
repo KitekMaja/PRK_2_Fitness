@@ -11,7 +11,7 @@ if (isset($_POST['dodaj'])) {
     $priimek = $_POST['priimek'];
     $email = $_POST['email'];
     $datumVnosa = $_POST['datum'];
-    $vsebina = $_POST['spol'];
+    $visina = $_POST['spol'];
     
     if ($naziv == '')
         $errMsg = 'Vnesite vaše ime';
@@ -33,7 +33,7 @@ if (isset($_POST['dodaj'])) {
                 ':priimek' => $priimek,
                 ':email' => $email,
                 ':datum' => $datumVnosa,
-                ':spol' => $vsebina
+                ':spol' => $visina
             ));
             header('Location: dodajOsebo.php?action=joined');
             exit();
