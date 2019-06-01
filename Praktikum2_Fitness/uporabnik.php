@@ -42,10 +42,8 @@ $row = FALSE; // predvidevamo, da ni podrobnosti
 		echo "<br />{$rowm['visina']}<br/>";
 		echo "<br />{$rowm['cilj']}<br/>";
 		
-		echo "<a href=\"dodajnovomeritev.php\">dodaj novo meritev</a>";
-        echo "<form  method=\"POST\">
-		<button type=\"submit\" align=\"center\" action=\"dodajnovomeritev.php\"  name=\"dodajnovomeritev\">Dodaj novo meritev</button></form>
-		</div><br />";
+		echo "<a href=\"dodajnovomeritev.php\">dodaj novo meritev</a></br>";
+		echo "<a href=\"graf.php\">izrisi graf</a>";
 		
 	
 	}
