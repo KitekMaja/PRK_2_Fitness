@@ -35,18 +35,14 @@ foreach($aray as $value) {
     if($max<$value)
         $max=$value;
 }
-echo $min;
-echo $max;
 if($min >$prvameritev)
     $min = $prvameritev;
 if($max < $prvameritev)
     $max = $prvameritev;
-    
-    echo $min;
-    echo $max;
-    
+    echo '<!---';
     $maxx = var_dump(round($max, 0, PHP_ROUND_HALF_UP));
     $minn = var_dump(round($min, 0, PHP_ROUND_HALF_DOWN));
+    echo '--->';
 echo '</table>';
 mysqli_close($connect);
 
@@ -65,7 +61,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	axisY: {
 
 		minimum: <?php echo json_encode($min); ?>,
-				maximum: <?php echo json_encode($max); ?>,
+				maximum: <?php echo json_encode($maxx); ?>,
 		title: "kilogrami"
 	},
 	data: [{
