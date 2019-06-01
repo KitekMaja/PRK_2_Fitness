@@ -29,17 +29,24 @@ while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
 $max =0;
 $min = 200;
 foreach($aray as $value) {
-    if($min>$value);
+    if($min>$value)
     $min = $value;
     
     if($max<$value)
         $max=$value;
 }
+echo $min;
+echo $max;
 if($min >$prvameritev)
     $min = $prvameritev;
 if($max < $prvameritev)
     $max = $prvameritev;
-
+    
+    echo $min;
+    echo $max;
+    
+    $maxx = var_dump(round($max, 0, PHP_ROUND_HALF_UP));
+    $minn = var_dump(round($min, 0, PHP_ROUND_HALF_DOWN));
 echo '</table>';
 mysqli_close($connect);
 
