@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>iLand Multipurpose Landing Page Template</title>
+
 <link rel="icon" href="temp/images/favicon.png" type="temp/image/png"
 	sizes="16x16">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,8 +21,12 @@ session_start();
 <link rel="stylesheet" href="temp/css/animate.css">
 <!-- Resource style -->
 <link rel="stylesheet" href="temp/css/owl.carousel.css">
+<link rel="stylesheet" href="temp/css/owl.carousel.css">
 <link rel="stylesheet" href="temp/css/owl.theme.css">
 <link rel="stylesheet" href="temp/css/ionicons.min.css">
+<link rel="stylesheet" href="temp/css/login.css">
+
+
 <!-- Resource style -->
 <link href="temp/css/style.css" rel="stylesheet" type="text/css"
 	media="all" />
@@ -46,34 +50,13 @@ session_start();
 					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-right"
-						id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-							<li><a class="page-scroll" href="#main">Home</a></li>
-							<li><a class="page-scroll" href="#classes">Classes</a></li>
-							<li><a class="page-scroll" href="#features">Features</a></li>
-							<li><a class="page-scroll" href="#review">Reviews</a></li>
-							<li><a class="page-scroll" href="#pricing">Pricing</a></li>
-							<li><a class="page-scroll" href="#contact">Contact</a></li>
-						</ul>
-					</div>
+						id="bs-example-navbar-collapse-1"></div>
 				</div>
 			</nav>
 			<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container-fluid -->
 
-		<div class="main app form" id="main">
-			<!-- Main Section-->
-			<div class="hero-section">
-				<div class="container nopadding">
-					<div class="col-md-12">
-						<div class="hero-content text-center">
-							<h1 class="wow fadeInUp" data-wow-delay="0.1s">ZDRAVO PREHRANA IN
-								FITNES NA ENOM MESTU</h1>
-
-						</div>
-					</div>
-				</div>
 
 </body>
 </html>
