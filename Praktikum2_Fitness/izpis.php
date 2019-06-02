@@ -1,6 +1,6 @@
 
 <?php
-require 'header.php';
+require 'head.php';
 include 'PHP_skripte/baza_handler.php';
 include 'PHP_skripte/baza_OOPhandler.php';
 include 'sloutf.php';
@@ -16,12 +16,25 @@ $ss = "SELECT * FROM  meritve where tk_meritve_uporabnik=$idu";
 $r = mysqli_query($connection, $q);
 
 $sss = mysqli_query($connection, $ss);
+
+$ime = 5;
+$priimek= 5;
+$email= 5;
+echo $idu;
 if (mysqli_num_rows($r) == 1 && mysqli_num_rows($sss) == 1) { // Good to go!
 
     // pridobivanje podatkov
     $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
     $rowm = mysqli_fetch_array($sss, MYSQLI_ASSOC);
+    
+    $ime = $row['ime'];
+    $priimek = $row['priimek'];
+    $email = $row['email'];
+    
+    
 }
+
+
    ?>
 
 <!DOCTYPE html>
@@ -58,9 +71,9 @@ if (mysqli_num_rows($r) == 1 && mysqli_num_rows($sss) == 1) { // Good to go!
 						<div class="profile-usertitle-name">
 					
 				<?php 	echo "<div align=\"center\">
-		<b>{$row['ime']} {$row['priimek']}<br />";
+		<b>{$ime} {$priimek}<br />";
 					
-   echo "<br />{$row['email']}<br/>";?>
+   echo "<br />{$email}<br/>";?>
 
 					</div>
 						<div class="profile-usertitle-job">Developer</div>
