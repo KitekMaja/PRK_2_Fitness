@@ -16,6 +16,10 @@ require "head.php"
 								onclick="document.getElementById('id01').style.display='block'"
 								class="btn btn-action wow fadeInUp"
 								style="visibility: visible; animation-name: fadeInUp;">Prijavi se</button>
+								<button
+								onclick="document.getElementById('id02').style.display='block'"
+								class="btn btn-action wow fadeInUp"
+								style="visibility: visible; animation-name: fadeInUp;">Registriaj se</button>
 						</div>
 
 						<div id="id01" class="modal">
@@ -26,11 +30,12 @@ require "head.php"
    <br>
 			<div class="title">Vpis</div>
 
+			      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 			
 			<br> <input type="text" placeholder="Vnesite email" name="email" required/> <br> 
 			<br> <input type="password" placeholder="Vnesite geslo" name="geslo" required/> <br>
 			<button type="submit" name="login-submit">Prijavi se </button>
-			<br><p>Ali ste pozabili &nbsp<a href="index.php"><i>geslo?</i></a></p>
+			<br><p>Se niste registrirani, registriraj se! &nbsp<a href="registracija.php"><i>geslo?</i></a></p>
 			
 		</div>
 	</form>
@@ -44,6 +49,34 @@ require "head.php"
 
 		</div>
 	</div>
+	
+	
+		<div id="id02" class="modal">
+
+							
+	<form class="modal-content animate" method="post" action="PHP_skripte/skripta_registracija.php">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+   	<br> <input type="text" placeholder="Vnesite ime" name="ime" required/> <br>
+			<br> <input type="text" placeholder="Vnesite priimek" name="priimek" required/> <br> 
+			<br> <input type="text" placeholder="Vnesite spol" name="spol" required/> <br> 
+			<br> <input type="text" placeholder="Vnesite tip uporabnika(trener/navadni)" name="tip_uporabnika" required/> <br> 
+			<br> <input type="text" placeholder="Vnesite email" name="email" required/> <br> 
+			<br> <input type="password" placeholder="Vnesite geslo" name="geslo" required/> <br>
+			<br> <input type="password" placeholder="Ponovno vnesite geslo" name="ponovljeno_geslo" required/> <br>
+
+			<button type="submit" name="signup-submit">Registracija </button>
+			<br><p>Ste ze registrirani? <a href="index.php"><i>Prijavi se</i></a></p>
+			
+
+	</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
 
 	<!-- Jquery and Js Plugins -->
 	<script type="text/javascript" src="temp/js/modal.js"></script>

@@ -36,18 +36,18 @@ if (isset($_POST['login-submit']))
              session_start();
              $_SESSION['id_uporabnika']=$vrstica['idUporabnik'];
              $_SESSION['email_uporabnika']=$vrstica['email'];
-            header("Location: ../domov.php?login=success");
+            header("Location: ../uporabnik.php?login=success");
             exit();
           }
           else // èe je sluèajno string ali kaj druga
           {
-            header("Location: ../domov.php?error=wrongpassword2");
+            header("Location: ../uporabnik.php?error=wrongpassword2");
             exit();
           }
         }
         else
         {
-          header("Location: ../domov.php?error=nouser");
+          header("Location: ../uporabnik.php?error=nouser");
           exit();
         }
       }
@@ -55,7 +55,7 @@ if (isset($_POST['login-submit']))
 }
 else
 {
-    header("Location: ../domov.php");
+    header("Location: ../uporabnik.php");
     exit();
 }
  ?>
