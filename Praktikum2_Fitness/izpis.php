@@ -5,7 +5,6 @@ include 'PHP_skripte/baza_handler.php';
 include 'PHP_skripte/baza_OOPhandler.php';
 include 'sloutf.php';
 // izpis podrobnosti posameznih slik
-// echo "<a href=\"seznamClankov.php\">seznam</a>";
 $row = FALSE; // predvidevamo, da ni podrobnosti
 
 $idu = $_SESSION['id_uporabnika'];
@@ -17,26 +16,16 @@ $r = mysqli_query($connection, $q);
 
 $sss = mysqli_query($connection, $ss);
 
-$ime = 5;
-$priimek= 5;
-$email= 5;
-echo $idu;
-if (mysqli_num_rows($r) == 1 && mysqli_num_rows($sss) == 1) { // Good to go!
+if (mysqli_num_rows($r) == 1) { // Good to go!
 
     // pridobivanje podatkov
     $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
     $rowm = mysqli_fetch_array($sss, MYSQLI_ASSOC);
-    
-    $ime = $row['ime'];
+    $ime = $row['ime'];    // zaèetek strani HTML
     $priimek = $row['priimek'];
-    $email = $row['email'];
-    
-    
+    $email=$row['email'];
 }
-
-
-   ?>
-
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,8 +42,6 @@ if (mysqli_num_rows($r) == 1 && mysqli_num_rows($sss) == 1) { // Good to go!
 </head>
 <body>
 
-
-
 <div class="container">
 		<div class="row profile">
 			<div class="col-md-3">
@@ -68,14 +55,11 @@ if (mysqli_num_rows($r) == 1 && mysqli_num_rows($sss) == 1) { // Good to go!
 					<!-- END SIDEBAR USERPIC -->
 					<!-- SIDEBAR USER TITLE -->
 					<div class="profile-usertitle">
-						<div class="profile-usertitle-name">
-					
-				<?php 	echo "<div align=\"center\">
-		<b>{$ime} {$priimek}<br />";
-					
-   echo "<br />{$email}<br/>";?>
+						<div class="profile-usertitle-name"></div>
+						<?php  echo "<p><br/>{$ime}</p>";
+						echo "<p><br/>{$priimek}</p>";
+						echo "<p><br/>{$email}</p>";?>
 
-					</div>
 						<div class="profile-usertitle-job">Developer</div>
 					</div>
 					<!-- END SIDEBAR USER TITLE -->
@@ -88,8 +72,7 @@ if (mysqli_num_rows($r) == 1 && mysqli_num_rows($sss) == 1) { // Good to go!
 					<!-- SIDEBAR MENU -->
 					<div class="profile-usermenu">
 						<ul class="nav">
-							<li class="active">
-							<a href="#"> <i
+							<li class="active"><a href="#"> <i
 									class="glyphicon glyphicon-home"></i> Overview
 							</a></li>
 							<li><a href="#"> <i class="glyphicon glyphicon-user"></i> Account
@@ -115,6 +98,8 @@ if (mysqli_num_rows($r) == 1 && mysqli_num_rows($sss) == 1) { // Good to go!
 		<strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">KeenThemes</a></strong>
 	</center>
 	<br>
+	<br>
+
 	<br>
 </body>
 </html>
