@@ -26,12 +26,12 @@ if (isset($_POST['login-submit']))
         if ($vrstica = mysqli_fetch_assoc($rezultat))
         {
           $preverjenoGeslo = $vrstica['geslo'];
-          if($preverjenoGeslo == false)
+          if($preverjenoGeslo != $geslo)
           {
             header("Location: ../domov.php?error=wrongpassword");
             exit();
           }
-          else if ($preverjenoGeslo == true)
+          else if ($preverjenoGeslo == $geslo)
           {
              session_start();
              $_SESSION['id_uporabnika']=$vrstica['idUporabnik'];
