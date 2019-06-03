@@ -18,7 +18,7 @@ date_default_timezone_set('Europe/Ljubljana');
 
 DEFINE ('DB_USER', 'root');
 DEFINE ('DB_PASSWORD', '');
-DEFINE ('DB_HOST', 'localhost:3307');
+DEFINE ('DB_HOST', 'localhost:3306');
 DEFINE ('DB_NAME', 'baza');
 
 //$dbc = @mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);

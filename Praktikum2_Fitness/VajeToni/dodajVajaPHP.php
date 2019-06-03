@@ -45,9 +45,9 @@ if(isset($_POST['dodaj_vajo'])){
        
             
             
-            $query = "INSERT INTO `vaja`
-(`naziv`, `opis`, `video`, `cas`, `set`, `rep` , `KategorijaVaje_id`, `Uporabnik_id`) 
-  			  VALUES('$naziv', '$opis', '$video', '$cas','$set','$rep', '$kategorijavaje', 2);";
+            $query = "INSERT INTO `vaje`
+(`naziv`, `opis`, `video`, `cas`, `set`, `rep` , `tk_vaje_uporabnik`, `tk_vaje_kategorijavaje`) 
+  			  VALUES('$naziv', '$opis', '$video', '$cas','$set','$rep', 2 ,'$kategorijavaje');";
             
             
             mysqli_query($connection, $query);

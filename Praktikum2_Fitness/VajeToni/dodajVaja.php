@@ -21,14 +21,14 @@ require 'baza_handler.php';
 
 		<tr>
 		<?php
-            $sql = "SELECT id, naziv FROM kategorijavaje where 1";
+            $sql = "SELECT idKategorijaVaje, naziv FROM kategorijavaje where 1";
             $result = mysqli_query($connection, $sql);
 
             echo "<td align='right'>kategorija: </td><td><select name='kategorijavaje'>";
             while ($row = mysqli_fetch_array($result)) {
-                 $id = $row["id"];
+                 $idKategorijaVaje = $row["idKategorijaVaje"];
                  $naziv = $row["naziv"];
-            echo '<option value="' . $row["id"] . '">' . $row["naziv"] . '</option>';
+            echo '<option value="' . $row["idKategorijaVaje"] . '">' . $row["naziv"] . '</option>';
                     }
             echo "</select></td>";
         ?>

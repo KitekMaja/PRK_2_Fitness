@@ -16,7 +16,7 @@ if(isset($_POST['noviPlan'])){
         
         
         
-        $query = "INSERT INTO `plan` (`naziv`, `datumNastanka`, `Uporabnik_id`) VALUES 
+        $query = "INSERT INTO `plan` (`naziv`, `datumNastanka`, `tk_plan_uporabnik`) VALUES 
                 ('$naziv', '$datum', '2');";
         
         

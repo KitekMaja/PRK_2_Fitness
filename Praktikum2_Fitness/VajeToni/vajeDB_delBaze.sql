@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Zbirka podatkov: `baza`
 --
-CREATE DATABASE IF NOT EXISTS `baza` DEFAULT CHARACTER SET utf8 COLLATE utf8_slovenian_ci;
-USE `baza`;
+CREATE DATABASE IF NOT EXISTS `baza2` DEFAULT CHARACTER SET utf8 COLLATE utf8_slovenian_ci;
+USE `baza2`;
 
 -- --------------------------------------------------------
 
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `planvaja` (
 --
 -- Struktura tabele `uporabnik`
 --
-
+-- 
 DROP TABLE IF EXISTS `uporabnik`;
 CREATE TABLE IF NOT EXISTS `uporabnik` (
   `id` int(11) NOT NULL,

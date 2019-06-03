@@ -9,14 +9,14 @@ echo $id;
 
 
 
-$q="SELECT * FROM `vaja` WHERE id='$id'";
+$q="SELECT * FROM `vaje` WHERE idVaje='$id'";
 
 $r = mysqli_query ($connection, $q);
 while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
     
     ?>
   <div class='container'>  
-<form method="POST" action="rezervacijaPHP.php?id=<?php echo $row['id']?>">   
+<form method="POST" action="rezervacijaPHP.php?id=<?php echo $row['idVaje']?>">   
 <table class= table table-striped>
 
 
