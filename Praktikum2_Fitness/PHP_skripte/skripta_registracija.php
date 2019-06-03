@@ -14,17 +14,17 @@ if(isset($_POST['signup-submit']))
     
     if (empty($ime) || empty($priimek) || empty($e_naslov) || empty($spol) || empty($tip) || empty($geslo) || empty($ponovljeno_geslo))
     {
-        header("Location: ../index.php?error=emptyfields");
+        header("Location: ../registracija.php?error=emptyfields");
         exit(); //da ne izvaja niè druga èe to ne uspe
     }
     else if (!filter_var($e_naslov, FILTER_VALIDATE_EMAIL))
     {
-        header("Location: ../index.php?error=invalidemail");
+        header("Location: ../registracija.php?error=invalidemail");
         exit();
     }
     else if ($geslo != $ponovljeno_geslo)
     {
-        header("Location: ../index.php?error=wrongpass");
+        header("Location: ../registracija.php?error=wrongpass");
         exit();
     }
     else {
@@ -32,7 +32,7 @@ if(isset($_POST['signup-submit']))
         $stmt = mysqli_stmt_init($connection);
         if (!mysqli_stmt_prepare($stmt, $sql))
         {
-            header("Location: ../index.php?error=sqlerror");
+            header("Location: ../registracija.php?error=sqlerror");
             exit();
         }
         else
@@ -43,7 +43,7 @@ if(isset($_POST['signup-submit']))
             $resultCheck = mysqli_stmt_num_rows($stmt); //vrne vrstice v bazi
             if($resultCheck>0)
             {
-                header("Location: ../index.php?error=usertaken&mail=".$e_naslov);
+                header("Location: ../registracija.php?error=usertaken&mail=".$e_naslov);
                 exit();
             }
             else
@@ -53,7 +53,7 @@ if(isset($_POST['signup-submit']))
                 $stmt = mysqli_stmt_init($connection);
                 if (!mysqli_stmt_prepare($stmt, $sql))
                 {
-                    header("Location: ../index.php?error=sqlerror2");
+                    header("Location: ../registracija.php?error=sqlerror2");
                     exit();
                 }
                 else
@@ -62,7 +62,7 @@ if(isset($_POST['signup-submit']))
                     
                     mysqli_stmt_bind_param($stmt, "ssssss",$ime, $priimek, $e_naslov, $zakodiranoGeslo, $spol, $tip);
                     mysqli_stmt_execute($stmt);
-                    header("Location: ../index.php?signup=success");
+                    header("Location: ../vpis.php?signup=success");
                     exit();
                 }
             }
@@ -73,7 +73,7 @@ if(isset($_POST['signup-submit']))
 }
 else
 {
-    header("Location: ../index.php");
+    header("Location: ../registracija.php");
     exit();
 }
 ?>

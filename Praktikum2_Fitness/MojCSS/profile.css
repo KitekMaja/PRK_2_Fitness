@@ -10,12 +10,12 @@ body {
 
 /* Profile container */
 .profile {
-  margin: 20px 0;
+  margin: auto;
 }
 
 /* Profile sidebar */
 .profile-sidebar {
-  padding: 20px 0 10px 0;
+  padding: 70px;
   background: #fff;
 }
 
@@ -107,7 +107,7 @@ body {
 
 /* Profile Content */
 .profile-content {
-  padding: 20px;
+  padding: 55px;
   background: #fff;
   min-height: 460px;
 }
