@@ -338,6 +338,18 @@ ALTER TABLE `uporabnik`
 --
 ALTER TABLE `vaje`
   MODIFY `idVaje` int(11) NOT NULL AUTO_INCREMENT;
+  
+  ALTER TABLE `plan`
+  MODIFY `idPlan` int(11) NOT NULL AUTO_INCREMENT;
+  
+    ALTER TABLE `kategorijavaje`
+  MODIFY `idKategorijaVaje` int(11) NOT NULL AUTO_INCREMENT;
+
+  ALTER TABLE `planvaja`
+  MODIFY `idPlanVaja` int(11) NOT NULL AUTO_INCREMENT;
+
+
+
 
 --
 -- Constraints for dumped tables
