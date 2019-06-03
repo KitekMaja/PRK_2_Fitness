@@ -1,5 +1,6 @@
 <?php 
     require "../header.php";
+    include_once "../PHP_skripte/baza_handler.php";
 ?>
 
 <html>
@@ -28,9 +29,9 @@
         $sql.=$idArtikla.","; 
       } 
       $sql=substr($sql, 0, -1).") ORDER BY idArtikel ASC"; 
-      $query=mysql_query($sql); 
+      $query=mysqli_query($connection, $sql); 
       $skupna_cena=0; 
-      while($row=mysql_fetch_array($query))
+      while($row=mysqli_fetch_array($query))
       { 
         $vmesna_cena=$_SESSION['kosarica'][$row['idArtikel']]['kolicina']*$row['cena']; 
         $skupna_cena+=$vmesna_cena; 

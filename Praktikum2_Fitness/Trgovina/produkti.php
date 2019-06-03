@@ -1,7 +1,8 @@
 <?php 
 require "../header.php";
+include_once "../PHP_skripte/baza_handler.php";
     
-    if(isset($_GET['action']) && $_GET['action']=="dodajVKosarico")
+    if(isset($_GET['action']) && $_GET['action']=="add")
     { 
         $idArtikla=intval($_GET['idArtikla']); 
           
@@ -11,17 +12,28 @@ require "../header.php";
         }
         else
         {       
-            $sql="SELECT * FROM artikel WHERE idArtikla={$idArtikla}"; 
-            $query=mysql_query($sql); 
+            $sql="SELECT * FROM artikel WHERE idArtikel={$idArtikla}"; 
+            //$query=mysqli_query($connection, $sql); 
+            $stmt = mysqli_stmt_init($connection);
             
-            if(mysql_num_rows($query)!=0)
-            { 
-                $row=mysql_fetch_array($query);       
-                $_SESSION['kosarica'][$row['idArtikla']] = array("kolicina" => 1, "cena" => $row['cena']); 
+            if(!mysqli_stmt_prepare($stmt, $sql))
+            {
+                echo "SQL statement failed: ".mysqli_error($connection);
             }
-            else
-            {       
-                $message="This product id is invalid!"; 
+            else 
+            {
+                mysqli_stmt_execute($stmt);
+                mysqli_stmt_store_result($stmt);
+                $steviloVrstic = mysqli_stmt_num_rows($stmt);
+                if($steviloVrstic>0)
+                {
+                    $row=mysqli_fetch_array($stmt);
+                    $_SESSION['kosarica'][$row['idArtikla']] = array("kolicina" => 1, "cena" => $row['cena']);
+                }
+                else
+                {
+                    $message="This product id is invalid!";
+                } 
             } 
         } 
     } 
@@ -74,12 +86,12 @@ else
   	        ?>
                 <tr>
                     <td><?php echo $row["naziv"] ?></td>
-                    <td></td>
+                    <td><?php echo $row["idArtikel"] ?></td>
                     <td><?php echo $row["koda"] ?></td>
                     <td><?php echo $row["opis"] ?></td>
                     <td><?php echo $row["cena"] ?></td>
                     <td>
-      	             <a href="produkti.php?action=dodajVKosarico&idArtikla=<?php echo $row['idArtikla'] ?>">Dodaj v kosarico</a>
+      	             <a href="produkti.php?action=add&idArtikla=<?php echo $row['idArtikel'] ?>">Dodaj v kosarico</a>
                     </td>
                 </tr>
                <?php
