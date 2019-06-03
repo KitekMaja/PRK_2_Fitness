@@ -3,7 +3,7 @@ require 'baza_handler.php';
 
 
 
-$q="select * from vaje where Uporabnik_id='2';";
+$q="select * from vaje where tk_vaje_uporabnik='1';";
 
 $r = mysqli_query ($connection, $q);
 while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
@@ -16,7 +16,7 @@ while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
 <tr><td>{$row['opis']}</td></tr>
 <tr><td>{$row['video']}?controls=0</td>
 <td>{$row['cas']}</td></tr>
-<tr><td>{$row['set']}</td>
+<tr><td>{$row['sets']}</td>
 <td>{$row['rep']}</td></tr>
 
 

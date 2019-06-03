@@ -2,7 +2,7 @@
 require 'baza_handler.php';
 
 ?>
-
+ 
 
 
 <form method="POST" action="dodajVajaPHP.php" id='register-form'>

@@ -1,5 +1,5 @@
 <?php
-require 'baza_handler.php';
+include "baza_handler.php";
 // $db = mysqli_connect('localhost:3307', 'root', '', 'hotel');
 // $connection = mysqli_connect($db_server, $db_username, $db_password, $db_database);
 
@@ -46,8 +46,8 @@ if(isset($_POST['dodaj_vajo'])){
             
             
             $query = "INSERT INTO `vaje`
-(`naziv`, `opis`, `video`, `cas`, `set`, `rep` , `tk_vaje_uporabnik`, `tk_vaje_kategorijavaje`) 
-  			  VALUES('$naziv', '$opis', '$video', '$cas','$set','$rep', 2 ,'$kategorijavaje');";
+(`naziv`, `opis`, `video`, `cas`, `sets`, `rep` , `tk_vaje_uporabnik`, `tk_vaje_kategorijavaje`) 
+  			  VALUES('$naziv', '$opis', '$video', '$cas','$set','$rep', '1' ,'$kategorijavaje');";
             
             
             mysqli_query($connection, $query);

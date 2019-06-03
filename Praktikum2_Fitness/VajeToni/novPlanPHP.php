@@ -4,7 +4,6 @@ require 'baza_handler.php';
 $naziv = mysqli_real_escape_string($connection, $_POST['naziv']);
 $datum="".date("d.m.Y");
 
-echo $datum;
 
 if(isset($_POST['noviPlan'])){
     if(empty($naziv) ){
@@ -17,7 +16,7 @@ if(isset($_POST['noviPlan'])){
         
         
         $query = "INSERT INTO `plan` (`naziv`, `datumNastanka`, `tk_plan_uporabnik`) VALUES 
-                ('$naziv', '$datum', '2');";
+                ('$naziv', '$datum', '1');";
         
         
         mysqli_query($connection, $query);
@@ -32,4 +31,6 @@ if(isset($_POST['noviPlan'])){
 
 ?>
 
+
+//idPlan	naziv	datumNastanka	tk_plan_uporabnik
 

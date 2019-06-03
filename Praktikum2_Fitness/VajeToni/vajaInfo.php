@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
 <td><?php echo $row['opis'] ?></td>
 <td><iframe src='<?php echo $row['video'] ?>'></iframe></td>
 <td><?php echo $row['cas'] ?></td>
-<td><?php echo $row['set'] ?></td>
+<td><?php echo $row['sets'] ?></td>
 <td><?php echo $row['rep'] ?></td>
 
 <td ><input type='submit' class='btn' name='rezerviraj'  /></td>
