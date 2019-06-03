@@ -15,7 +15,7 @@ session_start();
     <link rel="stylesheet" href="MojCSS/css.css">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light">
+	<nav class="navbar navbar-expand-lg navbar-light ">
   <a class="navbar-brand" href="#">
   	<img class="logotip_navbar" src="Slike/logo_transparent.png" alt="logo">
   </a>
