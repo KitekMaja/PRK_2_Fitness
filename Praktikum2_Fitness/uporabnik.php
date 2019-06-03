@@ -49,7 +49,10 @@ if (mysqli_num_rows($r) == 1 && mysqli_num_rows($sss) == 1) { // Good to go!
     echo "<a href=\"dodajnovomeritev.php\">dodaj novo meritev</a></br>";
     echo "<a href=\"graf.php\">izrisi graf</a>";
 }
-
+?>
+<p><strong>Id: </strong><?php echo $_SESSION['id'];  ?></p>
+<p><strong>Email: </strong><?php echo $_SESSION['email'];  ?></p>
+<?php 
 mysqli_close($connection);
 
 if (! $row) { // prikaz sporoèila o napakah

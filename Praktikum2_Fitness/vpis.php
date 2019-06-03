@@ -4,7 +4,6 @@ require "header.php"
 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="reg.css">
 <meta charset="UTF-8">
 <title></title>
 
@@ -25,7 +24,31 @@ require "header.php"
 			
 		</div>
 	</form>
-	
+	<div class="col-md-12">
+               <div class="g-signin2" data-onsuccess="onSignIn">
+        </div>
+    </div>	
+	<script type="text/javascript">
+	function onSignIn(googleUser) {
+	  var profile = googleUser.getBasicProfile();
+
+
+      if(profile){
+          $.ajax({
+                type: 'POST',
+                url: 'login_pro.php',
+                data: {id:profile.getId(), name:profile.getName(), email:profile.getEmail()}
+            }).done(function(data){
+                console.log(data);
+                window.location.href = 'uporabnik.php';
+            }).fail(function() { 
+                alert( "Posting failed." );
+            });
+      }
+
+
+    }
+</script>
 	</body>
 	</html>
 	
