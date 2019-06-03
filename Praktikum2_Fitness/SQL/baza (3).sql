@@ -97,10 +97,25 @@ CREATE TABLE `meritve` (
   `visina` double NOT NULL,
   `datumVnosa` date NOT NULL,
   `tk_meritve_uporabnik` int(11) NOT NULL,
-  `cilj` double NOT NULL
+  `cilj` varchar(20) COLLATE utf8_slovenian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 -- --------------------------------------------------------
+
+--
+-- Table structure for table `meritev`
+--
+
+CREATE TABLE `meritev` (
+  `idMeritev` int(11) NOT NULL,
+  `teza` double NOT NULL,
+  `datum` date NOT NULL,
+  `tk_uporabnik` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+
 
 --
 -- Table structure for table `slike`
@@ -175,6 +190,14 @@ ALTER TABLE `clanek`
 --
 ALTER TABLE `kategorije_artiklov`
   ADD PRIMARY KEY (`idKategorijeArtiklov`);
+  
+--
+-- Indexes for table `meritev`
+--
+ALTER TABLE `meritev`
+  ADD PRIMARY KEY (`idMeritev`),
+  ADD KEY `INDEX` (`tk_uporabnik`);
+
 
 --
 -- Indexes for table `meritve`
@@ -226,6 +249,12 @@ ALTER TABLE `clanek`
 --
 ALTER TABLE `kategorije_artiklov`
   MODIFY `idKategorijeArtiklov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  
+--
+-- AUTO_INCREMENT for table `meritev`
+--
+ALTER TABLE `meritev`
+  MODIFY `idMeritev` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `meritve`
