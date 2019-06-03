@@ -27,6 +27,7 @@
 
 
 <?php
+require 'header.php';
 include 'PHP_skripte/baza_handler.php';
 
 if (isset($_POST['dodajj']) && isset($_POST['teza'])) {
@@ -36,7 +37,7 @@ if (isset($_POST['dodajj']) && isset($_POST['teza'])) {
     $cilj = $_POST['cilj'];
     echo $_POST['cilj'];
     $datum = date("Y-m-d");
-    $up = 1;
+    $up = $_SESSION['id_uporabnika'];
     $query = "INSERT INTO meritve (teza, visina, datumVnosa, tk_meritve_uporabnik, cilj)
   			  VALUES('$teza', '$visina', '$datum',  '$up', '$cilj')";
 
