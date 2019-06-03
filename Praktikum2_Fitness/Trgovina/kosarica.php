@@ -1,6 +1,23 @@
 <?php 
     require "../header.php";
     include_once "../PHP_skripte/baza_handler.php";
+    
+    if(isset($_POST['submit-kosarica']))
+    {
+        foreach($_POST['kolicina'] as $key => $val)
+        {
+            if($val==0)
+            {
+                unset($_SESSION['kosarica'][$key]);
+                header("Location: ../Trgovina/kosarica.php");
+            }
+            else
+            {
+                $_SESSION['kosarica'][$key]['kolicina']=$val;
+                header("Location: ../Trgovina/kosarica.php");
+            }
+        }
+    }
 ?>
 
 <html>
@@ -11,7 +28,7 @@
 </head>
 <body>
 <a href="produkti.php">Vrni se na produkte</a>
-<form method="post" action="../PHP_skripte/skripta_kosarica.php"> 
+<form method="post" action="kosarica.php"> 
 <table class="table">
   <thead>
     <tr>
@@ -24,11 +41,14 @@
   <tbody>
   <?php 
       $sql="SELECT * FROM artikel WHERE idArtikel IN ("; 
+      
       foreach($_SESSION['kosarica'] as $idArtikla => $value) 
-      { 
-        $sql.=$idArtikla.","; 
+      {  
+        $sql.=$idArtikla.",";
       } 
+     
       $sql=substr($sql, 0, -1).") ORDER BY idArtikel ASC"; 
+      echo $sql;
       $query=mysqli_query($connection, $sql); 
       $skupna_cena=0; 
       while($row = mysqli_fetch_array($query))
