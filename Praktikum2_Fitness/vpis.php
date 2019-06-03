@@ -25,3 +25,8 @@ require "header.php"
 			
 		</div>
 	</form>
+	
+	</body>
+	</html>
+	
+	

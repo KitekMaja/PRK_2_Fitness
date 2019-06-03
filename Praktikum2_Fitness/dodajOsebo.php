@@ -1,6 +1,6 @@
  
 <?php
-require 'baza.php';
+require 'bazaa.php';
 
 require 'sloutf.php';
 
