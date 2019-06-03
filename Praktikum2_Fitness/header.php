@@ -25,7 +25,7 @@ session_start();
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Domov<span class="sr-only"></span></a>
+        <a class="nav-link" href="domov.php">Domov<span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Vaje</a>
@@ -34,10 +34,13 @@ session_start();
         <a class="nav-link" href="#">&#268;lanki</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="trgovina.php">Shop</a>
+        <a class="nav-link" href="Trgovina/produkti.php">Shop</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Kontakt</a>
+        <a class="nav-link" href="o_nas.php">O nas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="kontakt.php">Kontakt</a>
       </li>
     </ul>
    <?php 
