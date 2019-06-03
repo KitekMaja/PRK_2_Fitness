@@ -13,28 +13,16 @@ include_once "../PHP_skripte/baza_handler.php";
         else
         {       
             $sql="SELECT * FROM artikel WHERE idArtikel={$idArtikla}"; 
-            //$query=mysqli_query($connection, $sql); 
-            $stmt = mysqli_stmt_init($connection);
-            
-            if(!mysqli_stmt_prepare($stmt, $sql))
+            $query=mysqli_query($connection, $sql); 
+            if(mysqli_num_rows($query)!=0)
             {
-                echo "SQL statement failed: ".mysqli_error($connection);
+                $row = mysqli_fetch_array($query);
+                $_SESSION['kosarica'][$row['idArtikel']] = array("kolicina" => 1, "cena" => $row['cena']);
             }
-            else 
+            else
             {
-                mysqli_stmt_execute($stmt);
-                mysqli_stmt_store_result($stmt);
-                $steviloVrstic = mysqli_stmt_num_rows($stmt);
-                if($steviloVrstic>0)
-                {
-                    $row=mysqli_fetch_array($stmt);
-                    $_SESSION['kosarica'][$row['idArtikla']] = array("kolicina" => 1, "cena" => $row['cena']);
-                }
-                else
-                {
-                    $message="This product id is invalid!";
-                } 
-            } 
+                $message="Invalid product id.";
+            }
         } 
     } 
 ?>
