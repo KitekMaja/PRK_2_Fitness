@@ -3,7 +3,7 @@ require 'baza_handler.php';
 
 
 
-$q="select * from vaje where tk_vaje_uporabnik='1';";
+$q="select * from vaje;";
 
 $r = mysqli_query ($connection, $q);
 while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
@@ -19,14 +19,14 @@ while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
 <tr><td>{$row['sets']}</td>
 <td>{$row['rep']}</td></tr>
 
+<tr><th><iframe src='{$row['video']}'></iframe></th></tr>
 
-<tr>
-<iframe 
-src='{$row['video']}'>
-</iframe>
+
+<tr><th><p>===============</p></th></tr>
+
+<br><br><br><br>
 </tr>
-</tr>
-<br><br><br>
+
 </table>
 </div>
 

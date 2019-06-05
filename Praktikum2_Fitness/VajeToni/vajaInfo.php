@@ -16,7 +16,7 @@ while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
     
     ?>
   <div class='container'>  
-<form method="POST" action="rezervacijaPHP.php?id=<?php echo $row['idVaje']?>">   
+<form method="POST" action="php?id=<?php echo $row['idVaje']?>">   
 <table class= table table-striped>
 
 
@@ -28,7 +28,10 @@ while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
 <td><?php echo $row['sets'] ?></td>
 <td><?php echo $row['rep'] ?></td>
 
-<td ><input type='submit' class='btn' name='rezerviraj'  /></td>
+<li><a href="seznamVaj.php"> <i
+									class="glyphicon glyphicon-heart-empty"></i> nazaj
+							</a></li>
+
 
 </tr>
 </table>

@@ -78,7 +78,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 							<li><a href="grafP.php"> <i class="glyphicon glyphicon-stats"></i>
 									Graf
 							</a></li>
-							<li><a href="dodajnovomeritev.php"> <i
+							<li><a href="VajeToni/seznamVaj.php"> <i
 									class="glyphicon glyphicon-heart-empty"></i> Vaje
 							</a></li>
 							<li><a href="dodajnovomeritev.php"> <i
