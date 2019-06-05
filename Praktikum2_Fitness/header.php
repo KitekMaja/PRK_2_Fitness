@@ -94,7 +94,7 @@ session_start();
        echo '
         <span class="navbar-text"> 
             <form class="modal-content animate" method="post" action="PHP_skripte/skripta_izpis.php">
-              <button class="btn btn-primary-outline" type="submit" name="logout-submit">Izpis</button>
+              <button class="btn btn-primary-outline link" type="submit" name="logout-submit">Izpis</button>
             </form>
         </span>';
    }
