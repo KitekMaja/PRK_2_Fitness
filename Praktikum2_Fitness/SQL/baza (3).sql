@@ -115,7 +115,62 @@ CREATE TABLE `meritev` (
 
 -- --------------------------------------------------------
 
+--
+-- Struktura tabele `kategorijavaje`
+--
 
+DROP TABLE IF EXISTS `kategorijavaje`;
+CREATE TABLE IF NOT EXISTS `kategorijavaje` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `naziv` varchar(100) COLLATE utf8_slovenian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+
+INSERT INTO `kategorijavaje` (`id`, `naziv`) VALUES
+(1, 'Cardio'),
+(2, 'Rame'),
+(3, 'Roke'),
+(4, 'Prsa'),
+(5, 'Trebuh'),
+(6, 'Noge');
+
+
+--
+-- Struktura tabele `plan`
+--
+
+DROP TABLE IF EXISTS `plan`;
+CREATE TABLE IF NOT EXISTS `plan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `naziv` varchar(100) COLLATE utf8_slovenian_ci NOT NULL,
+  `datumNastanka` varchar(10) COLLATE utf8_slovenian_ci NOT NULL,
+  `Uporabnik_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_Plan_Uporabnik1_idx` (`Uporabnik_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+
+--
+-- Odloži podatke za tabelo `plan`
+--
+
+INSERT INTO `plan` (`id`, `naziv`, `datumNastanka`, `Uporabnik_id`) VALUES
+(1, 'w2ww', '02.06.2019', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabele `planvaja`
+--
+
+DROP TABLE IF EXISTS `planvaja`;
+CREATE TABLE IF NOT EXISTS `planvaja` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Plan_id` int(11) NOT NULL,
+  `Vaja_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_PlanVaja_Plan1_idx` (`Plan_id`),
+  KEY `fk_PlanVaja_Vaja1_idx` (`Vaja_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 --
 -- Table structure for table `slike`
@@ -142,7 +197,8 @@ CREATE TABLE `uporabnik` (
   `email` varchar(255) NOT NULL,
   `geslo` varchar(255) NOT NULL,
   `spol` varchar(1) NOT NULL,
-  `tip_uporabnika` varchar(255) NOT NULL
+  `tip_uporabnika` varchar(255) NOT NULL,
+  `google_id` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -158,15 +214,42 @@ INSERT INTO `uporabnik` (`idUporabnik`, `ime`, `priimek`, `email`, `geslo`, `spo
 -- Table structure for table `vaje`
 --
 
-CREATE TABLE `vaje` (
-  `idVaje` int(11) NOT NULL,
-  `naziv` varchar(255) COLLATE utf8_slovenian_ci NOT NULL,
+DROP TABLE IF EXISTS `vaja`;
+CREATE TABLE IF NOT EXISTS `vaja` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `naziv` varchar(250) COLLATE utf8_slovenian_ci NOT NULL,
   `opis` longtext COLLATE utf8_slovenian_ci NOT NULL,
-  `url` varchar(255) COLLATE utf8_slovenian_ci NOT NULL,
-  `tk_meritve_uporabnik` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+  `video` longtext COLLATE utf8_slovenian_ci,
+  `cas` int(3) DEFAULT NULL,
+  `set` int(3) DEFAULT NULL,
+  `rep` int(3) DEFAULT NULL,
+  `KategorijaVaje_id` int(11) NOT NULL,
+  `Uporabnik_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_Vaja_KategorijaVaje_idx` (`KategorijaVaje_id`),
+  KEY `fk_Vaja_Uporabnik1_idx` (`Uporabnik_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+--
 
 --
+-- Omejitve za tabelo `plan`
+--
+ALTER TABLE `plan`
+  ADD CONSTRAINT `fk_Plan_Uporabnik1` FOREIGN KEY (`Uporabnik_id`) REFERENCES `uporabnik` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Omejitve za tabelo `planvaja`
+--
+ALTER TABLE `planvaja`
+  ADD CONSTRAINT `fk_PlanVaja_Plan1` FOREIGN KEY (`Plan_id`) REFERENCES `plan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_PlanVaja_Vaja1` FOREIGN KEY (`Vaja_id`) REFERENCES `vaja` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Omejitve za tabelo `vaja`
+--
+ALTER TABLE `vaja`
+  ADD CONSTRAINT `fk_Vaja_KategorijaVaje` FOREIGN KEY (`KategorijaVaje_id`) REFERENCES `kategorijavaje` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Vaja_Uporabnik1` FOREIGN KEY (`Uporabnik_id`) REFERENCES `uporabnik` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- Indexes for dumped tables
 --
 
