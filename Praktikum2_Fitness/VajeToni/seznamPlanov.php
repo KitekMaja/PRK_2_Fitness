@@ -1,9 +1,9 @@
 <?php
 
+require 'baza_handler.php';
 
 
-
-$q="select * from plan where Uporabnik_id='2';";
+$q="select * from plan where tk_plan_uporabnik='1';";
 
 $r = mysqli_query ($connection, $q);
 while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {

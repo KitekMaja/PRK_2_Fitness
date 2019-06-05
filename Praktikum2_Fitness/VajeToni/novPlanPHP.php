@@ -24,13 +24,11 @@ if(isset($_POST['noviPlan'])){
         
         echo $query;
         
-//         header("Location: seznamVaj.php");
+        header("Location: seznamVaj.php");
     }
     
 }
 
 ?>
 
-
-//idPlan	naziv	datumNastanka	tk_plan_uporabnik
 
