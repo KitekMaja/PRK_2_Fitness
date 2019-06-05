@@ -6,6 +6,7 @@ Licensed under MIT
 
 body {
   background: #F1F3FA;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Profile container */
@@ -17,6 +18,7 @@ body {
 .profile-sidebar {
   padding: 70px;
   background: #fff;
+    border-radius: 5px;
 }
 
 .profile-userpic img {
@@ -110,4 +112,5 @@ body {
   padding: 55px;
   background: #fff;
   min-height: 460px;
+     border-radius: 5px;
 }

@@ -15,7 +15,7 @@ if (isset($_POST['login-submit']))
       $stmt = mysqli_stmt_init($connection);
       if(!mysqli_stmt_prepare($stmt, $sql))
       {
-        header("Location: ../domov.php?error=sqlerror");
+        header("Location: ../izpis.php?error=sqlerror");
         exit();
       }
       else
@@ -28,7 +28,7 @@ if (isset($_POST['login-submit']))
           $preverjenoGeslo = $vrstica['geslo'];
           if($preverjenoGeslo != $geslo)
           {
-            header("Location: ../domov.php?error=wrongpassword");
+            header("Location: ../izpis.php?error=wrongpassword");
             exit();
           }
           else if ($preverjenoGeslo == $geslo)

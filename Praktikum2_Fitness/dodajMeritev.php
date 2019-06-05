@@ -27,7 +27,7 @@
 
 
 <?php
-require 'header.php';
+require 'navbar.php';
 include 'PHP_skripte/baza_handler.php';
 
 if (isset($_POST['dodajj']) && isset($_POST['teza'])) {
