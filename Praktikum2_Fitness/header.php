@@ -12,15 +12,57 @@ session_start();
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<meta name="google-signin-client_id" content="827290065288-ru4b8ek49rjpip3rrirpduo4obafogrr.apps.googleusercontent.com" >
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link rel="stylesheet" href="MojCSS/css.css">
+    
+    <!-- LOGIN -->
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="MojCSS/login/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="MojCSS/login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="MojCSS/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="MojCSS/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="MojCSS/login/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="MojCSS/login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="MojCSS/login/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="MojCSS/login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="MojCSS/login/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="MojCSS/login/CSS/util.css">
+	<link rel="stylesheet" type="text/css" href="MojCSS/login/CSS/main.css">
+<!--===============================================================================================-->
+	<script src="MojCSS/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="MojCSS/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="MojCSS/login/vendor/bootstrap/js/popper.js"></script>
+	<script src="MojCSS/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="MojCSS/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="MojCSS/login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="MojCSS/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="MojCSS/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="MojCSS/login/js/main.js"></script>
+
+    
+    
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light ">
-  <a class="navbar-brand" href="#">
-  	<img class="logotip_navbar" src="Slike/logo_transparent.png" alt="logo">
+  <a class="navbar-brand" href="#"> 
+  	<img src="slike/fitt.png" alt="logo" style="width: 200px;">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

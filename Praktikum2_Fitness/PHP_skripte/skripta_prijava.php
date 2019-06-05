@@ -2,9 +2,9 @@
 if (isset($_POST['login-submit']))
 {
   require 'baza_handler.php';
-  $vpisne_informacije = $_POST['email'];
+  $email = $_POST['email'];
   $geslo = md5($_POST['geslo']);
-  if (empty($vpisne_informacije) || empty($geslo))
+  if (empty($email) || empty($geslo))
   {
     header("Location: ../index.php?error=emptyfields");
     exit();
@@ -20,7 +20,7 @@ if (isset($_POST['login-submit']))
       }
       else
       {
-        mysqli_stmt_bind_param($stmt, "s", $vpisne_informacije);
+        mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
         $rezultat = mysqli_stmt_get_result($stmt);
         if ($vrstica = mysqli_fetch_assoc($rezultat))
@@ -36,7 +36,7 @@ if (isset($_POST['login-submit']))
              session_start();
              $_SESSION['id_uporabnika']=$vrstica['idUporabnik'];
              $_SESSION['email_uporabnika']=$vrstica['email'];
-            header("Location: ../izpis.php?login=success");
+            header("Location: ../profil.php?login=success");
             exit();
           }
           else // èe je sluèajno string ali kaj druga

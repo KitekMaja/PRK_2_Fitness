@@ -1,6 +1,6 @@
 
 <?php
-require 'navbar.php';
+require 'header.php';
 include 'PHP_skripte/baza_handler.php';
 include 'PHP_skripte/baza_OOPhandler.php';
 include 'sloutf.php';

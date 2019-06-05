@@ -2,8 +2,7 @@
 
 
 	session_start();
-	
-	$_SESSION["id"] = $_POST["idUporabnik"];
+	$_SESSION["id"] = $_GET["idUporabnik"];
 	$_SESSION["email"] = $_POST["email"];
 
     include_once "PHP_skripte/baza_handler.php";
@@ -17,8 +16,6 @@
 	}else{
 		$sql2 = "INSERT INTO users (email, google_id) VALUES ('".$_POST["email"]."', '".$_POST["id"]."')";
 	}
-
-
 	$mysqli->query($sql2);
 
 

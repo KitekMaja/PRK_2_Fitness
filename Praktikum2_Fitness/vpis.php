@@ -6,50 +6,45 @@ require "header.php"
 <head>
 <meta charset="UTF-8">
 <title></title>
-
-
 </head>
 <body>
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(MojCSS/login/images/vpis.jpg);">
+					<span class="login100-form-title-1">
+						Prijava
+					</span>
+				</div>
 
-	<form class="modal-content animate" method="post" action="PHP_skripte/skripta_prijava.php">
-   <div class="container">
-   <br>
-			<div class="title">Vpis</div>
+				<form class="login100-form validate-form" method="post" action="PHP_skripte/skripta_prijava.php">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Vpi&#353;ite e-naslov!">
+						<span class="label-input100">E-naslov</span>
+						<input class="input100" type="text" name="email" placeholder="E-naslov">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-18" data-validate="Vpi&#353;ite geslo">
+						<span class="label-input100">Geslo</span>
+						<input class="input100" type="password" name="geslo" placeholder="Geslo">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="flex-sb-m w-full p-b-30">
 
-			
-			<br> <input type="text" placeholder="Vnesite email" name="email" required/> <br> 
-			<br> <input type="password" placeholder="Vnesite geslo" name="geslo" required/> <br>
-			<button type="submit" name="login-submit">Prijavi se </button>
-			<br><p>Ali ste pozabili &nbsp<a href="index.php"><i>geslo?</i></a></p>
-			
+						<div>
+							<a href="pozabljeno_geslo.php" class="txt1">
+								Pozabljeno geslo?
+							</a>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit" name="login-submit">
+							Prijavi se
+						</button>
+					</div>
+				</form>
+			</div>
 		</div>
-	</form>
-	<div class="col-md-12">
-               <div class="g-signin2" data-onsuccess="onSignIn">
-        </div>
-    </div>	
-	<script type="text/javascript">
-	function onSignIn(googleUser) {
-	  var profile = googleUser.getBasicProfile();
-
-
-      if(profile){
-          $.ajax({
-                type: 'POST',
-                url: 'login_pro.php',
-                data: {id:profile.getId(), name:profile.getName(), email:profile.getEmail()}
-            }).done(function(data){
-                console.log(data);
-                window.location.href = 'uporabnik.php';
-            }).fail(function() { 
-                alert( "Posting failed." );
-            });
-      }
-
-
-    }
-</script>
-	</body>
-	</html>
+</body>
+</html>
 	
 	

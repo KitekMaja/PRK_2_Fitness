@@ -30,6 +30,14 @@ session_start();
 <!-- Resource style -->
 <link href="temp/css/style.css" rel="stylesheet" type="text/css"
 	media="all" />
+<!-- Jquery and Js Plugins -->
+<script type="text/javascript" src="temp/js/modal.js"></script>
+<script type="text/javascript" src="temp/js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="temp/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="temp/js/plugins.js"></script>
+<script type="text/javascript" src="temp/js/menu.js"></script>
+<script type="text/javascript" src="temp/js/custom.js"></script>
+<script src="temp/js/jquery.subscribe.js"></script>
 </head>
 
 <body>
