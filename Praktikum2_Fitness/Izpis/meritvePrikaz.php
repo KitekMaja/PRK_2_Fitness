@@ -96,64 +96,62 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 			</div>
 			<div class="col-md-9">
 				<div class="profile-content">
-					<link rel="stylesheet"
-						href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-					<script
-						src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-					<script
-						src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+				<!DOCTYPE html>
+<html lang="en">
+<head>
 
-					<link rel="stylesheet" href="MojCSS/izpis.css">
+<script type="text/javascript" src="http://services.iperfect.net/js/IP_generalLib.js"></script>
+    <meta charset="UTF-8">
+    <title>Dodaj Clanek</title>
+</head>
+<body>
 
-					</head>
-					<body>
+<form  action="" method="POST">
+  Nova teza <input type="text" name="novameritev">
+    <br>
 
-<div class="container">
+			 <input type="text" name="datum" id="date1" alt="date" class="IP_calendar" title="Y/m/d" 
+			 value="<?php if(isset($_POST['datum'])) echo $_POST['datum'] ?>" placeholder="Datum meritve">
+			     <br>
+    <button type="submit" action="uporabnik.php" name="dodajm">Dodaj</button>
+	
+</form>
 
-  <form class="form-horizontal" action="/action_page.php">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Email:</label>
-      <div class="col-sm-4">
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Password:</label>
-      <div class="col-sm-4">          
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-      </div>
-    </div>
-    
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-4">
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
+
 <?php
+
 
 include 'PHP_skripte/baza_handler.php';
 
-if (isset($_POST['dodajm']) && isset($_POST['novameritev'])) {
-
+if(isset($_POST['dodajm']) && isset ($_POST['novameritev'])){
+    
     $teza = $_POST['novameritev'];
     $datum = $_POST['datum'];
     $up = $_SESSION['id_uporabnika'];
-    $query = "INSERT INTO meritev (teza, datum, tk_uporabnik)
+        $query = "INSERT INTO meritev (teza, datum, tk_uporabnik)
   			  VALUES('$teza', '$datum', '$up')";
-
-    mysqli_query($connection, $query);
-
-    header("Location: uporabnik.php");
-    die();
-
-    mysqli_close($connection);
+        
+        mysqli_query($connection, $query);
+        
+        header("Location: uporabnik.php");
+        die();
+        
+        mysqli_close($connection);
 }
 ?>
 
+</body>
+</html>
+				
+				
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<br>
+	<br>
 
-
+	<br>
 </body>
 </html>

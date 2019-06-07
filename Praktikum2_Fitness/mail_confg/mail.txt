@@ -1,0 +1,34 @@
+1. napisite kod 
+<?php
+//the subject
+$sub = "Registracija";
+//the message
+$msg = "Kul";
+//recipient email here
+$rec = "napisite svoj email";
+//send email
+mail($rec,$sub,$msg);
+?>
+2. konfiguriraj XAMPP-->
+2.1. php.ini --> 
+[mail function]
+SMTP=smtp.gmail.com
+smtp_port=587
+sendmail_from = healthandfitness.prk@gmail.com
+sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
+
+2.2
+C:\xampp\sendmail\sendmail.ini
+
+[sendmail]
+
+
+smtp_server=smtp.gmail.com
+smtp_port=587
+error_logfile=error.log
+debug_logfile=debug.log
+auth_username=healthandfitness.prk@gmail.com
+auth_password=6tUvvzc6
+force_sender=healthandfitness.prk@gmail.com
+
+
