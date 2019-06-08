@@ -40,7 +40,7 @@ for ($i = 1; $i < count($polje); $i ++) {
         $naziv = $row1["nazivVaje"];
         $opis = $row1["opis"];
         $video = $row1["video"];
-    ?>
+    ?> 
 
   <tr >
     <th><?php echo $id?></th>
