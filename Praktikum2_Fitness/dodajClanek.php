@@ -1,6 +1,6 @@
 <?php 
 
-require 'navbar.php';
+require 'header.php';
 
 if(isset($_SESSION['id_uporabnika']))
     echo "vse ok";

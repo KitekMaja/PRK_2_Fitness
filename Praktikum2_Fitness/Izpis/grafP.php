@@ -1,6 +1,6 @@
 
 <?php
-require 'header.php';
+require 'navbar.php';
 include 'PHP_skripte/baza_handler.php';
 include 'PHP_skripte/baza_OOPhandler.php';
 include 'sloutf.php';
@@ -70,12 +70,12 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 					<!-- SIDEBAR MENU -->
 					<div class="profile-usermenu">
 						<ul class="nav">
-							<li class="active"><a href="#"> <i
+							<li ><a href="#"> <i
 									class="glyphicon glyphicon-home"></i> Profil
 							</a></li>
 							<li><a href="#"> <i class="glyphicon glyphicon-user"></i> Uredi
 							</a></li>
-							<li><a href="grafP.php"> <i class="glyphicon glyphicon-stats"></i>
+							<li class="active"><a href="graf.php"> <i class="glyphicon glyphicon-stats"></i>
 									Graf
 							</a></li>
 							<li><a href="dodajnovomeritev.php"> <i
@@ -95,65 +95,89 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 				</div>
 			</div>
 			<div class="col-md-9">
-				<div class="profile-content">
-					<link rel="stylesheet"
-						href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-					<script
-						src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-					<script
-						src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-					<link rel="stylesheet" href="MojCSS/izpis.css">
-
-					</head>
-					<body>
-
-<div class="container">
-
-  <form class="form-horizontal" action="/action_page.php">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Email:</label>
-      <div class="col-sm-4">
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Password:</label>
-      <div class="col-sm-4">          
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-      </div>
-    </div>
-    
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-4">
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
+				
 <?php
-
-include 'PHP_skripte/baza_handler.php';
-
-if (isset($_POST['dodajm']) && isset($_POST['novameritev'])) {
-
-    $teza = $_POST['novameritev'];
-    $datum = $_POST['datum'];
-    $up = $_SESSION['id_uporabnika'];
-    $query = "INSERT INTO meritev (teza, datum, tk_uporabnik)
-  			  VALUES('$teza', '$datum', '$up')";
-
-    mysqli_query($connection, $query);
-
-    header("Location: uporabnik.php");
-    die();
-
-    mysqli_close($connection);
+$connect = mysqli_connect("localhost", "root", "", "baza");
+$idu = $_SESSION['id_uporabnika'];
+$queryy = " SELECT * FROM meritve where tk_meritve_uporabnik=$idu";
+$prvameritev;
+$query = " SELECT * FROM meritev where tk_uporabnik=$idu ORDER BY datum asc";
+$dataPointss = array();
+$rr = mysqli_query($connect, $queryy);
+$rrow =  mysqli_fetch_array ($rr, MYSQLI_ASSOC);
+$prvameritev = $rrow['teza'];
+$int = 0;
+$r = mysqli_query ($connect, $query);
+$aray = array();
+$dataa = array("y" => $rrow['teza'], "label" => $rrow['datumVnosa']);
+array_push($dataPointss, $dataa);
+while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
+    
+    $aray[$int] =  $row['teza'];
+    $data = array("y" => $row['teza'], "label" => $row['datum']);
+    
+    array_push($dataPointss, $data);
+    $int++;
 }
+$max =0;
+$min = 200;
+foreach($aray as $value) {
+    if($min>$value)
+    $min = $value;
+    
+    if($max<$value)
+        $max=$value;
+}
+if($min >$prvameritev)
+    $min = $prvameritev;
+if($max < $prvameritev)
+    $max = $prvameritev;
+    echo '<!---';
+    $maxx = var_dump(round($max, 0, PHP_ROUND_HALF_UP));
+    $minn = var_dump(round($min, 0, PHP_ROUND_HALF_DOWN));
+    echo '--->';
+echo '</table>';
+mysqli_close($connect);
+
+
 ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	title: {
+		text: "datum"
+	},
+	axisY: {
 
+		minimum: <?php echo json_encode($min); ?>,
+				maximum: <?php echo json_encode($maxx); ?>,
+		title: "kilogrami"
+	},
+	data: [{
+		type: "line",
+		dataPoints: <?php echo json_encode($dataPointss, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
+			</div>
+		</div>
+	
 
+	<br>
+	<br>
 
+	<br>
 </body>
 </html>

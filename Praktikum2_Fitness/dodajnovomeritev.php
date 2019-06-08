@@ -1,6 +1,6 @@
 <?php
 
-require 'navbar.php';
+require 'header.php';
         ?>
 <!DOCTYPE html>
 <html lang="en">
