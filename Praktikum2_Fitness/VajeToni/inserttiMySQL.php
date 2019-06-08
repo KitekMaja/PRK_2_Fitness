@@ -1,4 +1,4 @@
-INSERT INTO `kategorijavaje` (`id`, `naziv`) VALUES
+INSERT INTO `kategorijavaje` (`idKategorijavaje`, `naziv`) VALUES
 (1, 'Cardio'),
 (2, 'Rame'),
 (3, 'Roke'),
@@ -8,18 +8,7 @@ INSERT INTO `kategorijavaje` (`id`, `naziv`) VALUES
 
 ====
 
-INSERT INTO `uporabnik` (`id`, `ime`) VALUES
-(1, 'Uporabnik1'),
-(2, 'Uporabnik2'),
-(3, 'Uporabnik3'),
-(4, 'Uporabnik4'),
-(5, 'Uporabnik5'),
-(6, 'Uporabnik6'),
-(7, 'Uporabnik7'),
-(8, 'Uporabnik8'); 
 
-
-=============
 
 
 
