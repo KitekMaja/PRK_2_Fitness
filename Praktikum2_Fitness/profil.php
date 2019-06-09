@@ -63,11 +63,11 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 						<div class="profile-userbuttons">
 
 							<a href="profil.php" class="btn btn-light btn-block">Profil</a>
+							<br> <a	href="grafP.php" class="btn btn-light btn-block">Graf</a>
 							<br> <a href="meritvePrikaz.php"
-								class="btn btn-light btn-block">Senami</a> <br> <a
-								href="grafP.php" class="btn btn-light btn-block">Graf</a>
-							<br> <a href="meritvePrikaz.php"
-								class="btn btn-light btn-block">Meritve</a> <br> <br>
+								class="btn btn-light btn-block">Meritve</a> <br>
+								 <a href="cilj.php"
+								class="btn btn-light btn-block">Cilj</a> <br> <br>
 						</div>
 					</div>
 					<!--content-->
@@ -92,7 +92,13 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 							
 							
 							
-							<div role="tabpanel" class="tab-pane" id="t4"></div>
+							
+							
+							
+							
+							<div role="tabpanel" class="tab-pane" id="t4">
+							
+							</div>
 						</div>
 
 					</div>

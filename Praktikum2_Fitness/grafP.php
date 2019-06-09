@@ -63,11 +63,11 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 						<div class="profile-userbuttons">
 
 							<a href="profil.php" class="btn btn-light btn-block">Profil</a>
+							<br> <a	href="grafP.php" class="btn btn-light btn-block">Graf</a>
 							<br> <a href="meritvePrikaz.php"
-								class="btn btn-light btn-block">Senami</a> <br> <a
-								href="meritvePrikaz.php" class="btn btn-light btn-block">Graf</a>
-							<br> <a href="meritvePrikaz.php"
-								class="btn btn-light btn-block">Meritve</a> <br> <br>
+								class="btn btn-light btn-block">Meritve</a> <br>
+								 <a href="cilj.php"
+								class="btn btn-light btn-block">Cilj</a> <br> <br>
 						</div>
 					</div>
 					<!--content-->
@@ -95,7 +95,7 @@ $connect = mysqli_connect("localhost", "root", "", "baza");
 $idu = $_SESSION['id_uporabnika'];
 $queryy = " SELECT * FROM meritve where tk_meritve_uporabnik=$idu";
 $prvameritev;
-$query = " SELECT * FROM meritev where tk_uporabnik=$idu ORDER BY datum asc";
+$query = " SELECT * FROM meritev where tk_meritev_uporabnik=$idu ORDER BY datum asc";
 $dataPointss = array();
 $rr = mysqli_query($connect, $queryy);
 $rrow =  mysqli_fetch_array ($rr, MYSQLI_ASSOC);

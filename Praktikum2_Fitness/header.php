@@ -85,7 +85,7 @@ session_start();
         <a class="nav-link" href="o_nas.php">O nas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="kontakt.php">Kontakt</a>
+        <a class="nav-link" href="profil.php">Profil</a>
       </li>
     </ul>
    <?php 
