@@ -27,133 +27,119 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Izpis</title>
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
+
+<script type="text/javascript" src="http://services.iperfect.net/js/IP_generalLib.js"></script>
+<meta charset="utf-8">
+<!--  This file has been downloaded from https://bootdey.com  -->
+<!--  All snippets are MIT license https://bootdey.com/license -->
+<title>Profile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link
+	href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+	rel="stylesheet">
+
 <link rel="stylesheet" href="MojCSS/profile.css">
 
-<link rel="stylesheet" href="MojCSS/izpis.css">
-<!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
 
+	<link
+		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+		rel="stylesheet">
 	<div class="container">
-		<div class="row profile">
-			<div class="col-md-3">
-				<div class="profile-sidebar">
-					<!-- SIDEBAR USERPIC -->
-					<div class="profile-userpic">
-						 <?php  echo "<p><br/>{$slika}</p>"; ?>
+
+		<div class="row">
+			<div class="col-md-4 mb30">
+				<div class="card">
+
+					<div class="card-content pt20 pb20 profile-header">
+                     <?php  echo "<p><br/>{$slika}</p>"; ?>
+                    <h4 class="card-title text-center mb20"> <?php  echo "<p><br/>{$ime}  {$priimek}</p>"; ?><?php  echo "<p>{$email}</p>"; ?> </h4>
+
+						<hr>
+
+						<div class="profile-userbuttons">
+
+							<a href="profil.php" class="btn btn-light btn-block">Profil</a> <br>
+							<a href="meritvePrikaz.php" class="btn btn-light btn-block">Senami</a>
+							<br> <a href="grafP.php" class="btn btn-light btn-block">Graf</a>
+							<br> <a href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
+							<br> <br>
+						</div>
 					</div>
-					<!-- END SIDEBAR USERPIC -->
-					<!-- SIDEBAR USER TITLE -->
-					<div class="profile-usertitle">
-					 <?php  echo "<p><br/>{$ime}</p>"; ?>
-						<div class="profile-usertitle-name"></div>
-						<?php  echo "<p><br/>{$priimek}</p>";  ?>
-						<div class="profile-usertitle-job"><?php  echo "<p><br/>{$email}</p>";?></div>
-					</div>
-					<!-- END SIDEBAR USER TITLE -->
-					<!-- SIDEBAR BUTTONS -->
-					<div class="profile-userbuttons">
-						<a href="dodajnovomeritev.php" class="btn btn-info">Meritve</a>
+					<!--content-->
 
-					</div>
-
-					<!-- END SIDEBAR BUTTONS -->
-					<!-- SIDEBAR MENU -->
-					<div class="profile-usermenu">
-						<ul class="nav">
-							<li class="active"><a href="#"> <i
-									class="glyphicon glyphicon-home"></i> Profil
-							</a></li>
-							<li><a href="#"> <i class="glyphicon glyphicon-user"></i> Uredi
-							</a></li>
-							<li><a href="grafP.php"> <i class="glyphicon glyphicon-stats"></i>
-									Graf
-							</a></li>
-							<li><a href="dodajnovomeritev.php"> <i
-									class="glyphicon glyphicon-heart-empty"></i> Vaje
-							</a></li>
-							<li><a href="dodajnovomeritev.php"> <i
-									class="glyphicon glyphicon-list-alt"></i> Objave
-							</a></li>
-
-
-						</ul>
-
-
-						</ul>
-					</div>
-					<!-- END MENU -->
 				</div>
 			</div>
-			<div class="col-md-9">
-				<div class="profile-content">
-					<link rel="stylesheet"
-						href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-					<script
-						src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-					<script
-						src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+			<div class="col-md-8 mb30">
+				<div class="card">
+					<div>
 
-					<link rel="stylesheet" href="MojCSS/izpis.css">
+						<!-- Nav tabs -->
+						<ul class="nav tabs-admin" role="tablist">
+							<li role="presentation" class="nav-item"><a
+								class="nav-link active" href="#t1" aria-controls="t1" role="tab"
+								data-toggle="tab">Profil</a></li>
+						</ul>
 
-					</head>
-					<body>
-
-<div class="container">
-
-  <form class="form-horizontal" action="/action_page.php">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Email:</label>
-      <div class="col-sm-4">
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Password:</label>
-      <div class="col-sm-4">          
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-      </div>
-    </div>
-    
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-4">
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
-<?php
-
-include 'PHP_skripte/baza_handler.php';
-
-if (isset($_POST['dodajm']) && isset($_POST['novameritev'])) {
-
-    $teza = $_POST['novameritev'];
-    $datum = $_POST['datum'];
-    $up = $_SESSION['id_uporabnika'];
-    $query = "INSERT INTO meritev (teza, datum, tk_uporabnik)
-  			  VALUES('$teza', '$datum', '$up')";
-
-    mysqli_query($connection, $query);
-
-    header("Location: uporabnik.php");
-    die();
-
-    mysqli_close($connection);
-}
-?>
+						<!-- Tab panes -->
+						<div class="tab-content admin-tab-content pt30">
+							<div role="tabpanel" class="tab-pane active show" id="t1">
 
 
 
+								<form action="" method="POST">
+									Nova teza <input type="text" name="novameritev"> <br> <input
+										type="text" name="datum" id="date1" alt="date"
+										class="IP_calendar" title="Y/m/d"
+										value="<?php if(isset($_POST['datum'])) echo $_POST['datum'] ?>"
+										placeholder="Datum meritve"> <br>
+									<button type="submit" action="uporabnik.php" name="dodajm">Dodaj</button>
+
+								</form>
+
+
+								<div role="tabpanel" class="tab-pane" id="t4"></div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script
+			src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+	
+
+</script>
 
 </body>
 </html>
+
+
+<?php
+
+
+include 'PHP_skripte/baza_handler.php';
+
+if(isset($_POST['dodajm']) && isset ($_POST['novameritev'])){
+    
+     $teza = $_POST['novameritev'];
+     $datum = $_POST['datum'];
+    
+     $up = $_SESSION['id_uporabnika'];
+        $query = "INSERT INTO meritev (teza, datum, tk_meritev_uporabnik)
+  			  VALUES('$teza', '$datum', '$up')";
+        
+        mysqli_query($connection, $query);
+        
+        
+        mysqli_close($connection);
+}
+?>
