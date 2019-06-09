@@ -1,4 +1,7 @@
+<?php 
 
+require 'header.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,24 +30,30 @@
 
 
 <?php
-require 'navbar.php';
 include 'PHP_skripte/baza_handler.php';
 
 if (isset($_POST['dodajj']) && isset($_POST['teza'])) {
 
-    $teza = $_POST['teza'];
-    $visina = $_POST['visina'];
-    $cilj = $_POST['cilj'];
-    echo $_POST['cilj'];
-    $datum = date("Y-m-d");
     $up = $_SESSION['id_uporabnika'];
-    $query = "INSERT INTO meritve (teza, visina, datumVnosa, tk_meritve_uporabnik, cilj)
+    
+    $slop = "SELECT * FROM  meritve where tk_meritve_uporabnik =$up ";
+    $rrr = mysqli_query ($connection, $slop);
+    if (mysqli_num_rows($rrr) == 0) { // Good to go!
+        
+        $teza = $_POST['teza'];
+        $visina = $_POST['visina'];
+        $cilj = $_POST['cilj'];
+        echo $_POST['cilj'];
+        $datum = date("Y-m-d");
+        $up = $_SESSION['id_uporabnika'];
+        $query = "INSERT INTO meritve (teza, visina, datumVnosa, tk_meritve_uporabnik, cilj)
   			  VALUES('$teza', '$visina', '$datum',  '$up', '$cilj')";
+        
+        mysqli_query($connection, $query);
+        
+    }else
+        echo "Imate ze zacetno meritev, lahko dodajate samo nove meritve";
 
-    mysqli_query($connection, $query);
-
-    header("Location: dodajMeritev.php");
-    die();
 
     mysqli_close($connection);
 }
