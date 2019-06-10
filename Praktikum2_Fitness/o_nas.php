@@ -1,5 +1,5 @@
-<?php 
-    require 'navbar.php';
+<?php
+require 'header.php';
 ?>
 <html>
 <body>

@@ -16,7 +16,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link rel="stylesheet" href="MojCSS/css.css">
-    
+	<link rel="stylesheet" href="MojCSS/homepage.css">    
+	<link rel="stylesheet" href="MojCSS/footer.css">
     <!-- LOGIN -->
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="MojCSS/login/images/icons/favicon.ico"/>
@@ -60,7 +61,7 @@ session_start();
     
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light ">
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#"> 
   	<img src="slike/fitt.png" alt="logo" style="width: 200px;">
   </a>
@@ -79,7 +80,7 @@ session_start();
         <a class="nav-link" href="#">&#268;lanki</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Trgovina/produkti.php">Shop</a>
+        <a class="nav-link" href="produkti.php">Shop</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="o_nas.php">O nas</a>
@@ -96,6 +97,9 @@ session_start();
             <form class="modal-content animate" method="post" action="PHP_skripte/skripta_izpis.php">
               <button class="btn btn-primary-outline link" type="submit" name="logout-submit">Izpis</button>
             </form>
+        </span>
+        <span class="navbar-text"> 
+   		   <a class="nav-link" href="profil.php">Profil</a>
         </span>';
    }
    else
