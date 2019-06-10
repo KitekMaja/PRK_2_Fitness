@@ -1,6 +1,22 @@
 
 <?php
 require 'header.php';
+
+if(empty($_SESSION['id_uporabnika'])){
+    header('Location: login.php');
+} else {
+            include 'PHP_skripte/baza_handler.php';
+            $uid=$_SESSION['id_uporabnika'];
+            $uporabnik = "SELECT * FROM  uporabnik where idUporabnik=$uid";
+            
+            $uq = mysqli_query ($connection, $uporabnik);
+            
+            $row = mysqli_fetch_array ($uq, MYSQLI_ASSOC);
+            
+            if ($row['tip_uporabnika'] !=strtolower("trener"))
+               header('Location: seznamClankov.php');
+        
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,12 +119,11 @@ if(isset($_POST['dodajj']) && isset ($_POST['naziv'])){
         echo "Error: " . $query . "<br>" . mysqli_error($connection);
     }
     
-    echo $last_id;
     
     echo $target_file;
     $ab = NULL;
     
-    $querry = "INSERT INTO slike (imeSlike,tk_slike_clanek,tk_slike_uporabnik, tk_slike_vaje) VALUES('$target_file','$last_id','$ab','$ab')";
+    $querry = "INSERT INTO slike (imeSlike,tk_slike_clanek) VALUES('$target_file','$last_id')";
     mysqli_query($connection, $querry);
     //header("Location: seznamClankov.php");
     //die();
