@@ -62,6 +62,12 @@ if(isset($_POST['signup-submit']))
                     
                     mysqli_stmt_bind_param($stmt, "ssssss",$ime, $priimek, $e_naslov, $zakodiranoGeslo, $spol, $tip);
                     mysqli_stmt_execute($stmt);
+                    
+                    // POŠILJANJE NA MAIL
+                    $sub = "Registracija";
+                    $msg = "Registracija je bila uspešna";
+                    mail($e_naslov,$sub,$msg);
+                    
                     header("Location: ../vpis.php?signup=success");
                   
                     

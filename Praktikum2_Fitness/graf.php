@@ -8,7 +8,7 @@ $connect = mysqli_connect("localhost", "root", "", "baza");
 $idu = $_SESSION['id_uporabnika'];
 $queryy = " SELECT * FROM meritve where tk_meritve_uporabnik=$idu";
 $prvameritev;
-$query = " SELECT * FROM meritev where tk_uporabnik=$idu ORDER BY datum asc";
+$query = " SELECT * FROM meritev where tk_meritev_uporabnik=$idu ORDER BY datum asc";
 $dataPointss = array();
 $rr = mysqli_query($connect, $queryy);
 $rrow =  mysqli_fetch_array ($rr, MYSQLI_ASSOC);

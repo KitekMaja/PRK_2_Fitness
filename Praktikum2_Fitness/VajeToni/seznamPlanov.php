@@ -14,7 +14,7 @@ while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
 <tr>
 <th colspan='2' align='center'><a href='urediPlan.php?id={$row['idPlan']}'>{$row['naziv']}, {$row['datumNastanka']}</a></th>
 
-<br><br><br>
+<br>
 </table>
 </div>
 

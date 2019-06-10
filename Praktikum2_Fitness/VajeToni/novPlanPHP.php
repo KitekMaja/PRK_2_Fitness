@@ -24,7 +24,7 @@ if(isset($_POST['noviPlan'])){
         
         echo $query;
         
-        header("Location: seznamVaj.php");
+        header("Location: plani.php");
     }
     
 }

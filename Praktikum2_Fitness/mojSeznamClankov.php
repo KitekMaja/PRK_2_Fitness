@@ -41,9 +41,12 @@ require ('PHP_skripte/baza_handler.php');
 require 'sloutf.php';
 
 echo "<a href=\"dodajClanek.php\">dodaj Èlanek</a>";
+
+$up = $_SESSION['id_uporabnika'];
+$queery = "Select * from seznam where Uporabnik_id=$up";
+$uporabnikr = mysqli_query($connection, $queery);
+
 // privzet SQL stavek
-$q = "SELECT * FROM  clanek";
-    
     
 // zaèetek tabele
 echo '<table class= table table-striped">
@@ -54,21 +57,24 @@ echo '<table class= table table-striped">
 		<td align="left" width="20%"><b>Datum Vnosa</b></td>
 	</tr>';
 	
-// izpis slik in pripadajoèih povezav URL
-$r = mysqli_query ($connection, $q);
-while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
+while ($row = mysqli_fetch_array ($uporabnikr, MYSQLI_ASSOC)) {
     
-    $s = "SELECT * FROM uporabnik where idUporabnik={$row['tk_clanek_uporabnik']}";
+    $ss = "SELECT * FROM clanek where idClanek={$row['Clanek_id']}";
     
-    $p = mysqli_query ($connection, $s);
-    $iime = mysqli_fetch_array($p, MYSQLI_ASSOC);
+    $p = mysqli_query ($connection, $ss);
+    $iimec = mysqli_fetch_array($p, MYSQLI_ASSOC);
     
+    $s = "SELECT * FROM uporabnik where idUporabnik={$iimec['tk_clanek_uporabnik']}";
+    
+    
+    $pp = mysqli_query ($connection, $s);
+    $iimeu = mysqli_fetch_array($pp, MYSQLI_ASSOC);
 	// izpis posameznik zapisov
 	echo "\t<tr>
-	<td align=\"left\"><a href=\"clanek.php?cid={$row['idClanek']}&uid={$iime['idUporabnik']}\">{$row['naziv']}</a></td>
-		<td align=\"left\"><a href=\"uporabnik.php?pid={$row['tk_clanek_uporabnik']}\">{$iime['ime']}</a></td>
-		<td align=\"left\">{$row['vsebina']}</td>
-		<td align=\"left\">{$row['datumVnosa']}</td>
+	<td align=\"left\"><a href=\"clanek.php?cid={$iimec['idClanek']}&uid={$iimeu['idUporabnik']}\">{$iimec['naziv']}</a></td>
+		<td align=\"left\"><a href=\"profil.php?pid={$iimec['tk_clanek_uporabnik']}\">{$iimeu['ime']}</a></td>
+		<td align=\"left\">{$iimec['vsebina']}</td>
+		<td align=\"left\">{$iimec['datumVnosa']}</td>
 	</tr>\n";
 	
 }

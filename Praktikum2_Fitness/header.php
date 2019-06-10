@@ -63,7 +63,7 @@ session_start();
 <body>
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#"> 
-  	<img src="slike/fitt.png" alt="logo" style="width: 200px;">
+  	<img src="slike/header.png" alt="logo" style="width: 91px;">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -86,7 +86,7 @@ session_start();
         <a class="nav-link" href="o_nas.php">O nas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="kontakt.php">Kontakt</a>
+        <a class="nav-link" href="profil.php">Profil</a>
       </li>
     </ul>
    <?php 

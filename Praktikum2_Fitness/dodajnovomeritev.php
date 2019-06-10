@@ -1,7 +1,7 @@
 <?php
 
-require 'navbar.php';
-        ?>
+require 'header.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,16 +31,15 @@ include 'PHP_skripte/baza_handler.php';
 
 if(isset($_POST['dodajm']) && isset ($_POST['novameritev'])){
     
-    $teza = $_POST['novameritev'];
-    $datum = $_POST['datum'];
-    $up = $_SESSION['id_uporabnika'];
-        $query = "INSERT INTO meritev (teza, datum, tk_uporabnik)
+     $teza = $_POST['novameritev'];
+     $datum = $_POST['datum'];
+    
+     $up = $_SESSION['id_uporabnika'];
+        $query = "INSERT INTO meritev (teza, datum, tk_meritev_uporabnik)
   			  VALUES('$teza', '$datum', '$up')";
         
         mysqli_query($connection, $query);
         
-        header("Location: uporabnik.php");
-        die();
         
         mysqli_close($connection);
 }

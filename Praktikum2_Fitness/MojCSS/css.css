@@ -1,4 +1,7 @@
 /* navigation bar */
+body{
+	   font-family: Arial, Helvetica, sans-serif;
+}
 .logotip_navbar
 {
 	width:200px;	
