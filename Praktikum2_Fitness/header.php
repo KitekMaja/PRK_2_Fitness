@@ -85,9 +85,6 @@ session_start();
       <li class="nav-item">
         <a class="nav-link" href="o_nas.php">O nas</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="profil.php">Profil</a>
-      </li>
     </ul>
    <?php 
    if (isset($_SESSION['id_uporabnika']))
@@ -95,7 +92,7 @@ session_start();
        echo '
         <span class="navbar-text"> 
             <form class="modal-content animate" method="post" action="PHP_skripte/skripta_izpis.php">
-              <button class="btn btn-primary-outline link" type="submit" name="logout-submit">Izpis</button>
+              <button class="btn link" type="submit" name="logout-submit">Izpis</button>
             </form>
         </span>
         <span class="navbar-text"> 
