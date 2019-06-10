@@ -1,6 +1,6 @@
 <?php 
-    require "../header.php";
-    include_once "../PHP_skripte/baza_handler.php";
+    require "header.php";
+    include_once "PHP_skripte/baza_handler.php";
     
     if(isset($_POST['submit-kosarica']))
     {
@@ -9,23 +9,17 @@
             if($val==0)
             {
                 unset($_SESSION['kosarica'][$key]);
-                header("Location: ../Trgovina/kosarica.php");
+                header("Location: kosarica.php");
             }
             else
             {
                 $_SESSION['kosarica'][$key]['kolicina']=$val;
-                header("Location: ../Trgovina/kosarica.php");
+                header("Location: kosarica.php");
             }
         }
     }
 ?>
 
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="reg.css">
-<meta charset="UTF-8">
-<title>Kosarica</title>
-</head>
 <body>
 <a href="produkti.php">Vrni se na produkte</a>
 <form method="post" action="kosarica.php"> 
@@ -77,4 +71,3 @@
 </form>
 <p>Da odstranite artikel, kolicino spremenite na 0.</p>
 </body>
-</html>

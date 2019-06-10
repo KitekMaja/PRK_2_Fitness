@@ -1,0 +1,99 @@
+@font-face {
+  font-family: naslovnica_font;
+  src: url(fonts/neuzeiz_grotesk.otf);
+}
+
+.h1 
+{
+	font-family: naslovnica_font;
+}
+
+.hero-image {
+	
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../slike/domov/domov4.jpg");
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-image-footer{
+	
+  background-image:  url("../slike/domov/domov6.jpg");
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-text {
+  text-align: left;
+  font-family: naslovnica_font;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  font-family: naslovnica_font;
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+
+.div_od_slike
+{
+	padding-top: 130px;
+}
+
+.div_od_slike2
+{
+	padding-top: 130px;
+	padding-left: 100px;
+}
+
+.slika_2_na_robu
+{
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-bottom: 10px;
+	padding-right: 80px;
+	height: 350px;
+	width: 60%;
+}
+
+.slika_3_na_robu
+{
+	padding-top: 20px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	height: 350px;
+	width: 60%;
+}
+
+.icon-check
+{
+	height:30px;
+}
+
+.icon-timer
+{
+ 	height: 80px;
+}
+
+.icon-dumbbell
+{
+	height: 150px;
+}

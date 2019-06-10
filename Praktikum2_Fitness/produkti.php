@@ -1,6 +1,6 @@
 <?php 
-require "../header.php";
-include_once "../PHP_skripte/baza_handler.php";
+require "header.php";
+include_once "PHP_skripte/baza_handler.php";
     
     if(isset($_GET['action']) && $_GET['action']=="add")
     { 
@@ -26,12 +26,7 @@ include_once "../PHP_skripte/baza_handler.php";
         } 
     } 
 ?>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="reg.css">
-<meta charset="UTF-8">
-<title>Produkti</title>
-</head>
+
 <body>
  <?php 
     if(isset($message)){ 
@@ -40,9 +35,9 @@ include_once "../PHP_skripte/baza_handler.php";
 ?>
 <?php 
 
-include_once '../PHP_skripte/baza_handler.php';
+include_once 'PHP_skripte/baza_handler.php';
 
-$sql = "SELECT * FROM artikel ORDER BY idArtikel ASC;";
+$sql = "SELECT * FROM artikel ORDER BY idArtikel DESC;";
 $stmt = mysqli_stmt_init($connection);
 
 if (!mysqli_stmt_prepare($stmt, $sql))
@@ -55,7 +50,15 @@ else
     $result = mysqli_stmt_get_result($stmt);
     
 ?>
-<a href="kosarica.php">Poglej kosarico</a>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm" >
+    
+      One of three columns
+    </div>
+    <div class="col-sm-8 d-flex justify-content-center ozadjeONas">
+      
 	<table class="table">
   <thead>
     <tr>
@@ -88,5 +91,11 @@ else
   	 ?> 
   </tbody>
 	</table>
+    </div>
+    <div class="col-sm">  
+	<a href="kosarica.php">Poglej kosarico</a>
+    </div>
+  </div>
+</div>
+
 </body>
-</html>
