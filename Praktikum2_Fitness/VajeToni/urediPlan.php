@@ -1,10 +1,15 @@
 <?php
+session_start();
 require 'baza_handler.php';
+$planID=$_GET['id'];
+echo $planID;
+$_SESSION['planId']=$planID;
 
 $sql = "SELECT idKategorijaVaje, naziv FROM kategorijavaje where 1";
 $result = mysqli_query($connection, $sql);
 
 $polje = array();
+$poljeVaje=array();
 
 // select * from vaje join kategorijavaje on vaje.tk_vaje_kategorijavaje=kategorijavaje.idKategorijaVaje
 
@@ -26,6 +31,7 @@ for ($i = 1; $i < count($polje); $i ++) {
 
     ?>
 <div>
+<form  method="post">
 	<table border='1'>
 		<tr>
 			<th><?php echo $polje[$i]?></th>
@@ -48,7 +54,7 @@ for ($i = 1; $i < count($polje); $i ++) {
  
     <td><?php echo $opis?></td>
     <td><?php echo $video?></td>
-    <td><input type="checkbox" value="<?php $polje[$i-1].'-'.$id?>" checked></td>
+    <td><input type="checkbox" name="vaje[]" value='<?php echo $polje[$i-1].'-'.$id ?>' ></td>
  </tr>
 
 
@@ -60,32 +66,28 @@ for ($i = 1; $i < count($polje); $i ++) {
  
 </table>
 
-</div>
-<input type="submit" id="submit">
+
 <?php 
 $i += 1;
 
 }
 ?>
-<script type="text/javascript">
-var checkboxes = document.querySelectorAll("input[type=checkbox]");
-var submit = document.getElementById("submit");
+<input type="submit" id="submit">
 
-function getChecked() {
-  var checked = [];
-
-  for (var i = 0; i < checkboxes.length; i++) {
-    var checkbox = checkboxes[i];
-    if (checkbox.checked) checked.push(checkbox.value);
-  }
-
-  return checked;
+</form>
+</div>
+<?php 
+if (isset($_POST['vaje'])) 
+{
+    print_r($_POST['vaje']); 
+     implode(',', $_POST['vaje']);
+    $checkedVall= implode(',', $_POST['vaje']);
+    $obkljukano= "".$checkedVall;
+    
+        $_SESSION['polje']=$obkljukano;
+    
+    header("Location: insertPlan.php");
 }
 
-submit.addEventListener("click", function() {
-  var checked = getChecked();
-  console.log(checked);
-});
-</script>
 
-
+?>
