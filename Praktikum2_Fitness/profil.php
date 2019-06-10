@@ -9,6 +9,7 @@ $row = FALSE; // predvidevamo, da ni podrobnosti
 
 $idu = $_SESSION['id_uporabnika'];
 
+
 // pridobivanje podatkov o sliki
 $q = "SELECT * FROM  uporabnik where idUporabnik=$idu";
 $ss = "SELECT * FROM  meritve where tk_meritve_uporabnik=$idu";
@@ -59,6 +60,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 						<div class="profile-userbuttons">
 
 							<a href="profil.php" class="btn btn-light btn-block">Profil</a>
+							<br> <a	href="planiMoji.php" class="btn btn-light btn-block">Rutine Moje</a>
 							<br> <a	href="grafP.php" class="btn btn-light btn-block">Graf</a>
 							<br> <a href="meritvePrikaz.php"
 								class="btn btn-light btn-block">Meritve</a> <br>
