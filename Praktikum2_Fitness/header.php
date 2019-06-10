@@ -18,6 +18,8 @@ session_start();
     <link rel="stylesheet" href="MojCSS/css.css">
 	<link rel="stylesheet" href="MojCSS/homepage.css">    
 	<link rel="stylesheet" href="MojCSS/footer.css">
+	<link rel="stylesheet" href="MojCSS/shop/productPage.css">
+	
     <!-- LOGIN -->
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="MojCSS/login/images/icons/favicon.ico"/>
