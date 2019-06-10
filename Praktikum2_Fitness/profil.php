@@ -41,13 +41,9 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 	rel="stylesheet">
 
 <link rel="stylesheet" href="MojCSS/profile.css">
-
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-
-	<link
-		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-		rel="stylesheet">
 	<div class="container">
 
 		<div class="row">
@@ -105,6 +101,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<script
