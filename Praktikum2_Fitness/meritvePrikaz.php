@@ -48,6 +48,15 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 </head>
 <body>
 
+<br>
+<br>
+
+<br>
+<br>
+
+
+<br>
+
 	<link
 		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 		rel="stylesheet">

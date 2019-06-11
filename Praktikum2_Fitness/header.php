@@ -63,9 +63,9 @@ session_start();
     
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#"> 
-  	<img src="slike/header.png" alt="logo" style="width: 91px;">
+  	<img src="slike/header.png" alt="logo" style="width: 70px;">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

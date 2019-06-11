@@ -50,7 +50,14 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 
 </head>
 <body>
+<br>
+<br>
 
+<br>
+<br>
+
+
+<br>
 	<link
 		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 		rel="stylesheet">
@@ -87,7 +94,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 						<ul class="nav tabs-admin" role="tablist">
 							<li role="presentation" class="nav-item"><a
 								class="nav-link active" href="#t1" aria-controls="t1" role="tab"
-								data-toggle="tab">Meritve</a></li>
+								data-toggle="tab">Rutine</a></li>
 						</ul>
 
 						<!-- Tab panes -->
