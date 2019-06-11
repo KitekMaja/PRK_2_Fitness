@@ -2,7 +2,21 @@
 require 'PHP_skripte/baza_handler.php';
 include 'header.php';
 
-$q = "select * from vaje;";
+$q = 
+"
+SELECT 
+vaje.naziv as 'nazivVaje',
+vaje.opis as 'opisVaje',
+vaje.video as 'videoVaje',
+vaje.cas as 'casVaje',
+vaje.sets as 'setsVaje',
+vaje.rep as 'repVaje',
+kategorijavaje.naziv as 'nazivKategorije' 
+FROM `vaje` 
+join kategorijavaje on `tk_vaje_kategorijavaje`=kategorijavaje.idKategorijaVaje 
+ORDER BY `vaje`.`idVaje` 
+ASC
+";
 
 $r = mysqli_query($connection, $q);
 while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
@@ -13,19 +27,19 @@ while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 		<tr>
 
 			<th colspan='2' scope="col"><a
-				href='vajaInfo.php?id=<?php echo $row['idVaje'] ?>'><?php echo $row['naziv'] ?></a></th>
+				href='vajaInfo.php?id=<?php echo $row['idVaje'] ?>'><?php echo $row['nazivKategorije'].", ".$row['nazivVaje'] ?></a></th>
 
 		</tr>
 		
 		<tbody><tr >
-			<td colspan="2"><?php echo $row['opis'] ?></td>
+			<td colspan="2"><?php echo $row['opisVaje'] ?></td>
 		</tr>
 		
 		<tr>
-			<td>&Ccaron;as izvajanja: <?php echo $row['cas'] ?><br> &Scaron;tevilo rund: <?php echo $row['sets'] ?><br> &Scaron;tevilo ponovitev: <?php echo $row['rep'] ?></td>
+			<td>&Ccaron;as izvajanja: <?php echo $row['casVaje'] ?><br> &Scaron;tevilo rund: <?php echo $row['setsVaje'] ?><br> &Scaron;tevilo ponovitev: <?php echo $row['repVaje'] ?></td>
 			
 		
-					<td><iframe src='<?php echo $row['video'].'?controls=0' ?>'></iframe></td>
+					<td><iframe src='<?php echo $row['videoVaje'].'?controls=0' ?>'></iframe></td>
 		
 		</tr></tbody>
 
@@ -169,3 +183,4 @@ table th {
   }
 }
 </style>
+

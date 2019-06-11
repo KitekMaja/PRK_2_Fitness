@@ -93,21 +93,10 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 						<!-- Tab panes -->
 						<div class="tab-content admin-tab-content pt30">
 							<div role="tabpanel" class="tab-pane active show" id="t1">
-
-
-
-								<!--<form action="" method="POST">
-									Nova teza <input type="text" name="novameritev"> <br> <input
-										type="text" name="datum" id="date1" alt="date"
-										class="IP_calendar" title="Y/m/d"
-										value="<?php if(isset($_POST['datum'])) echo $_POST['datum'] ?>"
-										placeholder="Datum meritve"> <br>
-									<button type="submit" action="uporabnik.php" name="dodajm">Dodaj</button>-->
-									
-									
+									<?php  require 'novPlan.php';?>
 									<?php
-                                    $q = "select * from plan where tk_plan_uporabnik='.$idu.';";
-
+									
+                                    $q = "select * from plan where tk_plan_uporabnik='$idu';";
                                     $r = mysqli_query($connection, $q);
                                     while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
                                     ?>
@@ -116,8 +105,9 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 							<div class='container'>
 								<table id='seznam' class=table table-striped border='1'>
 									<tr>
-										<td colspan='2' align='center'><a
-											href='urediPlan.php?id=<?php echo $row['idPlan'] ?>'><?php echo $row['naziv'] ?>  , Ustvarjeno: <?php echo $row['datumNastanka'] ?></a></td>
+										<td colspan='2' align='center'><a href='urediPlan.php?id=<?php echo $row['idPlan'] ?>'><?php echo $row['naziv'] ?>, 
+										<?php echo $row['opisPlana'] ?>,<?php echo $row['ciljPlana'] ?> ,<?php echo $row['tipPlana'] ?> , Ustvarjeno: <?php echo $row['datumNastanka'] ?></a></td>
+										
 
 									</tr>
 								</table>
@@ -127,7 +117,12 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 
 							<?php 
                                 }
+                                
+                               
+                                
                                 ?>
+                                
+                                
 
 								</form>
 

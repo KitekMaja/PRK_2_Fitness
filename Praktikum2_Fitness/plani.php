@@ -6,7 +6,6 @@ include 'header.php';
 
 
 <?php
-require 'seznamPlanov.php';
-require 'novPlan.php';
+require 'seznamPlanovJavno.php';
 
 ?>

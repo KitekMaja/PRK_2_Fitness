@@ -18,7 +18,7 @@ session_start();
     <link rel="stylesheet" href="MojCSS/css.css">
 	<link rel="stylesheet" href="MojCSS/homepage.css">    
 	<link rel="stylesheet" href="MojCSS/footer.css">
-	<link rel="stylesheet" href="MojCSS/shop/productPage.css">
+	<!-- <link rel="stylesheet" href="MojCSS/shop/productPage.css"> -->
 	
     <!-- LOGIN -->
 <!--===============================================================================================-->	
@@ -76,7 +76,10 @@ session_start();
         <a class="nav-link" href="domov.php">Domov<span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Vaje</a>
+        <a class="nav-link" href="seznamVaj.php">Vaje</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="plani.php">Plani</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">&#268;lanki</a>

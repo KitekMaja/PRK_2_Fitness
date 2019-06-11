@@ -8,6 +8,8 @@ include 'sloutf.php';
 $row = FALSE; // predvidevamo, da ni podrobnosti
 
 $idu = $_SESSION['id_uporabnika'];
+// echo "<br>".$idu."<br>";
+$_SESSION['id_uporabnika']= $idu;
 
 // pridobivanje podatkov o sliki
 $q = "SELECT * FROM  uporabnik where idUporabnik=$idu";

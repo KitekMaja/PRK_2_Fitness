@@ -114,9 +114,17 @@ if (isset($_POST['vaje']))
         mysqli_query($connection, $sql);
         mysqli_close($connection);
         
-        header("Location: prikazPlana.php");
-        
+//         header("Location: prikazPlana.php");
+        echo "
+
+            <script>
+                window.location = 'prikazPlana.php?id=$planID';
+            </script>
+
+               ";
 }
 
 
 ?>
+
+
