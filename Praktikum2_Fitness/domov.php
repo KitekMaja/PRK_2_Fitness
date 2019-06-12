@@ -4,8 +4,6 @@
 <div class="hero-image">
   <div class="hero-text">
     <h1 style="font-size:50px"><i>TRENIRAJTE<br/>Z NAMI</i></h1><br/><br/>
-    <button>REGISTRACIJA</button>
-    <button>PRIJAVA</button>
   </div>
 </div>
 <div class="row">
@@ -36,11 +34,7 @@
 	</div>
 </div>
 <div class="hero-image-footer">
-  <div class="hero-text">
-    <h1 style="font-size:50px"><i>TRENIRAJTE<br/>Z NAMI</i></h1><br/><br/>
-    <button>REGISTRACIJA</button>
-    <button>PRIJAVA</button>
-  </div>
+  
 </div>
 <?php 
     require "footer.php";
