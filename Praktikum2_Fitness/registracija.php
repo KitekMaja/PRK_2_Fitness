@@ -31,6 +31,11 @@ require 'head.php';
 						<input class="input100" type="text" name="tip_uporabnika" placeholder="(navadni/trener)">
 						<span class="focus-input100"></span>
 					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Vnesite sliku">
+						<span class="label-input100">Slika</span>
+						<input class="input100" type="text" name="slika" placeholder="Slika">
+						<span class="focus-input100"></span>
+					</div>
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Vpi&#353;ite e-naslov!">
 						<span class="label-input100">E-naslov</span>
 						<input class="input100" type="text" name="email" placeholder="E-naslov">

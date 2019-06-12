@@ -6,7 +6,7 @@ if (isset($_POST['login-submit']))
   $geslo = md5($_POST['geslo']);
   if (empty($email) || empty($geslo))
   {
-    header("Location: ../index.php?error=emptyfields");
+    header("Location: ../domov.php?error=emptyfields");
     exit();
   }
   else
@@ -15,7 +15,7 @@ if (isset($_POST['login-submit']))
       $stmt = mysqli_stmt_init($connection);
       if(!mysqli_stmt_prepare($stmt, $sql))
       {
-        header("Location: ../izpis.php?error=sqlerror");
+        header("Location: ../profil.php?error=sqlerror");
         exit();
       }
       else
@@ -28,7 +28,7 @@ if (isset($_POST['login-submit']))
           $preverjenoGeslo = $vrstica['geslo'];
           if($preverjenoGeslo != $geslo)
           {
-            header("Location: ../izpis.php?error=wrongpassword");
+            header("Location: ../profil.php?error=wrongpassword");
             exit();
           }
           else if ($preverjenoGeslo == $geslo)
@@ -41,13 +41,13 @@ if (isset($_POST['login-submit']))
           }
           else // èe je sluèajno string ali kaj druga
           {
-            header("Location: ../izpis.php?error=wrongpassword2");
+            header("Location: ../profil.php?error=wrongpassword2");
             exit();
           }
         }
         else
         {
-          header("Location: ../izpis.php?error=nouser");
+          header("Location: ../profil.php?error=nouser");
           exit();
         }
       }
@@ -55,7 +55,7 @@ if (isset($_POST['login-submit']))
 }
 else
 {
-    header("Location: ../izpis.php");
+    header("Location: ../profil.php");
     exit();
 }
  ?>

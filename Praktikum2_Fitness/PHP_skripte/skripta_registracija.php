@@ -11,6 +11,7 @@ if(isset($_POST['signup-submit']))
     $tip=$_POST['tip_uporabnika'];
     $geslo=$_POST['geslo'];
     $ponovljeno_geslo=$_POST['ponovljeno_geslo'];
+    $slika=$_POST['slika'];
     
     if (empty($ime) || empty($priimek) || empty($e_naslov) || empty($spol) || empty($tip) || empty($geslo) || empty($ponovljeno_geslo))
     {
@@ -48,8 +49,8 @@ if(isset($_POST['signup-submit']))
             }
             else
             {
-                $sql = "INSERT INTO uporabnik (ime, priimek, email, geslo, spol, tip_uporabnika)
-            VALUES (?,?,?,?,?,?);";
+                $sql = "INSERT INTO uporabnik (ime, priimek, email, geslo, spol, tip_uporabnika, slika)
+            VALUES (?,?,?,?,?,?,?);";
                 $stmt = mysqli_stmt_init($connection);
                 if (!mysqli_stmt_prepare($stmt, $sql))
                 {
@@ -60,7 +61,7 @@ if(isset($_POST['signup-submit']))
                 {
                     $zakodiranoGeslo = md5($geslo);
                     
-                    mysqli_stmt_bind_param($stmt, "ssssss",$ime, $priimek, $e_naslov, $zakodiranoGeslo, $spol, $tip);
+                    mysqli_stmt_bind_param($stmt, "ssssss",$ime, $priimek, $e_naslov, $zakodiranoGeslo, $spol, $tip, $slika);
                     mysqli_stmt_execute($stmt);
                     
                     // POŠILJANJE NA MAIL
