@@ -1,6 +1,6 @@
 
 <?php
-require 'header.php';
+require 'head.php';
 include 'PHP_skripte/baza_handler.php';
 include 'PHP_skripte/baza_OOPhandler.php';
 include 'sloutf.php';
@@ -8,7 +8,6 @@ include 'sloutf.php';
 $row = FALSE; // predvidevamo, da ni podrobnosti
 
 $idu = $_SESSION['id_uporabnika'];
-
 
 // pridobivanje podatkov o sliki
 $q = "SELECT * FROM  uporabnik where idUporabnik=$idu";
@@ -33,7 +32,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 <meta charset="utf-8">
 <!--  This file has been downloaded from https://bootdey.com  -->
 <!--  All snippets are MIT license https://bootdey.com/license -->
-<title>Profile</title>
+<title>Profil</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -42,17 +41,16 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 	rel="stylesheet">
 
 <link rel="stylesheet" href="MojCSS/profile.css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
+
 </head>
 <body>
-<br>
-<br>
-
-<br>
-<br>
-
-
-<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
 	<div class="container">
 
@@ -68,13 +66,14 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 
 						<div class="profile-userbuttons">
 
-							<a href="profil.php" class="btn btn-light btn-block">Profil</a>
-							<br> <a	href="planiMoji.php" class="btn btn-light btn-block">Rutine Moje</a>
-							<br> <a	href="grafP.php" class="btn btn-light btn-block">Graf</a>
-							<br> <a href="meritvePrikaz.php"
-								class="btn btn-light btn-block">Meritve</a> <br>
-								 <a href="cilj.php"
-								class="btn btn-light btn-block">Cilj</a> <br> <br>
+							<a href="profil.php" class="btn btn-light btn-block">Profil</a> <br>
+							<a href="planiMoji.php" class="btn btn-light btn-block">Moje
+								rutine</a> <br> <a href="bmiP.php"
+								class="btn btn-light btn-block">BMI</a> <br> <a
+								href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
+							<br> <a href="cilj.php" class="btn btn-light btn-block">Cilj</a>
+							<br>
+
 						</div>
 					</div>
 					<!--content-->
@@ -96,23 +95,97 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 						<div class="tab-content admin-tab-content pt30">
 							<div role="tabpanel" class="tab-pane active show" id="t1">
 							
-							
-							
-							
-							
-							
-							
-							
-							<div role="tabpanel" class="tab-pane" id="t4">
+											
+<?php
+$connect = mysqli_connect("localhost", "root", "", "baza");
+$idu = $_SESSION['id_uporabnika'];
+$queryy = " SELECT * FROM meritve where tk_meritve_uporabnik=$idu";
+$prvameritev;
+$query = " SELECT * FROM meritev where tk_meritev_uporabnik=$idu ORDER BY datum asc";
+$dataPointss = array();
+$rr = mysqli_query($connect, $queryy);
+$rrow = mysqli_fetch_array($rr, MYSQLI_ASSOC);
+$prvameritev = $rrow['teza'];
+$int = 0;
+$r = mysqli_query($connect, $query);
+$aray = array();
+$dataa = array(
+    "y" => $rrow['teza'],
+    "label" => $rrow['datumVnosa']
+);
+array_push($dataPointss, $dataa);
+while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+
+    $aray[$int] = $row['teza'];
+    $data = array(
+        "y" => $row['teza'],
+        "label" => $row['datum']
+    );
+
+    array_push($dataPointss, $data);
+    $int ++;
+}
+$max = 0;
+$min = 200;
+foreach ($aray as $value) {
+    if ($min > $value)
+        $min = $value;
+
+    if ($max < $value)
+        $max = $value;
+}
+if ($min > $prvameritev)
+    $min = $prvameritev;
+if ($max < $prvameritev)
+    $max = $prvameritev;
+echo '<!---';
+$maxx = var_dump(round($max, 0, PHP_ROUND_HALF_UP));
+$minn = var_dump(round($min, 0, PHP_ROUND_HALF_DOWN));
+echo '--->';
+echo '</table>';
+mysqli_close($connect);
+
+?>
+<!DOCTYPE HTML>
+								<html>
+<head>
+<script>
+window.onload = function () {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	title: {
+		text: "datum"
+	},
+	axisY: {
+
+		minimum: <?php echo json_encode($min); ?>,
+				maximum: <?php echo json_encode($maxx); ?>,
+		title: "kilogrami"
+	},
+	data: [{
+		type: "line",
+		dataPoints: <?php echo json_encode($dataPointss, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
+}
+</script>
+</head>
+<body>
+	<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 							
 							</div>
+
+
+							<div role="tabpanel" class="tab-pane" id="t4"></div>
 						</div>
 
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 
 	<script

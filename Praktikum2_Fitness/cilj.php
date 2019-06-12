@@ -1,6 +1,6 @@
 
 <?php
-require 'header.php';
+require 'head.php';
 include 'PHP_skripte/baza_handler.php';
 include 'PHP_skripte/baza_OOPhandler.php';
 include 'sloutf.php';
@@ -41,22 +41,23 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 	rel="stylesheet">
 
 <link rel="stylesheet" href="MojCSS/profile.css">
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
 
 </head>
 <body>
 
-<br>
-<br>
+	<br>
+	<br>
 
-<br>
-<br>
+	<br>
+	<br>
 
 
-<br>
+	<br>
 
-	<link
-		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-		rel="stylesheet">
+
 	<div class="container">
 
 		<div class="row">
@@ -71,13 +72,14 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 
 						<div class="profile-userbuttons">
 
-							<a href="profil.php" class="btn btn-light btn-block">Profil</a><br>
-							<a	href="planiMoji.php" class="btn btn-light btn-block">Rutine Moje</a>
-							<br> <a	href="grafP.php" class="btn btn-light btn-block">Graf</a>
-							<br> <a href="meritvePrikaz.php"
-								class="btn btn-light btn-block">Meritve</a> <br>
-								 <a href="cilj.php"
-								class="btn btn-light btn-block">Cilj</a> <br> <br>
+							<a href="profil.php" class="btn btn-light btn-block">Profil</a> <br>
+							<a href="planiMoji.php" class="btn btn-light btn-block">Moje
+								rutine</a> <br> <a href="bmiP.php"
+								class="btn btn-light btn-block">BMI</a> <br> <a
+								href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
+							<br> <a href="cilj.php" class="btn btn-light btn-block">Cilj</a>
+							<br>
+
 						</div>
 					</div>
 					<!--content-->
@@ -98,10 +100,10 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 						<!-- Tab panes -->
 						<div class="tab-content admin-tab-content pt30">
 							<div role="tabpanel" class="tab-pane active show" id="t1">
-							
-							
-							<!DOCTYPE html>
-<html lang="en">
+
+
+								<!DOCTYPE html>
+								<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Dodaj meritev</title>
@@ -116,9 +118,9 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="ime">cilj</label>
 			<div class="col-sm-3">
-				<input type="radio" name="cilj" value="hujsanje">Hujsanje 
-				<input type="radio" name="cilj" value="pridobitev">Pridobitev
-				<input type="radio" name="cilj" value="zdavo">Zdravo 
+				<input type="radio" name="cilj" value="hujsanje">Hujsanje <input
+					type="radio" name="cilj" value="pridobitev">Pridobitev <input
+					type="radio" name="cilj" value="zdavo">Zdravo
 			</div>
 		</div>
 		<button type="submit" action="dodajMeritev.php" name="dodajj">Dodaj</button>
@@ -132,11 +134,11 @@ include 'PHP_skripte/baza_handler.php';
 if (isset($_POST['dodajj']) && isset($_POST['teza'])) {
 
     $up = $_SESSION['id_uporabnika'];
-    
+
     $slop = "SELECT * FROM  meritve where tk_meritve_uporabnik =$up ";
-    $rrr = mysqli_query ($connection, $slop);
+    $rrr = mysqli_query($connection, $slop);
     if (mysqli_num_rows($rrr) == 0) { // Good to go!
-        
+
         $teza = $_POST['teza'];
         $visina = $_POST['visina'];
         $cilj = $_POST['cilj'];
@@ -145,30 +147,27 @@ if (isset($_POST['dodajj']) && isset($_POST['teza'])) {
         $up = $_SESSION['id_uporabnika'];
         $query = "INSERT INTO meritve (teza, visina, datumVnosa, tk_meritve_uporabnik, cilj)
   			  VALUES('$teza', '$visina', '$datum',  '$up', '$cilj')";
-        
-        mysqli_query($connection, $query);
-        
-    }else
-        echo "Imate ze zacetno meritev, lahko dodajate samo nove meritve";
 
+        mysqli_query($connection, $query);
+    } else
+        echo "Imate ze zacetno meritev, lahko dodajate samo nove meritve";
 
     mysqli_close($connection);
 }
 ?>
 
 </body>
-</html>
-							
-							
-							
-							
-							
-							
-							<div role="tabpanel" class="tab-pane" id="t4">
-							
-							</div>
-						</div>
+								</html>
 
+
+
+
+
+
+								<div role="tabpanel" class="tab-pane" id="t4"></div>
+							</div>
+
+						</div>
 					</div>
 				</div>
 			</div>

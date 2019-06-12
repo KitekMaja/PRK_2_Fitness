@@ -1,6 +1,6 @@
 <?php
 require 'PHP_skripte/baza_handler.php';
-include 'header.php';
+include 'head.php';
 
 $q = 
 "
@@ -21,6 +21,8 @@ ASC
 $r = mysqli_query($connection, $q);
 while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
     ?>
+    
+
 
 <div class='container' style="overflow-x:auto;">
 	<table id='seznam' class=table table-striped border='1'>
