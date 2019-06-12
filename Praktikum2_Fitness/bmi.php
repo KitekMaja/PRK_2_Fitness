@@ -40,7 +40,7 @@ if (isset($errMsg)) {
     echo '<div style="color:#FF0000;text-align:center;font-size:17px;">' . $errMsg . '</div>';
 }
 ?>
-   <h1 class="register-title">BMI izraèun</h1>
+
 		<form action="" method="post">
 			<input  type="number" name="teza"
 				placeholder="60 kg"

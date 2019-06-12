@@ -1,6 +1,6 @@
 
 <?php
-require 'header.php';
+require 'head.php';
 include 'PHP_skripte/baza_handler.php';
 include 'PHP_skripte/baza_OOPhandler.php';
 include 'sloutf.php';
@@ -44,22 +44,17 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 	rel="stylesheet">
 
 <link rel="stylesheet" href="MojCSS/profile.css">
-
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
 </head>
 <body>
 
-<br>
-<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
-<br>
-<br>
-
-
-<br>
-
-	<link
-		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-		rel="stylesheet">
 	<div class="container">
 
 		<div class="row">
@@ -70,61 +65,64 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
                      <?php  echo "<p><br/>{$slika}</p>"; ?>
                     <h4 class="card-title text-center mb20"> <?php  echo "<p><br/>{$ime}  {$priimek}</p>"; ?><?php  echo "<p>{$email}</p>"; ?> </h4>
 
-						<hr>
+					<hr>
 
 						<div class="profile-userbuttons">
+
 							<a href="profil.php" class="btn btn-light btn-block">Profil</a> <br>
-							<a	href="planiMoji.php" class="btn btn-light btn-block">Rutine Moje</a><br>
-							<a href="grafP.php" class="btn btn-light btn-block">Graf</a> <br>
-							<a href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
+							<a href="planiMoji.php" class="btn btn-light btn-block">Moje
+								rutine</a> <br> <a href="bmiP.php"
+								class="btn btn-light btn-block">BMI</a> <br> <a
+								href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
 							<br> <a href="cilj.php" class="btn btn-light btn-block">Cilj</a>
-							<br> <br>
-						</div>
+							<br>
 					</div>
-					<!--content-->
-
 				</div>
+				<!--content-->
+
 			</div>
-			<div class="col-md-8 mb30">
-				<div class="card">
-					<div>
+		</div>
+		<div class="col-md-8 mb30">
+			<div class="card">
+				<div>
 
-						<!-- Nav tabs -->
-						<ul class="nav tabs-admin" role="tablist">
-							<li role="presentation" class="nav-item"><a
-								class="nav-link active" href="#t1" aria-controls="t1" role="tab"
-								data-toggle="tab">Meritve</a></li>
-						</ul>
+					<!-- Nav tabs -->
+					<ul class="nav tabs-admin" role="tablist">
+						<li role="presentation" class="nav-item"><a
+							class="nav-link active" href="#t1" aria-controls="t1" role="tab"
+							data-toggle="tab">Meritve</a></li>
+					</ul>
 
-						<!-- Tab panes -->
-						<div class="tab-content admin-tab-content pt30">
-							<div role="tabpanel" class="tab-pane active show" id="t1">
-
-
-
-								<form action="" method="POST">
-									Nova teza <input type="text" name="novameritev"> <br> <input
-										type="text" name="datum" id="date1" alt="date"
-										class="IP_calendar" title="Y/m/d"
-										value="<?php if(isset($_POST['datum'])) echo $_POST['datum'] ?>"
-										placeholder="Datum meritve"> <br>
-									<button type="submit" action="uporabnik.php" name="dodajm">Dodaj</button>
-
-								</form>
+					<!-- Tab panes -->
+					<div class="tab-content admin-tab-content pt30">
+						<div role="tabpanel" class="tab-pane active show" id="t1">
 
 
-								<div role="tabpanel" class="tab-pane" id="t4"></div>
-							</div>
 
+							<form action="" method="POST">
+								Nova teza <input type="text" name="novameritev"> <br> <input
+									type="text" name="datum" id="date1" alt="date"
+									class="IP_calendar" title="Y/m/d"
+									value="<?php if(isset($_POST['datum'])) echo $_POST['datum'] ?>"
+									placeholder="Datum meritve"> <br>
+								<button type="submit" action="uporabnik.php" name="dodajm">Dodaj</button>
+
+							</form>
+
+
+							<div role="tabpanel" class="tab-pane" id="t4"></div>
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<script
-			src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-		<script type="text/javascript">
+
+	<script
+		src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
 	
 
 </script>
