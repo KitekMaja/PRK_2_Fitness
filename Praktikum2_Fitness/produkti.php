@@ -15,9 +15,12 @@ if(isset($_GET['action']) && $_GET['action']=="add")
     {
         $sql="SELECT * FROM artikel WHERE idArtikel={$idArtikla}";
         $query=mysqli_query($connection, $sql);
-        if(mysqli_num_rows($query)!=0)
+        if(mysqli_num_rows($query)!=0) //preveri èe je produkt s tem id-jem
         {
             $row = mysqli_fetch_array($query);
+            
+            
+            
             $_SESSION['kosarica'][$row['idArtikel']] = array("kolicina" => 1, "cena" => $row['cena']);
         }
         else
