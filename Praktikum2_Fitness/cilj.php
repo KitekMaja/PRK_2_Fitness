@@ -45,6 +45,14 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet">
 
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="http://services.iperfect.net/js/IP_generalLib.js"></script>
 </head>
 <body>
 
@@ -110,20 +118,42 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 </head>
 <body>
 
-	<form action="" method="POST">
-		teza <input type="double" name="teza"> <br> visina <input
-			type="double" name="visina"> <br>
 
-		<p>Prosim izberite svoj cilj:</p>
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="ime">cilj</label>
-			<div class="col-sm-3">
-				<input type="radio" name="cilj" value="hujsanje">Hujsanje <input
-					type="radio" name="cilj" value="pridobitev">Pridobitev <input
-					type="radio" name="cilj" value="zdavo">Zdravo
-			</div>
-		</div>
-		<button type="submit" action="dodajMeritev.php" name="dodajj">Dodaj</button>
+
+								<div class="container">
+
+									<form action="" method="post">
+
+										<div class="form-group">
+											<label for="teza">Teza:</label> <input type="number"
+												class="form-control" id="teza" name="teza"
+												placeholder="Vnesite kilograme" />
+										</div>
+										<div class="form-group">
+											<label for="visina">Visina:</label> <input type="number"
+												class="form-control" id="visina" name="visina"
+												placeholder="Vnesite visinu" />
+										</div>
+										<label for="teza">Cilj:</label>
+										    <div class="form-check">
+      <label class="form-check-label" for="radio1">
+        <input type="radio" class="form-check-input"  name="cilj" value="hujsanje" checked>Hujsanje
+      </label>
+    </div>
+    										    <div class="form-check">
+      <label class="form-check-label" for="radio1">
+        <input type="radio" class="form-check-input" name="cilj" value="pridobitev" checked>Pridobitev
+      </label>
+    </div>
+    										    <div class="form-check">
+      <label class="form-check-label" for="radio1">
+        <input type="radio" class="form-check-input" name="cilj" value="zdravo" checked>Zdravo
+      </label>
+    </div>
+				
+										<button type="submit" class="btn btn-primary" name='dodajj'>Dodaj</button>
+
+
 
 	</form>
 

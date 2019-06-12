@@ -47,6 +47,15 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet">
+	
+	
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="http://services.iperfect.net/js/IP_generalLib.js"></script>
 </head>
 <body>
 
@@ -99,13 +108,27 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 
 
 
-							<form action="" method="POST">
-								Nova teza <input type="text" name="novameritev"> <br> <input
-									type="text" name="datum" id="date1" alt="date"
+
+
+								<div class="container">
+
+									<form action="" method="post">
+
+										<div class="form-group">
+											<label for="teza">Nova teza:</label> <input type="number"
+												class="form-control" id="novameritev" name="novameritev"
+												placeholder="Vnesite kilograme" />
+										</div>
+										<div class="form-group">
+											<label for="visina">Datum:</label> <input type="text"
+												class="form-control" id="date1" name="datum"
+												alt="date"
 									class="IP_calendar" title="Y/m/d"
 									value="<?php if(isset($_POST['datum'])) echo $_POST['datum'] ?>"
-									placeholder="Datum meritve"> <br>
-								<button type="submit" action="uporabnik.php" name="dodajm">Dodaj</button>
+									placeholder="Vnesite datum meritve">
+										</div>
+										<button type="submit" class="btn btn-primary" name='dodajm'>Dodaj</button>
+
 
 							</form>
 
