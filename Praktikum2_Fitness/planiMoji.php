@@ -101,20 +101,33 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 									<?php  require 'novPlan.php';?>
 									<?php
 
-        $q = "select * from plan where tk_plan_uporabnik='$idu';";
-        $r = mysqli_query($connection, $q);
-        while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
-            ?>
+                                        $q = "
+select idPlan, SUBSTRING(`opisPlana`, 1, 75) as opisPlana, naziv, tipPlana, ciljPlana, datumNastanka from plan where tk_plan_uporabnik='$idu';";
+                                        
+                                        
+                                        
+                                        $r = mysqli_query($connection, $q);
+                                        while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+                                    ?>
 
 
 							<div class='container'>
 									<table id='seznam' class=table table-striped border='1'>
 										<tr>
-											<td colspan='2' align='center'><a
-												href='urediPlan.php?id=<?php echo $row['idPlan'] ?>'><?php echo $row['naziv'] ?>, 
-										<?php echo $row['opisPlana'] ?>,<?php echo $row['ciljPlana'] ?> ,<?php echo $row['tipPlana'] ?> , Ustvarjeno: <?php echo $row['datumNastanka'] ?></a></td>
+											<td colspan='2' align='center'><?php echo $row['naziv'] ?>, 
+										<?php //echo $row['opisPlana'] ?>,<?php echo $row['ciljPlana'] ?> ,<?php echo $row['tipPlana'] ?> , Ustvarjeno: <?php echo $row['datumNastanka'] ?></a>
+											</td>
+											
+											<td><button><a href='urediPlan.php?id=<?php echo $row['idPlan'] ?>' />Uredi</button></td>
+											<td><button><a href='brisiPlan.php?id=<?php echo $row['idPlan'] ?>' />Zbrisi</button></td>
+											
 
 
+										</tr>
+										<tr><td colspan='4' align='center' style="table-layout: fixed; ">
+										<?php echo $row['opisPlana'] ?>
+										</td>
+										
 										</tr>
 									</table>
 								</div>

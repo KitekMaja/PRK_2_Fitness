@@ -54,8 +54,8 @@
  			<div class="form-group">
 			<label for="tip">Tip plana:</label> <select class="form-control"
 				id="tip" name="tip">
-				<option value="privat">Zaseben</option>
-				<option value="public">Javen</option>
+				<option value="Zaseben">Zaseben</option>
+				<option value="Javen">Javen</option>
 				
 				
 			</select> 
@@ -63,9 +63,9 @@
 			<div class="form-group">
 			<label for="cilj">Cilj plana</label> <select
 				class="form-control" id="cilj" name="cilj">
-				<option value="hujsanje">Hujsanje</option>
-				<option value="kondicija">Kondicija</option>
-				<option value="pridobivanje">Pridobivanje</option>
+				<option value="Hujšanje">Hujsanje</option>
+				<option value="Kondicija">Kondicija</option>
+				<option value="Pridobivanje">Pridobivanje</option>
 			</select>
 			</div>
 
