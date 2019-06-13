@@ -82,7 +82,7 @@ session_start();
         <a class="nav-link" href="plani.php">Plani</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">&#268;lanki</a>
+        <a class="nav-link" href="seznamClankovTest.php">&#268;lanki</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="produkti.php">Shop</a>

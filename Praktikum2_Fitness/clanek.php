@@ -51,7 +51,7 @@ if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array('
 		echo "<br />{$row['vsebina']}<br/>";
 		
         echo "<form  method=\"POST\">
-		<button type=\"submit\" align=\"center\"  name=\"dodajClanek\">Dodaj Clanek v seznam</button></form>
+		<button type=\"submit\" align=\"center\" name=\"dodajClanek\">Dodaj Clanek v seznam</button></form>
 		</div><br />";
 		
 	
@@ -71,20 +71,25 @@ if (!$row) { // prikaz sporočila o napakah
 if (isset($_POST['dodajClanek'])){ 
     
     $cid = $_GET['cid'];
-    $uid = $_GET['uid'];
+    $up = $_SESSION['id_uporabnika'];
     
-    $slo = "SELECT * FROM  seznam where Uporabnik_id =$uid and Clanek_id=$cid ";
+    $slo = "SELECT * FROM  seznam where Uporabnik_id =$up and Clanek_id=$cid ";
     $rrr = mysqli_query ($connection, $slo);
     if (mysqli_num_rows($rrr) == 0) { // Good to go!
         
     $up = $_SESSION['id_uporabnika'];
     $query = "INSERT INTO seznam (Uporabnik_id, Clanek_id)
-  			  VALUES('$uid', '$cid')";
+  			  VALUES('$up', '$cid')";
     
      mysqli_query($connection, $query);
+     
+     echo "<script>window.location=\"mojSeznamClankovT.php\";</script>";
     
-}else 
+    }else {
     echo "Imate e na seznamu";
+    
+    echo "<script>window.location=\"mojSeznamClankovT.php\";</script>";
+    }
 }
 
 mysqli_close($connection);

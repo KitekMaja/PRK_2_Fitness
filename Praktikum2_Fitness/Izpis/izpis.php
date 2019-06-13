@@ -11,10 +11,10 @@ $idu = $_SESSION['id_uporabnika'];
 
 // pridobivanje podatkov o sliki
 $q = "SELECT * FROM  uporabnik where idUporabnik=$idu";
-$ss = "SELECT * FROM  meritve where tk_meritve_uporabnik=$idu";
+$clanek = "SELECT * FROM  meritve where tk_meritve_uporabnik=$idu";
 $r = mysqli_query($connection, $q);
 
-$sss = mysqli_query($connection, $ss);
+$sss = mysqli_query($connection, $clanek);
 
 if (mysqli_num_rows($r) == 1) { // Good to go!
 

@@ -48,10 +48,10 @@ $q = "SELECT * FROM  clanek";
 $r = mysqli_query ($connection, $q);
 while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
     
-    $s = "SELECT * FROM uporabnik where idUporabnik={$row['tk_clanek_uporabnik']}";
+    $uporabnik = "SELECT * FROM uporabnik where idUporabnik={$row['tk_clanek_uporabnik']}";
     
-    $p = mysqli_query ($connection, $s);
-    $iime = mysqli_fetch_array($p, MYSQLI_ASSOC);
+    $claneek = mysqli_query ($connection, $uporabnik);
+    $iime = mysqli_fetch_array($claneek, MYSQLI_ASSOC);
     
 	// izpis posameznik zapisov
     

@@ -13,8 +13,8 @@ if(empty($_SESSION['id_uporabnika'])){
             
             $row = mysqli_fetch_array ($uq, MYSQLI_ASSOC);
             
-            if ($row['tip_uporabnika'] !=strtolower("trener"))
-               header('Location: seznamClankov.php');
+//             if ($row['tip_uporabnika'] !=strtolower("trener"))
+//                header('Location: seznamClankov.php');
         
     }
 ?>
@@ -30,11 +30,11 @@ if(empty($_SESSION['id_uporabnika'])){
 }
 
 </style>
-<meta charset="UTF-8">
-<title>Dodaj Clanek</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>Dodaj Članek</title>
 </head>
 <body>
-<h1 align="center">Dodaj Clanek</h1><br/>
+<h1 align="center">Dodaj Članek</h1><br/>
 <form enctype="multipart/form-data" align="center"  action="" method="POST">
 naziv <input class="ppp" type="text" name="naziv">
 <br>

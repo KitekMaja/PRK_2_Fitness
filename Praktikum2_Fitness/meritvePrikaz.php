@@ -136,7 +136,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 										</div>
 										<div class="form-group">
 											<label for="visina">Datum:</label> <input type="text"
-												class="form-control" id="date1" name="datum"
+												 id="date1" name="datum"
 												alt="date"
 									class="IP_calendar" title="Y/m/d"
 									value="<?php if(isset($_POST['datum'])) echo $_POST['datum'] ?>"

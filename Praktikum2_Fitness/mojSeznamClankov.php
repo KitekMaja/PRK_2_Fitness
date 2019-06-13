@@ -7,7 +7,7 @@ require 'header.php';
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="index.css">
-  <title>Seznam Clankov</title>
+  <title>Seznam Člankov</title>
    
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -40,7 +40,7 @@ body, html {
 require ('PHP_skripte/baza_handler.php');
 require 'sloutf.php';
 
-echo "<a href=\"dodajClanek.php\">dodaj Èlanek</a>";
+echo "<a href=\"dodajClanek.php\">dodaj Članek</a>";
 
 $up = $_SESSION['id_uporabnika'];
 $queery = "Select * from seznam where Uporabnik_id=$up";
@@ -59,22 +59,22 @@ echo '<table class= table table-striped">
 	
 while ($row = mysqli_fetch_array ($uporabnikr, MYSQLI_ASSOC)) {
     
-    $ss = "SELECT * FROM clanek where idClanek={$row['Clanek_id']}";
+    $clanek = "SELECT * FROM clanek where idClanek={$row['Clanek_id']}";
     
-    $p = mysqli_query ($connection, $ss);
-    $iimec = mysqli_fetch_array($p, MYSQLI_ASSOC);
+    $claneek = mysqli_query ($connection, $clanek);
+    $claanek = mysqli_fetch_array($claneek, MYSQLI_ASSOC);
     
-    $s = "SELECT * FROM uporabnik where idUporabnik={$iimec['tk_clanek_uporabnik']}";
+    $uporabnik = "SELECT * FROM uporabnik where idUporabnik={$claanek['tk_clanek_uporabnik']}";
     
     
-    $pp = mysqli_query ($connection, $s);
-    $iimeu = mysqli_fetch_array($pp, MYSQLI_ASSOC);
+    $uporabnikk = mysqli_query ($connection, $uporabnik);
+    $iimeu = mysqli_fetch_array($uporabnikk, MYSQLI_ASSOC);
 	// izpis posameznik zapisov
 	echo "\t<tr>
-	<td align=\"left\"><a href=\"clanek.php?cid={$iimec['idClanek']}&uid={$iimeu['idUporabnik']}\">{$iimec['naziv']}</a></td>
-		<td align=\"left\"><a href=\"profil.php?pid={$iimec['tk_clanek_uporabnik']}\">{$iimeu['ime']}</a></td>
-		<td align=\"left\">{$iimec['vsebina']}</td>
-		<td align=\"left\">{$iimec['datumVnosa']}</td>
+	<td align=\"left\"><a href=\"clanek.php?cid={$claanek['idClanek']}&uid={$iimeu['idUporabnik']}\">{$claanek['naziv']}</a></td>
+		<td align=\"left\"><a href=\"profil.php?pid={$claanek['tk_clanek_uporabnik']}\">{$iimeu['ime']}</a></td>
+		<td align=\"left\">{$claanek['vsebina']}</td>
+		<td align=\"left\">{$claanek['datumVnosa']}</td>
 	</tr>\n";
 	
 }

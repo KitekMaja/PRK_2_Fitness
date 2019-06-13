@@ -12,14 +12,14 @@ require 'header.php';
 <body>
 
 	<form action="" method="POST">
-		teza <input type="double" name="teza"> <br> visina <input
+		teža <input type="double" name="teza"> <br> višina <input
 			type="double" name="visina"> <br>
 
 		<p>Prosim izberite svoj cilj:</p>
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="ime">cilj</label>
 			<div class="col-sm-3">
-				<input type="radio" name="cilj" value="hujsanje">Hujsanje 
+				<input type="radio" name="cilj" value="hujsanje">Hujšanje 
 				<input type="radio" name="cilj" value="pridobitev">Pridobitev
 				<input type="radio" name="cilj" value="zdavo">Zdravo 
 			</div>

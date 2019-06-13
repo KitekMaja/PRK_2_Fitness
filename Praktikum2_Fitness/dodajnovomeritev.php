@@ -8,10 +8,10 @@ require 'header.php';
 
 <script type="text/javascript" src="http://services.iperfect.net/js/IP_generalLib.js"></script>
     <meta charset="UTF-8">
-    <title>Dodaj Clanek</title>
+    <title>Dodaj novo meritev</title>
 </head>
 <body>
-
+čšž
 <form  action="" method="POST">
   Nova teza <input type="text" name="novameritev">
     <br>

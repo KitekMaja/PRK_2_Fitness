@@ -41,11 +41,10 @@ require ('PHP_skripte/baza_handler.php');
 require 'sloutf.php';
 
 echo "<a href=\"dodajClanek.php\">dodaj Èlanek</a>";
-// privzet SQL stavek
+
 $q = "SELECT * FROM  clanek";
     
-    
-// zaèetek tabele
+
 echo '<table class= table table-striped">
 	<tr>
 		<td align="left" width="20%"><b>Naziv</b></td>
@@ -58,10 +57,10 @@ echo '<table class= table table-striped">
 $r = mysqli_query ($connection, $q);
 while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
     
-    $s = "SELECT * FROM uporabnik where idUporabnik={$row['tk_clanek_uporabnik']}";
+    $uporabnik = "SELECT * FROM uporabnik where idUporabnik={$row['tk_clanek_uporabnik']}";
     
-    $p = mysqli_query ($connection, $s);
-    $iime = mysqli_fetch_array($p, MYSQLI_ASSOC);
+    $claneek = mysqli_query ($connection, $uporabnik);
+    $iime = mysqli_fetch_array($claneek, MYSQLI_ASSOC);
     
 	// izpis posameznik zapisov
 	echo "\t<tr>
