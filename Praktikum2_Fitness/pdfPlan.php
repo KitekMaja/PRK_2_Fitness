@@ -3,8 +3,7 @@ session_start();
 require "PHP_skripte/baza_handler.php";
 require('FPDF/fpdf.php');
 // $planID=$_SESSION['planID'];
-$planID=34;
-// echo $planID."==================";
+$planID=$_GET['id'];
 
 class PDF extends FPDF
 {
@@ -47,7 +46,7 @@ class PDF extends FPDF
 $sql = "SELECT
     vaje.idVaje as idVaje,
     vaje.naziv as imeVaje,
-   
+    
     cas,
     sets,
     rep
@@ -65,17 +64,17 @@ $sqlImena="show COLUMNS FROM `imenapdf`";
 $result = mysqli_query($connection, $sql);
 $header = mysqli_query($connection, $sqlImena);
 // while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
-    
+
 //     $a=$row['idVaje'].", ".$row['nazivKategorije'].", ".$row['imeVaje'].", ".$row['cas'];
 //     $b=$row['sets'].", ".$row['rep'].", ".$row['opisVaje'].", ".$row['idVaje'];
 //     $res=$a.$b;
-    
+
 // //     $pdf->Cell(40,10,$res);
-    
+
 // }
 $display_heading = array(
     'idVaje'=>'idVaje',
-    'imeVaje'=> 'imeVaje', 
+    'imeVaje'=> 'imeVaje',
     'cas'=> 'cas',
     'sets'=> 'sets',
     'rep'=> 'rep'
@@ -98,4 +97,4 @@ foreach($result as $row) {
         $pdf->Cell(40,12,$column,1);
 }
 $pdf->Output('D','fitnessPlan.pdf');
-?>
+ ?>
