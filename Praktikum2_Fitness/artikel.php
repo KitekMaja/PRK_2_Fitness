@@ -23,18 +23,41 @@
 			</div>
 			<div class="col-sm-5"><br/>
 				<h1><?php  echo $row["naziv"]?></h1>
+				<?php 
+				
+				if ($row["kolicina"] == 0)
+				{
+				    echo '<span class="badge badge-pill badge-danger">Ni na zalogi</span>';
+				}
+				else if ($row["kolicina"] <= 10)
+				{
+				    echo '<span class="badge badge-pill badge-warning">Zadnji kosi</span>';
+				}
+				else
+				{
+				    echo '<span class="badge badge-pill badge-success">Na zalogi</span>';
+				}
+				
+				?>
 				<img src="slike/trgovina/slike_produktov/<?php echo $row["slika"]?>" alt="Card Image" class="card-img-top img-fluid">
 			</div>
 			<div class="col-sm-3">
 			<br/><br/>
 				<p><?php echo $row["opis"]?></p>
 				<h5><?php echo $row["cena"]?></h5>
+				
+				<?php 
+				if ($row["kolicina"] > 0)
+				{
+				    echo '<a href="#" class="btn btn-default btn-sm">Dodaj v kosarico</a>';
+				}
+				?>
 			</div>
 			<div class="col-sm-2">
 			</div>
 		</div>
 	</div>
-
+	
 <?php 
     require "footer.php";
 ?>
