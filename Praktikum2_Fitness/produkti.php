@@ -60,10 +60,10 @@ if(isset($_GET['action']) && $_GET['action']=="add")
 	       			<div class="col-md-6 col-lg-4">
                    	 	<div class="card border-0 transform-on-hover">
                         	<a class="lightbox" href="">
-                        		<img src="slike/trgovina/slike_produktov/rsn.jpg" alt="Card Image" class="card-img-top" style="width:350px; height: 350px;">
+                        		<img src="slike/trgovina/slike_produktov/<?php echo $row["slika"]?>" alt="Card Image" class="card-img-top img-fluid">
                         	</a>
     	                	<div class="card-body">
-    	                   	<h6><a href="#"></a><?php echo $row["naziv"] ?></h6>
+    	                   	<h6><a href="artikel.php?artikel_id=<?php echo $row["idArtikel"]?>"><?php echo $row["naziv"] ?></a></h6>
                          	<br/>
                          	<?php echo $row["cena"] ?>
                          	<br/>
