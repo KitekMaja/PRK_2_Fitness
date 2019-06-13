@@ -13,6 +13,17 @@ $set = mysqli_real_escape_string($connection, $_POST['set']);
 $rep = mysqli_real_escape_string($connection, $_POST['rep']);
 
 
+if($cas==null){
+    $cas=0;
+}
+if($set==null){
+    $set=0;
+}
+if($rep==null){
+    $rep=0;
+}
+    
+
 //od kje?-->   https://stackoverflow.com/questions/19050890/find-youtube-link-in-php-string-and-convert-it-into-embed-code
 function getYoutubeEmbedUrl($url)
 {

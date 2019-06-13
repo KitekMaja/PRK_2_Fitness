@@ -43,20 +43,20 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 	rel="stylesheet">
 
 <link rel="stylesheet" href="MojCSS/profile.css">
-
-</head>
-<body>
-<br>
-<br>
-
-<br>
-<br>
-
-
-<br>
-	<link
+<link
 		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 		rel="stylesheet">
+</head>
+<body>
+	<br>
+	<br>
+
+	<br>
+	<br>
+
+
+	<br>
+	
 	<div class="container">
 
 		<div class="row">
@@ -67,7 +67,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
                      <?php  echo "<p><br/>{$slika}</p>"; ?>
                     <h4 class="card-title text-center mb20"> <?php  echo "<p><br/>{$ime}  {$priimek}</p>"; ?><?php  echo "<p>{$email}</p>"; ?> </h4>
 
-					<hr>
+						<hr>
 
 						<div class="profile-userbuttons">
 
@@ -100,32 +100,44 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 							<div role="tabpanel" class="tab-pane active show" id="t1">
 									<?php  require 'novPlan.php';?>
 									<?php
-									
-                                    $q = "select * from plan where tk_plan_uporabnik='$idu';";
-                                    $r = mysqli_query($connection, $q);
-                                    while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+
+                                        $q = "
+select idPlan, SUBSTRING(`opisPlana`, 1, 75) as opisPlana, naziv, tipPlana, ciljPlana, datumNastanka from plan where tk_plan_uporabnik='$idu';";
+                                        
+                                        
+                                        
+                                        $r = mysqli_query($connection, $q);
+                                        while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
                                     ?>
 
 
 							<div class='container'>
-								<table id='seznam' class=table table-striped border='1'>
-									<tr>
-										<td colspan='2' align='center'><a href='urediPlan.php?id=<?php echo $row['idPlan'] ?>'><?php echo $row['naziv'] ?>, 
-										<?php echo $row['opisPlana'] ?>,<?php echo $row['ciljPlana'] ?> ,<?php echo $row['tipPlana'] ?> , Ustvarjeno: <?php echo $row['datumNastanka'] ?></a></td>
+									<table id='seznam' class=table table-striped border='1'>
+										<tr>
+											<td colspan='2' align='center'><?php echo $row['naziv'] ?>, 
+										<?php //echo $row['opisPlana'] ?>,<?php echo $row['ciljPlana'] ?> ,<?php echo $row['tipPlana'] ?> , Ustvarjeno: <?php echo $row['datumNastanka'] ?></a>
+											</td>
+											
+											<td><button><a href='urediPlan.php?id=<?php echo $row['idPlan'] ?>' />Uredi</button></td>
+											<td><button><a href='brisiPlan.php?id=<?php echo $row['idPlan'] ?>' />Zbrisi</button></td>
+											
+
+
+										</tr>
+										<tr><td colspan='4' align='center' style="table-layout: fixed; ">
+										<?php echo $row['opisPlana'] ?>
+										</td>
 										
-
-									</tr>
-								</table>
-							</div>
-
+										</tr>
+									</table>
+								</div>
 
 
-							<?php 
-                                }
-                                
-                               
-                                
-                                ?>
+
+							<?php
+        }
+
+        ?>
                                 
                                 
 

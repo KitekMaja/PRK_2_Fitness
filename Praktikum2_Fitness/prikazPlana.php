@@ -42,4 +42,10 @@ while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
     
     <?php 
 }
+
+
+
+
 ?>
+
+ <button onclick="window.location.href = 'pdfPlan.php?id=<?php echo $planID?>'">Click Here</button>

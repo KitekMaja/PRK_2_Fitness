@@ -1,3 +1,4 @@
+<br><br><br><br><br>
 <?php
 require 'PHP_skripte/baza_handler.php';
 include 'head.php';
@@ -23,32 +24,35 @@ while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
     ?>
     
 
-
 <div class='container' style="overflow-x:auto;">
 	<table id='seznam' class=table table-striped border='1'>
 		<tr>
 
 			<th colspan='2' scope="col"><a
-				href='vajaInfo.php?id=<?php echo $row['idVaje'] ?>'><?php echo $row['nazivKategorije'].", ".$row['nazivVaje'] ?></a></th>
+				href='vajaInfo.php?id=<?php echo $row['idVaje'] ?>'>
+				<?php echo $row['nazivKategorije']?>, <?php echo $row['nazivVaje'] ?></a></th>
 
 		</tr>
 		
-		<tbody><tr >
-			<td colspan="2"><?php echo $row['opisVaje'] ?></td>
+		<tbody>
+		<tr >
+			<td colspan="2">&Ccaron;as izvajanja: <?php echo $row['casVaje'] ?> min<br>  &Scaron;tevilo rund: <?php echo $row['setsVaje'] ?>,  &Scaron;tevilo ponovitev: <?php echo $row['repVaje'] ?></td>
+			
 		</tr>
 		
 		<tr>
-			<td>&Ccaron;as izvajanja: <?php echo $row['casVaje'] ?><br> &Scaron;tevilo rund: <?php echo $row['setsVaje'] ?><br> &Scaron;tevilo ponovitev: <?php echo $row['repVaje'] ?></td>
-			
+			<td ><?php echo $row['opisVaje'] ?></td>
 		
-					<td><iframe src='<?php echo $row['videoVaje'].'?controls=0' ?>'></iframe></td>
+			<td>
+			<iframe src='<?php echo $row['videoVaje'].'?controls=0' ?>'></iframe>
+			<p><a href='<?php echo $row['videoVaje'] ?>'>Povezava do posnetka</a></p>
+			</td>
 		
-		</tr></tbody>
+		</tr>
+		</tbody>
 
 
 
-		<br>
-		<br>
 
 	</table>
 </div>
@@ -60,44 +64,6 @@ while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 
 ?>
 
-
-<table>
-  <caption>Statement Summary</caption>
-  <thead>
-    <tr>
-      <th scope="col">Account</th>
-      <th scope="col">Due Date</th>
-      <th scope="col">Amount</th>
-      <th scope="col">Period</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td data-label="Account">Visa - 3412</td>
-      <td data-label="Due Date">04/01/2016</td>
-      <td data-label="Amount">$1,190</td>
-      <td data-label="Period">03/01/2016 - 03/31/2016</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Account">Visa - 6076</td>
-      <td data-label="Due Date">03/01/2016</td>
-      <td data-label="Amount">$2,443</td>
-      <td data-label="Period">02/01/2016 - 02/29/2016</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Account">Corporate AMEX</td>
-      <td data-label="Due Date">03/01/2016</td>
-      <td data-label="Amount">$1,181</td>
-      <td data-label="Period">02/01/2016 - 02/29/2016</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Acount">Visa - 3412</td>
-      <td data-label="Due Date">02/01/2016</td>
-      <td data-label="Amount">$842</td>
-      <td data-label="Period">01/01/2016 - 01/31/2016</td>
-    </tr>
-  </tbody>
-</table>
 <style>
 body {
   font-family: "Open Sans", sans-serif;
