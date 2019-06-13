@@ -66,8 +66,7 @@ if(isset($_POST['signup-submit']))
                     
                     mysqli_stmt_bind_param($stmt, "ssssss",$ime, $priimek, $e_naslov, $zakodiranoGeslo, $spol, $tip);
                     mysqli_stmt_execute($stmt);
-                    
-                    
+               
                     
                     $last_id = mysqli_insert_id($connection);
                     // dodajanje slike

@@ -36,6 +36,35 @@ if (isset($_POST['login-submit']))
              session_start();
              $_SESSION['id_uporabnika']=$vrstica['idUporabnik'];
              $_SESSION['email_uporabnika']=$vrstica['email'];
+             
+             $sql3 = "SELECT * FROM kosarica WHERE uporabnik_id=?";
+             $stmt3 = mysqli_stmt_init($connection);
+             if (!mysqli_stmt_prepare($stmt3, $sql3))
+             {
+                 echo "SQL statement failed.";
+             }
+             else
+             {
+                 mysqli_stmt_bind_param($stmt3, "i", $_SESSION['id_uporabnika']);
+                 mysqli_stmt_execute($stmt3);
+                 $rezultat = mysqli_stmt_get_result($stmt3);
+                 $vrstica = mysqli_fetch_assoc($rezultat);
+                 
+                 if ($vrstica != 0)
+                 {
+                     header("Location: ../profil.php?login=success");
+                     exit();
+                 }
+                 else
+                 {
+                     $sql2 = "INSERT INTO kosarica (uporabnik_id) VALUES (?);";
+                     $stmt2 = mysqli_stmt_init($connection);
+                     mysqli_stmt_prepare($stmt2, $sql2);
+                     mysqli_stmt_bind_param($stmt2, "i", $_SESSION['id_uporabnika']);
+                     mysqli_stmt_execute($stmt2);
+                 }
+                 
+             }
             header("Location: ../profil.php?login=success");
             exit();
           }
