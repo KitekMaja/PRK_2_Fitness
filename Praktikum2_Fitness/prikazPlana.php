@@ -19,6 +19,7 @@ include 'head.php';
 
 // $planID=$_SESSION['planId'];
 $planID = $_GET['id'];
+$_SESSION['planID']=$planID;
 
 // echo $planID;
 // imeVaje opisVaje videoVaje cas sets rep nazivKategorije nazivPlana
@@ -105,7 +106,12 @@ while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 	<tr><td>imeplana:<?php echo $row['nazivPlana'] ?></td></tr>
 	<tr><td>================</td></tr>
 	
-    
+    echo "
+            <script>
+                window.location = 'prikazPlana.php?id=$planID';
+            </script>
+
+               ";
      -->
 
 
