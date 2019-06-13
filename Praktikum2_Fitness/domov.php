@@ -19,9 +19,9 @@
 </div>
 <div class="row">
 	<div class="col-sm">
-		<img src="slike/domov/domov5.jpg" class="img-fluid float-right slika_3_na_robu"> 
+		<img src="slike/domov/slika8.jpg" class="img-fluid float-right slika_3_na_robu"> 
 		<div class="div_od_slike2">
-			<img src="slike/domov/timer.png" class="icon-timer"><br/>
+
 			<h2>SLEDI PROGRAMU</h2><br/>
 			<p>
 				<img src="slike/domov/check.png" class="icon-check">&nbsp;CELODNEVEN DOSTOP<br/>
