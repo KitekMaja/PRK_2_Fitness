@@ -12,12 +12,20 @@ $idu = $_SESSION['id_uporabnika'];
 // pridobivanje podatkov o sliki
 $q = "SELECT * FROM  uporabnik where idUporabnik=$idu";
 $ss = "SELECT * FROM  meritve where tk_meritve_uporabnik=$idu";
+
+$slikica = "Select * From slike where tk_slike_uporabnik=$idu";
+$sslikica = mysqli_query($connection, $slikica);
+
+if (mysqli_num_rows($sslikica) == 1) { // Good to go!
+    $slikarow = mysqli_fetch_array($sslikica, MYSQLI_ASSOC);
+    $slika = $slikarow['imeSlike'];
+}
+
 $r = mysqli_query($connection, $q);
 
 $sss = mysqli_query($connection, $ss);
 
 if (mysqli_num_rows($r) == 1) { // Good to go!
-
     // pridobivanje podatkov
     $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
     $rowm = mysqli_fetch_array($sss, MYSQLI_ASSOC);
@@ -51,6 +59,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 	<br>
 	<br>
 	<br>
+	
 	<div class="container">
 
 		<div class="row">
@@ -58,8 +67,12 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 				<div class="card">
 
 					<div class="card-content pt20 pb20 profile-header">
-                     <?php  echo "<p><br/>{$slika}</p>"; ?>
-                    <h4 class="card-title text-center mb20"> <?php  echo "<p><br/>{$ime}  {$priimek}</p>"; ?><?php  echo "<p>{$email}</p>"; ?> </h4>
+						<div class="profile-userpic img">
+                     <?php
+
+                    echo "<img src=\"PHP_skripte/$slika\"  class=\"mx-auto d-block\" style=\"width:65%\"  >";
+                    ?></div>
+						<h4 class="card-title text-center mb20"> <?php  echo "<p><br/>{$ime}  {$priimek}</p>"; ?><?php  echo "<p>{$email}</p>"; ?> </h4>
 
 						<hr>
 
@@ -71,6 +84,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 								class="btn btn-light btn-block">BMI</a> <br> <a
 								href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
 							<br> <a href="cilj.php" class="btn btn-light btn-block">Cilj</a>
+							<br> <a href="cilj.php" class="btn btn-light btn-block">Kosarica</a>
 							<br>
 
 						</div>
