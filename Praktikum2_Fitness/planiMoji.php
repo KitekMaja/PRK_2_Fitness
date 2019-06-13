@@ -92,8 +92,12 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 						<ul class="nav tabs-admin" role="tablist">
 							<li role="presentation" class="nav-item"><a
 								class="nav-link active" href="#t1" aria-controls="t1" role="tab"
-								data-toggle="tab">Rutine</a></li>
+								data-toggle="tab">Dodaj rutine</a></li>
+								<li role="presentation" class="nav-item"><a
+								class="nav-link " href="#t4" aria-controls="t1" role="tab"
+								data-toggle="tab">Moje rutine</a></li>
 						</ul>
+						
 
 						<!-- Tab panes -->
 						<div class="tab-content admin-tab-content pt30">
@@ -142,9 +146,16 @@ select idPlan, SUBSTRING(`opisPlana`, 1, 75) as opisPlana, naziv, tipPlana, cilj
                                 
 
 								</form>
+<br>
+<br>
+</div>
 
 
-								<div role="tabpanel" class="tab-pane" id="t4"></div>
+								<div role="tabpanel" class="tab-pane" id="t4">
+								
+								
+								kjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+								</div>
 							</div>
 
 						</div>
