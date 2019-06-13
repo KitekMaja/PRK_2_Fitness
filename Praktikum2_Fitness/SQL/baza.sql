@@ -9,7 +9,7 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
-START TRANSACTION;
+START TRANSACTION; 
 SET time_zone = "+00:00";
 
 
@@ -46,7 +46,7 @@ INSERT INTO `artikel` (`idArtikel`, `naziv`, `koda`, `opis`, `cena`, `tk_kategor
 (2, 'Jed North - Koko Lounge Pajkice', 'KokoPajkice_1', 'Zelena barva', 44.00, 2),
 (3, 'Jed North - Koko Lounge Pajkice', 'KokoPajkice_2', 'Siva barva', 44.00, 2),
 (4, 'Venum Challanger 2.0 rokavice', 'RokaviceVenum_2', 'Roèno izdelane na Tajskem', 47.99, 4),
-(5, 'RSN - Whey Protein Isolate 1816g', 'RSNProteini_1', 'RSN Whey Protein Isolate je izdelek najvišje kakovosti narejen izkljuèno iz èistega sirotkinega izolata.', 49.99, 1);
+(5, 'RSN - Whey Protein Isolate 1816g', 'RSNProteini_1', 'RSN Whey Protein Isolate je izdelek najvi?je kakovosti narejen izkljuèno iz èistega sirotkinega izolata.', 49.99, 1);
 
 -- --------------------------------------------------------
 
@@ -68,21 +68,21 @@ CREATE TABLE `clanek` (
 --
 
 INSERT INTO `clanek` (`idClanek`, `datumVnosa`, `naziv`, `vsebina`, `tk_clanek_uporabnik`) VALUES
-(4, '2019-06-10','Uživanje rib za zdrav stil življenja',  '- Priporoèamo pestro uživanje rib enkrat do dvakrat tedensko, predvsem kot zamenjavo za rdeèe meso in mesne izdelke;
+(4, '2019-06-10','uživanje rib za zdrav stil življenja',  '- Priporoèamo pestro uživanje rib enkrat do dvakrat tedensko, predvsem kot zamenjavo za rdeèe meso in mesne izdelke;
 </br><p>- Ribe imajo ugodno hranilno sestavo, so bogat vir biološko visoko vrednih beljakovin, vitaminov in mineralov in so edinstvene po vsebnosti esencialnih omega3 mašèobnih kislin, ki so pomembne za zdravje srca;</p>
 </br><p>- Zlasti manjše ribe, ki jih zaužijemo s kostmi vred, so vir vitamina D, kalcija, fosforja, morske ribe pa tudi joda in selena;</p>
 </br><p>- Ribe so lahko prebavljive, z malo vezivnega tkiva ter rahlo celièno strukturo in veljajo za kakovosten in uravnotežen obrok, še posebej v kombinaciji z zelenjavo (npr. blitvo); </p>
 </br><p>- Zaradi vseh omenjenih koristi naj bi tedensko zaužili okoli 200 gramov ribjega mesa, od tega polovico mastnih modrih morskih rib;</p>
 </br><p>- Najbolj koristne ribje jedi so pripravljene iz svežih ali zamrznjenih rib, prehransko manj primerni so ribji pripravki (npr. panirane ribje palèke);</p>
 </br><p>- Vse ribe na trgu morajo glede mikrobiološke in kemijske varnosti ustrezati predpisom, nadzor pa redno izvajajo pristojne inštitucije;</p>
-</br><p>- Ribe in ribji izdelki lahko vsebujejo zdravju škodljiva onesnaževala. S pestro izbiro »manjših« rib (sardela, sardon, skuša, mol, špar, postrv, cipelj, orada, morski list itd.), ki so kratkožive in nižje v prehranjevalni verigi, lahko ta tveganja za zdravje bistveno zmanjšamo. Z morebitnimi škodljivimi onesnaževali so praviloma bolj obremenjene dolgo živeèe, veèje ter roparske ribe;</p>
+</br><p>- Ribe in ribji izdelki lahko vsebujejo zdravju škodljiva onesnaževala. S pestro izbiro manjših rib (sardela, sardon, skuša, mol, špar, postrv, cipelj, orada, morski list itd.), ki so kratkožive in nižje v prehranjevalni verigi, lahko ta tveganja za zdravje bistveno zmanjšamo. Z morebitnimi škodljivimi onesnaževali so praviloma bolj obremenjene dolgo živeèe, veèje ter roparske ribe;</p>
 </br><p>- Ribe in ribji izdelki so za posameznike lahko alergeni, zato morajo biti v skladu z zakonodajo ustrezno oznaèeni.</p>', 1),
 
 (1, '2019-06-03','10 nasvetov za zdravo življenje',  '<h5 align="center">Poskrbite za zdravo prehranjevanje</h5></br>
 Pa saj to za vas ni nobena novica, kajne? O zdravem prehranjevanju govorijo prav vsi, saj je predpogoj za zdravo življenje. Na ta naèin se lahko izognete številnim kroniènim boleznim, med katere sodijo kardiovaskularna obolenja, diabetes tipa 2 in nekatere vrste raka. Priporoèamo uravnoteženo prehrano, ki naj sestoji iz veliko sadja, zelenjave ter polnozrnatih izdelkov, pa tudi nemastnega mesa, rib in mleènih proizvodov. Izogibajte se predelanim živilom in hitri hrani.
 </br>
 <h5 align="center">Bodite aktivni vsaj 30 minut na dan</h5></br>
-<p>Življenje si lahko podaljšate tudi z rednim gibanjem. S tem ne mislimo na kakšno težko, rigorozno vadbo (èeprav vam tudi ta ne bi škodila). Gibanje je lahko tako preprosto kot igra z otroki, sprehod s psom, kolesarjenje, plavanje, tek ali ples. Vse to bo pripomoglo k temu, da bo vaše telo pripravljeno na nove izzive, obenem pa boste prepreèili tudi tveganje za nastanek bolezni srca, kapi, visokega krvnega pritiska in podobno. Tudi kakovost vašega življenja se bo precej izboljšala.</p>
+<p>življenje si lahko podaljšate tudi z rednim gibanjem. S tem ne mislimo na kakšno težko, rigorozno vadbo (èeprav vam tudi ta ne bi škodila). Gibanje je lahko tako preprosto kot igra z otroki, sprehod s psom, kolesarjenje, plavanje, tek ali ples. Vse to bo pripomoglo k temu, da bo vaše telo pripravljeno na nove izzive, obenem pa boste prepreèili tudi tveganje za nastanek bolezni srca, kapi, visokega krvnega pritiska in podobno. Tudi kakovost vašega življenja se bo precej izboljšala.</p>
 </br>
 <h5  align="center">Prenehajte s kajenjem </h5></br>
 <p>Kaj sploh še lahko napišemo o tej izredno škodljivi razvadi? S prenehanjem kajenja boste prepreèili številne bolezni in si zagotovili daljše in bolj zdravo življenje.</p>
@@ -97,7 +97,7 @@ Pa saj to za vas ni nobena novica, kajne? O zdravem prehranjevanju govorijo prav
 <p>Še en super nasvet za zdravo življenje. Kadarkoli ste izpostavljeni soncu, še posebej pa poleti, poskrbite za ustrezno zašèito vaše kože s primerno kremo za sonèenje. Niè ne bo škodilo, èe si boste nadeli tudi klobuk. Ogromno ljudi namreè umre zaradi kožnega raka, ki ga lahko prepreèite na povsem enostaven naèin, s predhodno opisanimi nasveti.</p>
 </br>
 <h5  align="center">Nauèite se globoko dihati</h5></br>
-<p>Veèina ljudi dandanes živi kaotièno in prav niè zdravo življenje, zato ni niè èudnega, da smo vsi preveè obremenjeni in pod stresom. Naše telo pa se proti stresu bori na naèin “bojuj se ali zbeži”. Zato prihaja do poveèanega utripa srca, pospešenega dihanja in poveèanega krvnega pritiska. Èim dalj èasa je naše telo podvrženo stresu, tem veèjo škodo lahko le-ta povzroèi.</p>
+<p>Veèina ljudi dandanes živi kaotièno in prav niè zdravo življenje, zato ni niè èudnega, da smo vsi preveè obremenjeni in pod stresom. Naše telo pa se proti stresu bori na naèin šbojuj se ali zbeši. Zato prihaja do poveèanega utripa srca, pospešenega dihanja in poveèanega krvnega pritiska. Èim dalj èasa je naše telo podvrženo stresu, tem veèjo škodo lahko le-ta povzroèi.</p>
 </br>
 <p>Nauèite se globoko dihati in obvladati stres. Zato vam svetujemo, da se vpišete v teèaj joge, kjer se boste nauèili pravilnih tehnik dihanja.</p>
 </br>
@@ -110,7 +110,7 @@ Pa saj to za vas ni nobena novica, kajne? O zdravem prehranjevanju govorijo prav
 <h5  align="center">Poskrbite za kakovostno spanje</h5></br>
 <p>Zdravo življenje je odvisno tudi od tega, da spite dobro in dovolj, saj se med spanjem vaše telo obnavlja in pripravlja na izzive, ki jih bo prinesel nov dan.</p>
 
-<p>Pazite na svoje zdravje. Tudi tako, da upoštevate naše koristne nasvete … Želimo vam dolgo in zdravo življenje.</p>', 1),
+<p>Pazite na svoje zdravje. Tudi tako, da upoštevate naše koristne nasvete in želimo vam dolgo in zdravo življenje.</p>', 1),
 
 
 (2, '2019-06-08','3 hitri naèini, kako shujšati s toplo vodo',  '<b>Verjetno ni pripadnice ženskega spola, ki v nekem trenutku ne bi bila na dieti, hotela pospešiti metabolizma in izboljšati prebave. Gre za scenarij, v katerem se vsaj enkrat v življenju najde marsikatera, in tistih, ki se vsak ponedeljek odloèijo za drugo dieto, ni malo. Rešitev pa je lahko povsem preprosta, saj že s kozarcem tople vode lahko izboljšate poèutje in izgubite kakšen kilogram!</b></br></br></br>
@@ -148,12 +148,12 @@ Pa saj to za vas ni nobena novica, kajne? O zdravem prehranjevanju govorijo prav
 
 <h5>2. Obremenitev dvigujte eksplozivno</h5>
 
-<p>Kolièina prirasti mišiène mase je sorazmerna s kolièino uporabljene moèi, da se doloèena obremenitev premaga.Moè je definirana kot teža, ki jo dvignete, pomnožena s pospeškom (hitrostjo s katero potiskate težo navzgor, proti uporu). Da bi proizvedli veè moèi, morate poveèati težo tako, da breme dvigujete kar se da sunkovito (poveèate hitrost dviga, v primerjavi s hitrostjo spusta bremena).</p>
+<p>Kolièina prirasti mišiène mase je sorazmerna s kolièino uporabljene moèi, da se doloèena obremenitev premaga.Moè je definirana kot teža, ki jo dvignete, pomnoža s pospeškom (hitrostjo s katero potiskate tešavzgor, proti uporu). Da bi proizvedli veè moèi, morate poveèati težako, da breme dvigujete kar se da sunkovito (poveèate hitrost dviga, v primerjavi s hitrostjo spusta bremena).</p>
 
 
 </br>
 <h5>3. Poudarite negativne ponovitve (spust bremena)</h5>
-<p>Rast mišic je odvisna od mišiènega krèenja. Posebej pomembno je, da breme spušèamo poèasi, kontrolirano. Tako dosegamo veè mišiène napetosti v fazi raztegovanja mišice. Daljši je èas oziroma poèasneje kot spušèamo breme, veèja je rast mišiène mase. </p>
+<p>Rast mišic je odvisna od mišiènega krèenja. Posebej pomembno je, da breme spušèamo poèasi, kontrolirano. Tako dosegamo veè miše napetosti v fazi raztegovanja mišice. Daljše èas oziroma poèasneje kot spušèamo breme, veèja je rast miše mase. </p>
 
 <p>Najbolj produktiven naèin treninga je poèasen spust in hiter, vendar maksimalno kontroliran dvig. </p>
 
@@ -239,9 +239,9 @@ INSERT INTO `kategorije_artiklov` (`idKategorijeArtiklov`, `naziv`) VALUES
 (1, 'Prehrana'),
 (2, 'Oblaèila'),
 (3, 'Fitness oprema'),
-(4, 'Borilne vešèine'),
+(4, 'Borilne ve?èine'),
 (5, 'Gimnastika/Aerobika'),
-(6, 'Indoor/Outdoor športi');
+(6, 'Indoor/Outdoor ?porti');
 
 -- --------------------------------------------------------
 
@@ -413,7 +413,7 @@ INSERT INTO `uporabnik` (`idUporabnik`, `ime`, `priimek`, `email`, `geslo`, `spo
 (1, 'test', 'test', 'test@test.test', '098f6bcd4621d373cade4e832627b4f6', 'M', 'trener', ''),
 (2, 'Maja', 'Kitek', 'maja.kitek@gmail.com', '926b021c23fbd4d79af4144cd5d9113d', 'Z', 'navadni', ''),
 (3, 'toni', 'zunec', 'toni.zunec14@gmail.com', 'dce6345ea5b90d6ea53f0ef5c4b4c72c', 'm', 'u', ''),
-(4, 'Toni', 'Žunec', 'toni.zunec@student.um.si', 'dce6345ea5b90d6ea53f0ef5c4b4c72c', 'm', 'navadni', '');
+(4, 'Toni', '?unec', 'toni.zunec@student.um.si', 'dce6345ea5b90d6ea53f0ef5c4b4c72c', 'm', 'navadni', '');
 
 -- --------------------------------------------------------
 
