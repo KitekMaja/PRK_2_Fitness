@@ -123,22 +123,30 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 							<div role="tabpanel" class="tab-pane" id="t4">
 								
 								
-<?php
+                    <?php
 
-$q = "
-select idPlan, SUBSTRING(`opisPlana`, 1, 60) as opisPlana, naziv, tipPlana, ciljPlana, datumNastanka from plan where tk_plan_uporabnik='$idu';";
-
-$r = mysqli_query($connection, $q);
-while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
-    ?>
-
+                        $q = "
+                        select 
+                            idPlan, SUBSTRING(`opisPlana`, 1, 60) as opisPlana, naziv, tipPlana, ciljPlana, datumNastanka 
+                        from plan where tk_plan_uporabnik='$idu';";
+                        
+                        $r = mysqli_query($connection, $q);
+                        while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+                   ?>
 
 							<div class='table-responsive'>
 
 									<table id='seznam' class="table table-bordered ">
 										<tr>
-											<td colspan='2'  width="80%" align='center'><?php echo $row['naziv'] ?><br> 
-										<?php //echo $row['opisPlana'] ?>,<?php echo $row['ciljPlana'] ?> ,<?php echo $row['tipPlana'] ?></a><br>
+										
+										
+										
+										
+										<td ><button type="button" class="btn btn-primary btn-lg">
+										<a href='prikazPlana.php?id=<?php echo $row['idPlan'] ?>' style="color: #FFFFFF">Ogled</td>
+										
+											<td><?php echo $row['naziv'] ?>,<br> 
+										<?php echo $row['ciljPlana'] ?> ,<?php echo $row['tipPlana'] ?></a><br>
 										<small> Ustvarjeno: <?php echo $row['datumNastanka'] ?></small>
 											</td>
 

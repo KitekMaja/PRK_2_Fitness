@@ -1,7 +1,16 @@
+
+
 <?php
 require 'PHP_skripte/baza_handler.php';
 include 'header.php';
-
+?>
+<style>
+.btn111 {width: 20px; height: 20px;}
+</style>
+<br>
+<div class='table-responsive'>
+<form  method="post">
+<?php
 $planID=$_GET['id'];
 // echo $planID;
 $_SESSION['planId']=$planID;
@@ -31,12 +40,11 @@ for ($i = 1; $i < count($polje); $i ++) {
 
 ?>
 
+<!-- <table border='' class="table"> -->
 
-<div class='table-responsive'>
-<form  method="post">
-<table border='' class="thead-dark">
-		<tr><th>	<?php echo $polje[$i]?></th></tr>
-	<table  class="thead-light" border='1'>
+
+		<tr><th >	<h3 class="text-center"><?php echo $polje[$i]?></h3></th></tr><br>
+	<table  class="table" border='1'>
 
 <?php
     while ($row1 = mysqli_fetch_array($result1)) {
@@ -47,12 +55,12 @@ for ($i = 1; $i < count($polje); $i ++) {
         $video = $row1["video"];
 ?>
   <tr >
-  <td><input type="checkbox" name="vaje[]" value='<?php echo $polje[$i-1].'-'.$id ?>' ></td>
-    <th><?php echo $id?></th>
-    <th><?php echo $naziv?></th>
+  <td width="5%" ><input type="checkbox"  class="btn111 btn-primary active" name="vaje[]" value='<?php echo $polje[$i-1].'-'.$id ?>'   ></td>
+    
+    <th width="45%" ><?php echo $naziv?></th>
  
-    <td><?php echo $opis?></td>
-    <td><?php echo $video?></td>
+    <td width="50%" ><?php echo $opis?></td>
+   <!-- <td><?php echo $video?></td> -->
     
  </tr>
 
@@ -64,22 +72,25 @@ for ($i = 1; $i < count($polje); $i ++) {
 ?>
  
 </table>
-</table>
-
+<!-- </table> -->
 
 <?php
 $i += 1;
 
 }
 ?>
-<input type="submit" id="submit">
+<br>
+<button type="submit" class="btn btn-primary btn-block"   id="submit"> Dodaj izbiro
+</button>
 
 </form>
 </div>
+
+<br><br><br>
 <?php
 if (isset($_POST['vaje'])) 
 {
-    print_r($_POST['vaje']); 
+//     print_r($_POST['vaje']); 
      implode(',', $_POST['vaje']);
     $checkedVall= implode(',', $_POST['vaje']);
     $obkljukano= "".$checkedVall;
@@ -116,7 +127,6 @@ if (isset($_POST['vaje']))
         
 //         header("Location: prikazPlana.php");
         echo "
-
             <script>
                 window.location = 'prikazPlana.php?id=$planID';
             </script>
