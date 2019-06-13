@@ -84,7 +84,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 								class="btn btn-light btn-block">BMI</a> <br> <a
 								href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
 							<br> <a href="cilj.php" class="btn btn-light btn-block">Cilj</a>
-							<br> <a href="cilj.php" class="btn btn-light btn-block">Kosarica</a>
+							<br> <a href="kosarica.php" class="btn btn-light btn-block">Kosarica</a>
 							<br>
 
 						</div>
@@ -166,15 +166,20 @@ mysqli_close($connect);
 window.onload = function () {
  
 var chart = new CanvasJS.Chart("chartContainer", {
-	title: {
-		text: "datum"
-	},
+
+	
 	axisY: {
 
 		minimum: <?php echo json_encode($min); ?>,
 				maximum: <?php echo json_encode($maxx); ?>,
 		title: "kilogrami"
 	},
+	axisX: {
+
+
+		title: "datum meritve"
+	},
+	
 	data: [{
 		type: "line",
 		dataPoints: <?php echo json_encode($dataPointss, JSON_NUMERIC_CHECK); ?>
@@ -186,7 +191,7 @@ chart.render();
 </script>
 </head>
 <body>
-	<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+	<div id="chartContainer" style="height:375px; width: 100%;"></div>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 							
 							</div>

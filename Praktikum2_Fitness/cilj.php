@@ -94,7 +94,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 								class="btn btn-light btn-block">BMI</a> <br> <a
 								href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
 							<br> <a href="cilj.php" class="btn btn-light btn-block">Cilj</a>
-							<br> <a href="cilj.php" class="btn btn-light btn-block">Kosarica</a>
+							<br> <a href="kosarica.php" class="btn btn-light btn-block">Kosarica</a>
 							<br>
 
 						</div>

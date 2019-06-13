@@ -1,73 +1,132 @@
-<?php 
-    require "header.php";
-    include_once "PHP_skripte/baza_handler.php";
-    
-    if(isset($_POST['submit-kosarica']))
-    {
-        foreach($_POST['kolicina'] as $key => $val)
-        {
-            if($val==0)
-            {
-                unset($_SESSION['kosarica'][$key]);
-                header("Location: kosarica.php");
-            }
-            else
-            {
-                $_SESSION['kosarica'][$key]['kolicina']=$val;
-                header("Location: kosarica.php");
-            }
-        }
-    }
-?>
 
+<?php
+require 'head.php';
+include 'PHP_skripte/baza_handler.php';
+include 'PHP_skripte/baza_OOPhandler.php';
+include 'sloutf.php';
+// izpis podrobnosti posameznih slik
+$row = FALSE; // predvidevamo, da ni podrobnosti
+
+$idu = $_SESSION['id_uporabnika'];
+
+// pridobivanje podatkov o sliki
+$q = "SELECT * FROM  uporabnik where idUporabnik=$idu";
+$ss = "SELECT * FROM  meritve where tk_meritve_uporabnik=$idu";
+
+$slikica = "Select * From slike where tk_slike_uporabnik=$idu";
+$sslikica = mysqli_query($connection, $slikica);
+
+if (mysqli_num_rows($sslikica) == 1) { // Good to go!
+    $slikarow = mysqli_fetch_array($sslikica, MYSQLI_ASSOC);
+    $slika = $slikarow['imeSlike'];
+}
+
+$r = mysqli_query($connection, $q);
+
+$sss = mysqli_query($connection, $ss);
+
+if (mysqli_num_rows($r) == 1) { // Good to go!
+
+    // pridobivanje podatkov
+    $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
+    $rowm = mysqli_fetch_array($sss, MYSQLI_ASSOC);
+    $ime = $row['ime']; // zaèetek strani HTML
+    $priimek = $row['priimek'];
+    $email = $row['email'];
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!--  This file has been downloaded from https://bootdey.com  -->
+<!--  All snippets are MIT license https://bootdey.com/license -->
+<title>Profile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link
+	href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="MojCSS/profile.css">
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
+
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="http://services.iperfect.net/js/IP_generalLib.js"></script>
+</head>
 <body>
-<a href="produkti.php">Vrni se na produkte</a>
-<form method="post" action="kosarica.php"> 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Naziv</th>
-      <th scope="col"></th>
-      <th scope="col">Cena</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php 
-      $sql="SELECT * FROM artikel WHERE idArtikel IN ("; 
-      
-      foreach($_SESSION['kosarica'] as $idArtikla => $value) 
-      {  
-        $sql.=$idArtikla.",";
-      } 
-     
-      $sql=substr($sql, 0, -1).") ORDER BY idArtikel ASC"; 
-      echo $sql;
-      $query=mysqli_query($connection, $sql); 
-      $skupna_cena=0; 
-      while($row = mysqli_fetch_array($query))
-      { 
-        $vmesna_cena=$_SESSION['kosarica'][$row['idArtikel']]['kolicina']*$row['cena']; 
-        $skupna_cena+=$vmesna_cena; 
-  ?>                      
-    <tr>
-      <td><?php echo $row["naziv"] ?></td>
-      <td></td>
-      <td><?php echo $row["cena"] ?></td>
-      <td>
-      	<input type="text" name="kolicina[<?php echo $row['idArtikel'] ?>]" size="5" value="<?php echo $_SESSION['kosarica'][$row['idArtikel']]['kolicina'] ?>" />
-      </td>
-    </tr>
-    <?php             
-      } 
-    ?>
-    <tr> 
-     <td colspan="4">Koncna cena: <?php echo $skupna_cena ?></td> 
-    </tr>        
-  </tbody>
-</table>
-</br>
-<button type="submit" name="submit-kosarica">Posodobi kosarico</button>
-</form>
-<p>Da odstranite artikel, kolicino spremenite na 0.</p>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-4 mb30">
+				<div class="card">
+
+					<div class="card-content pt20 pb20 profile-header">
+						<div class="profile-userpic img">
+                     <?php
+
+                    echo "<img src=\"PHP_skripte/$slika\"  class=\"mx-auto d-block\" style=\"width:65%\"  >";
+                    ?></div>
+						<h4 class="card-title text-center mb20"> <?php  echo "<p><br/>{$ime}  {$priimek}</p>"; ?><?php  echo "<p>{$email}</p>"; ?> </h4>
+
+						<hr>
+
+						<div class="profile-userbuttons">
+
+							<a href="profil.php" class="btn btn-light btn-block">Profil</a> <br>
+							<a href="planiMoji.php" class="btn btn-light btn-block">Moje
+								rutine</a> <br> <a href="bmiP.php"
+								class="btn btn-light btn-block">BMI</a> <br> <a
+								href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
+							<br> <a href="cilj.php" class="btn btn-light btn-block">Cilj</a>
+							<br> <a href="kosarica.php" class="btn btn-light btn-block">Kosarica</a>
+							
+							<br>
+
+						</div>
+					</div>
+					<!--content-->
+
+				</div>
+			</div>
+			<div class="col-md-8 mb30">
+				<div class="card">
+					<div>
+
+						<!-- Nav tabs -->
+						<ul class="nav tabs-admin" role="tablist">
+							<li role="presentation" class="nav-item"><a
+								class="nav-link active" href="#t1" aria-controls="t1" role="tab"
+								data-toggle="tab">Kosarica</a></li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content admin-tab-content pt30">
+							<div role="tabpanel" class="tab-pane active show" id="t1"></div>
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+				</div>
+			
+
+			
+
 </body>
+</html>
