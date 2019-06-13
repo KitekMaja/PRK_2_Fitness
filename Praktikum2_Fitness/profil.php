@@ -1,4 +1,3 @@
-
 <?php
 require 'head.php';
 include 'PHP_skripte/baza_handler.php';
@@ -17,8 +16,8 @@ $slikica = "Select * From slike where tk_slike_uporabnik=$idu";
 $sslikica = mysqli_query($connection, $slikica);
 
 if (mysqli_num_rows($sslikica) == 1) { // Good to go!
-$slikarow = mysqli_fetch_array($sslikica, MYSQLI_ASSOC);
-$slika = $slikarow['imeSlike'];
+    $slikarow = mysqli_fetch_array($sslikica, MYSQLI_ASSOC);
+    $slika = $slikarow['imeSlike'];
 }
 
 $r = mysqli_query($connection, $q);
@@ -68,9 +67,12 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 				<div class="card">
 
 					<div class="card-content pt20 pb20 profile-header">
+						<div class="profile-userpic img">
                      <?php
-                     echo "<img src=\"PHP_skripte/$slika\"  height=\"200\" width=\"200\">"; ?>
-                    <h4 class="card-title text-center mb20"> <?php  echo "<p><br/>{$ime}  {$priimek}</p>"; ?><?php  echo "<p>{$email}</p>"; ?> </h4>
+
+                    echo "<img src=\"PHP_skripte/$slika\"  class=\"mx-auto d-block\" style=\"width:65%\"  >";
+                    ?></div>
+						<h4 class="card-title text-center mb20"> <?php  echo "<p><br/>{$ime}  {$priimek}</p>"; ?><?php  echo "<p>{$email}</p>"; ?> </h4>
 
 						<hr>
 

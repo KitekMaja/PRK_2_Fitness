@@ -1,4 +1,10 @@
 <br><br><br><br><br>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
 <?php
 require 'PHP_skripte/baza_handler.php';
 include 'head.php';
@@ -45,7 +51,7 @@ while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 		
 			<td>
 			<iframe src='<?php echo $row['videoVaje'].'?controls=0' ?>'></iframe>
-			<p><a href='<?php echo $row['videoVaje'] ?>'>Povezava do posnetka</a></p>
+			<p><a href='<?php echo $row['videoVaje'] ?>'></a></p>
 			</td>
 		
 		</tr>

@@ -9,6 +9,13 @@ body{
 /*
 Profile
 */
+
+.slika{
+	margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
 .si-border-round {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
