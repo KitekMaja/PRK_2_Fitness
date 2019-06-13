@@ -133,20 +133,21 @@ while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
     ?>
 
 
-							<div class='container'>
+							<div class='table-responsive'>
 
-									<table id='seznam' class="table table-bordered">
+									<table id='seznam' class="table table-bordered ">
 										<tr>
-											<td colspan='2' align='center'><?php echo $row['naziv'] ?><br> 
-										<?php //echo $row['opisPlana'] ?>,<?php echo $row['ciljPlana'] ?> ,<?php echo $row['tipPlana'] ?> , Ustvarjeno: <?php echo $row['datumNastanka'] ?></a>
+											<td colspan='2'  width="80%" align='center'><?php echo $row['naziv'] ?><br> 
+										<?php //echo $row['opisPlana'] ?>,<?php echo $row['ciljPlana'] ?> ,<?php echo $row['tipPlana'] ?></a><br>
+										<small> Ustvarjeno: <?php echo $row['datumNastanka'] ?></small>
 											</td>
 
-											<td><button type="button" class="btn btn-primary btn-md">
+											<td width="10%"><button type="button" class="btn btn-primary btn-md">
 													<a href='urediPlan.php?id=<?php echo $row['idPlan'] ?>'
 														style="color: #FFFFFF"> Uredi 
 												
 												</button></td>
-											<td><button type="button" class="btn btn-primary btn-md">
+											<td width="10%"><button type="button" class="btn btn-primary btn-md">
 													<a href='brisiPlan.php?id=<?php echo $row['idPlan'] ?>'
 														style="color: #FFFFFF"> Zbrisi </a>
 												</button></td>

@@ -12,7 +12,6 @@ $result = mysqli_query($connection, $sql);
 $polje = array();
 $poljeVaje=array();
 
-// select * from vaje join kategorijavaje on vaje.tk_vaje_kategorijavaje=kategorijavaje.idKategorijaVaje
 
 while ($row = mysqli_fetch_array($result)) {
     $idKategorijaVaje = $row["idKategorijaVaje"];
@@ -31,14 +30,13 @@ for ($i = 1; $i < count($polje); $i ++) {
     $result1 = mysqli_query($connection, $sql1);
 
 ?>
-<div>
+
+
+<div class='table-responsive'>
 <form  method="post">
-	<table border='1'>
-		<tr>
-			<th><?php echo $polje[$i]?></th>
-		</tr>
-	</table>
-	<table border='1'>
+<table border='' class="thead-dark">
+		<tr><th>	<?php echo $polje[$i]?></th></tr>
+	<table  class="thead-light" border='1'>
 
 <?php
     while ($row1 = mysqli_fetch_array($result1)) {
@@ -49,12 +47,13 @@ for ($i = 1; $i < count($polje); $i ++) {
         $video = $row1["video"];
 ?>
   <tr >
+  <td><input type="checkbox" name="vaje[]" value='<?php echo $polje[$i-1].'-'.$id ?>' ></td>
     <th><?php echo $id?></th>
     <th><?php echo $naziv?></th>
  
     <td><?php echo $opis?></td>
     <td><?php echo $video?></td>
-    <td><input type="checkbox" name="vaje[]" value='<?php echo $polje[$i-1].'-'.$id ?>' ></td>
+    
  </tr>
 
 
@@ -64,6 +63,7 @@ for ($i = 1; $i < count($polje); $i ++) {
     
 ?>
  
+</table>
 </table>
 
 

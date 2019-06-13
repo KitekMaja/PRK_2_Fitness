@@ -31,18 +31,18 @@ while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
     
 
 <div class='container' style="overflow-x:auto;">
-	<table id='seznam' class=table table-striped border='1'>
+	<table id='seznam' class=table table-striped >
 		<tr>
 
 			<th colspan='2' scope="col"><a
 				href='vajaInfo.php?id=<?php echo $row['idVaje'] ?>'>
-				<?php echo $row['nazivKategorije']?>, <?php echo $row['nazivVaje'] ?></a></th>
+				<h6><?php echo $row['nazivKategorije']?></h6><h3><?php echo $row['nazivVaje'] ?></h3></a></th>
 
 		</tr>
 		
 		<tbody>
 		<tr >
-			<td colspan="2">&Ccaron;as izvajanja: <?php echo $row['casVaje'] ?> min<br>  &Scaron;tevilo rund: <?php echo $row['setsVaje'] ?>,  &Scaron;tevilo ponovitev: <?php echo $row['repVaje'] ?></td>
+			<td colspan="2">&Ccaron;as izvajanja: <?php echo $row['casVaje'] ?> min,  &Scaron;tevilo rund: <?php echo $row['setsVaje'] ?>,  &Scaron;tevilo ponovitev: <?php echo $row['repVaje'] ?></td>
 			
 		</tr>
 		
@@ -50,7 +50,7 @@ while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 			<td ><?php echo $row['opisVaje'] ?></td>
 		
 			<td>
-			<iframe src='<?php echo $row['videoVaje'].'?controls=0' ?>'></iframe>
+			<iframe width="100%" height="100%" src='<?php echo $row['videoVaje'].'?controls=0' ?>'></iframe>
 			<p><a href='<?php echo $row['videoVaje'] ?>'></a></p>
 			</td>
 		
