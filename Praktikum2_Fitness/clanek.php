@@ -3,7 +3,7 @@ require 'header.php';
 ?>
 
 <html>
-<head><title>Clanek</title>
+<head><title>Članek</title>
 <meta charset="UTF-8"></head>
 
 <body>
@@ -51,7 +51,7 @@ if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array('
 		echo "<br />{$row['vsebina']}<br/>";
 		
         echo "<form  method=\"POST\">
-		<button type=\"submit\" align=\"center\" name=\"dodajClanek\">Dodaj Clanek v seznam</button></form>
+		<button type=\"submit\" align=\"center\" name=\"dodajClanek\">Dodaj Članek v seznam</button></form>
 		</div><br />";
 		
 	

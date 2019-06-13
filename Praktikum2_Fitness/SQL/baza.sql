@@ -137,7 +137,7 @@ Pa saj to za vas ni nobena novica, kajne? O zdravem prehranjevanju govorijo prav
 ', 1),
 
 (3, '2019-06-10','Poveèanje mišiène mase, 10 kratkih nasvetov',  '
-<h5>1.Poveèajte intenzivnost treninga</h5>
+<h5>1.Poveèajte intenzivnost treninga  </h5>
 
 <p>-poveèanje vzdržljivosti, brez obèutnega poveèanja mišiène mase in moèi (12-15 ponovitev) </p>
 <p>-poveèanje mišiène mase in moèi (6-8 ponovitev) </p>
