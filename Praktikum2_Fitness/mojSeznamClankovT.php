@@ -5,10 +5,23 @@ include 'PHP_skripte/baza_handler.php';
 include 'PHP_skripte/baza_OOPhandler.php';
 include 'sloutf.php';
 // izpis podrobnosti posameznih slik
+
+
+
 $row = FALSE; // predvidevamo, da ni podrobnosti
 
 $idu = $_SESSION['id_uporabnika'];
 
+// pridobivanje podatkov o sliki
+$ss = "SELECT * FROM  meritve where tk_meritve_uporabnik=$idu";
+
+$slikica = "Select * From slike where tk_slike_uporabnik=$idu";
+$sslikica = mysqli_query($connection, $slikica);
+
+if (mysqli_num_rows($sslikica) == 1) { // Good to go!
+    $slikarow = mysqli_fetch_array($sslikica, MYSQLI_ASSOC);
+    $slika = $slikarow['imeSlike'];
+}
 // pridobivanje podatkov o sliki
 $q = "SELECT * FROM  uporabnik where idUporabnik=$idu";
 $clanek = "SELECT * FROM  meritve where tk_meritve_uporabnik=$idu";
@@ -91,7 +104,8 @@ body, html {
 				<div class="card">
 
 					<div class="card-content pt20 pb20 profile-header">
-                     <?php  echo "<p><br/>{$slika}</p>"; ?>
+                     <?php   echo "<img src=\"PHP_skripte/$slika\"  class=\"mx-auto d-block\" style=\"width:65%\"  >";
+                    ?>
                     <h4 class="card-title text-center mb20"> <?php  echo "<p><br/>{$ime}  {$priimek}</p>"; ?><?php  echo "<p>{$email}</p>"; ?> </h4>
 
 						<hr>
@@ -217,6 +231,6 @@ body, html {
 <?php
 
 if (isset($_POST['dodajm'])) {
-    echo "<script>window.location=\"seznamClankov.php\";</script>";
+    echo "<script>window.location=\"seznamClankovTest.php\";</script>";
 }
 ?>

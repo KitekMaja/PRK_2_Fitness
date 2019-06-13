@@ -12,8 +12,7 @@ require 'header.php';
 include 'PHP_skripte/baza_handler.php';
 include 'PHP_skripte/baza_OOPhandler.php';
 include 'sloutf.php';
-// izpis podrobnosti posameznih slik
-echo "<a href=\"seznamClankov.php\">seznam</a>";
+// izpis podrobnosti posameznih slik    
 $row = FALSE; // predvidevamo, da ni podrobnosti
 
 if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array('min_range' => 1)) ) { // preverjanje ID slike
@@ -40,13 +39,14 @@ if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array('
 		$page_title = $row['naziv'];
 
 		// prikaz glave
-		echo "<div align=\"center\">
-		<b>{$row['naziv']}</b> by
-		{$urow['ime']}<br />";
+		echo "<div >
+		<h3 align=\"center\">{$row['naziv']}</h3> </br>
+    <h5 align=\"center\">by
+		{$urow['ime']}</h5><br />";
 		
-		echo "<br />{$row['datumVnosa']}<br/>";
+		echo "<br /> <h6 align=\"center\">{$row['datumVnosa']}</h6><br/>";
 		
-		echo "<img src=\"{$srow['imeSlike']}\"  height=\"300\" width=\"300\">";
+		echo "<h6 align=\"center\"><img src=\"{$srow['imeSlike']}\"  height=\"300\" width=\"300\" ></h6>";
 		
 		echo "<br />{$row['vsebina']}<br/>";
 		
