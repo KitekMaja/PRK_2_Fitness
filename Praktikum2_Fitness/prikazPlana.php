@@ -21,9 +21,10 @@ include 'head.php';
 $planID = $_GET['id'];
 $_SESSION['planID']=$planID;
 ?>
-<a href='pdfPlan.php?id=<?php echo $planID?>' class="btn btn-info" role="button" target='_blank'>Link Button</a>
-<?php 
+<a href='pdfPlan.php?id=<?php echo $planID?>' class="btn btn-primary  btn-block" role="button" target='_blank'>Shrani v PDF</a>
+<br>
 
+<?php 
 // echo $planID;
 // imeVaje opisVaje videoVaje cas sets rep nazivKategorije nazivPlana
 
@@ -90,9 +91,9 @@ while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 
 ?>
 
-<button
-	onclick="window.location.href = 'pdfPlan.php?id=<?php echo $planID?>'">Click
-	Here</button>
+<a href='pdfPlan.php?id=<?php echo $planID?>' class="btn btn-primary  btn-block" role="button" target='_blank'>Shrani v PDF</a>
+
+<br><br><br><br>
 
 
 <!-- 
