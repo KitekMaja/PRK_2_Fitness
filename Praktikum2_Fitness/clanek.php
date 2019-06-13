@@ -7,6 +7,7 @@ require 'header.php';
 <title>ÄŒlanek</title>
 <meta charset="UTF-8">
 <style>
+
 body {
 	background: #F1F3FA;
 	font-family: Arial, Helvetica, sans-serif;
@@ -75,10 +76,16 @@ if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array(
 		<?php
 
         echo "<br />{$row['vsebina']}<br/>";
-
+        ?>
+	<div class="btn">
+		<?php
         echo "<form  method=\"POST\">
-		<button type=\"submit\" align=\"center\" name=\"dodajClanek\">Dodaj Clanek v seznam</button></form>
+		<button type=\"submit\" align=\"center\" name=\"dodajClanek\" class=\"btn btn-info\">Dodaj clanek v seznam</button></form>
 		</div><br />";
+        
+        ?>
+	</div>
+		<?php
     }
 }
 ?>
