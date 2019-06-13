@@ -30,7 +30,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
     // pridobivanje podatkov
     $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
     $rowm = mysqli_fetch_array($sss, MYSQLI_ASSOC);
-    $ime = $row['ime']; // za�etek strani HTML
+    $ime = $row['ime']; // začetek strani HTML
     $priimek = $row['priimek'];
     $email = $row['email'];
 }
@@ -41,7 +41,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 <meta charset="utf-8">
 <!--  This file has been downloaded from https://bootdey.com  -->
 <!--  All snippets are MIT license https://bootdey.com/license -->
-<title>Profile</title>
+<title>Moj cilj</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -94,7 +94,8 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 								class="btn btn-light btn-block">BMI</a> <br> <a
 								href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
 							<br> <a href="cilj.php" class="btn btn-light btn-block">Cilj</a>
-							<br> <a href="kosarica.php" class="btn btn-light btn-block">Kosarica</a>
+							<br> <a href="kosarica.php" class="btn btn-light btn-block">Košarica</a>
+							<br> <a href="mojSeznamClankovT.php" class="btn btn-light btn-block">Moj seznam Člankov</a>
 							<br>
 
 						</div>
@@ -134,29 +135,29 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 									<form action="" method="post">
 
 										<div class="form-group">
-											<label for="teza">Teza:</label> <input type="number"
+											<label for="teza">Teža:</label> <input type="number"
 												class="form-control" id="teza" name="teza"
 												placeholder="Vnesite kilograme" />
 										</div>
 										<div class="form-group">
-											<label for="visina">Visina:</label> <input type="number"
+											<label for="visina">Višina:</label> <input type="number"
 												class="form-control" id="visina" name="visina"
 												placeholder="Vnesite visinu" />
 										</div>
 										<label for="teza">Cilj:</label>
 										    <div class="form-check">
       <label class="form-check-label" for="radio1">
-        <input type="radio" class="form-check-input"  name="cilj" value="hujsanje" checked>Hujsanje
+        <input type="radio" class="form-check-input"  name="cilj" value="hujsanje" checked>Hujšanje
       </label>
     </div>
     										    <div class="form-check">
       <label class="form-check-label" for="radio1">
-        <input type="radio" class="form-check-input" name="cilj" value="pridobitev" checked>Pridobitev
+        <input type="radio" class="form-check-input" name="cilj" value="pridobitev" checked>Pridobitev mase
       </label>
     </div>
     										    <div class="form-check">
       <label class="form-check-label" for="radio1">
-        <input type="radio" class="form-check-input" name="cilj" value="zdravo" checked>Zdravo
+        <input type="radio" class="form-check-input" name="cilj" value="zdravo" checked>Zdrav stil življenja
       </label>
     </div>
     <br>

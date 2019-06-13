@@ -185,5 +185,8 @@ if (isset($_POST['dodajm']) && isset($_POST['novameritev'])) {
     mysqli_query($connection, $query);
 
     mysqli_close($connection);
+    
+    
+    echo "<script>window.location=\"profil.php\";</script>";
 }
 ?>

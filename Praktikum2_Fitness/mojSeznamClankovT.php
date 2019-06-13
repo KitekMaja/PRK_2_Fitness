@@ -48,7 +48,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 <meta charset="utf-8">
 <!--  This file has been downloaded from https://bootdey.com  -->
 <!--  All snippets are MIT license https://bootdey.com/license -->
-<title>Profile</title>
+<title>Moj seznam Člankov</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body, html {
@@ -119,7 +119,7 @@ body, html {
 								class="btn btn-light btn-block">BMI</a> <br> <a
 								href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
 							<br> <a href="cilj.php" class="btn btn-light btn-block">Cilj</a>
-							<br> <a href="cilj.php" class="btn btn-light btn-block">Kosarica</a>
+							<br> <a href="cilj.php" class="btn btn-light btn-block">Košarica</a>
 							<br> <a href="mojSeznamClankovT.php" class="btn btn-light btn-block">Moj seznam Člankov</a>
 							<br>
 						</div>
@@ -136,7 +136,7 @@ body, html {
 						<ul class="nav tabs-admin" role="tablist">
 							<li role="presentation" class="nav-item"><a
 								class="nav-link active" href="#t1" aria-controls="t1" role="tab"
-								data-toggle="tab">Moj seznam Clankov</a></li>
+								data-toggle="tab">Moj seznam Člankov</a></li>
 						</ul>
 
 						<!-- Tab panes -->
@@ -169,8 +169,6 @@ body, html {
 	</tr>';
 
         while ($roww = mysqli_fetch_array($uporabnikr, MYSQLI_ASSOC)) {
-            echo "aaa";
-
             $clanek = "SELECT * FROM clanek where idClanek={$roww['Clanek_id']}";
 
             $claneek = mysqli_query($connection, $clanek);
@@ -201,7 +199,7 @@ body, html {
 										
 										</div>
 										<button type="submit" class="btn btn-primary" name='dodajm'>Dodaj
-											nove Clanke</button>
+											nove Članke</button>
 
 
 									</form>

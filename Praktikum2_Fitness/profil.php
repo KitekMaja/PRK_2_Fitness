@@ -29,7 +29,7 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
     // pridobivanje podatkov
     $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
     $rowm = mysqli_fetch_array($sss, MYSQLI_ASSOC);
-    $ime = $row['ime']; // zaèetek strani HTML
+    $ime = $row['ime']; // zaÃ¨etek strani HTML
     $priimek = $row['priimek'];
     $email = $row['email'];
 }
@@ -159,8 +159,8 @@ chart.render();
 								class="btn btn-light btn-block">BMI</a> <br> <a
 								href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
 							<br> <a href="cilj.php" class="btn btn-light btn-block">Cilj</a>
-							<br> <a href="kosarica.php" class="btn btn-light btn-block">Kosarica</a>
-							<br> <a href="mojSeznamClankovT.php" class="btn btn-light btn-block">Moj seznam Èlankov</a>
+							<br> <a href="kosarica.php" class="btn btn-light btn-block">KoÅ¡arica</a>
+							<br> <a href="mojSeznamClankovT.php" class="btn btn-light btn-block">Moj seznam ÄŒlankov</a>
 							<br>
 
 						</div>

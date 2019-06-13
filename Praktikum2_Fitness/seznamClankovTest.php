@@ -7,7 +7,7 @@ require 'header.php';
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="index.css">
-  <title>Seznam Clankov</title>
+  <title>Seznam Člankov</title>
    
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -39,9 +39,16 @@ body, html {
 <?php
 require ('PHP_skripte/baza_handler.php');
 require 'sloutf.php';
-
-echo "<a href=\"dodajClanek.php\">dodaj Èlanek</a>";
-
+            $uid=$_SESSION['id_uporabnika'];
+            $uporabnik = "SELECT * FROM  uporabnik where idUporabnik=$uid";
+            
+            $uq = mysqli_query ($connection, $uporabnik);
+            
+            $row = mysqli_fetch_array ($uq, MYSQLI_ASSOC);
+            
+             if (strtolower($row['tip_uporabnika']) ==strtolower("trener")){		 
+echo "<a href=\"dodajClanek.php\">dodaj Članek</a>";
+			 }
 $q = "SELECT * FROM  clanek";
      
 // izpis slik in pripadajoèih povezav URL
