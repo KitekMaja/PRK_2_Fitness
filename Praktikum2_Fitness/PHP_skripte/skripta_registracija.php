@@ -104,10 +104,11 @@ if(isset($_POST['signup-submit']))
                         $querry = "INSERT INTO slike (imeSlike,tk_slike_uporabnik) VALUES('$target_file','$last_id')";
                         mysqli_query($connection, $querry);
                         
+                        
+                        header("Location: ../vpis.php?signup=success"); 
                     
                     
-                    
-                    // POŠILJANJE NA MAIL
+                    // POŠILJANJE NA MAIL  
                     $sub = "Registracija";
                     $msg = "Registracija je bila uspešna";
                     mail($e_naslov,$sub,$msg);
