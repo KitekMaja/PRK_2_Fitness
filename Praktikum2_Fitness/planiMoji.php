@@ -53,17 +53,17 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 
 <link rel="stylesheet" href="MojCSS/profile.css">
 <link
-		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-		rel="stylesheet">
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
 </head>
 <body>
-	
+
 	<br>
 	<br>
 	<br>
 	<br>
-	
-<div class="container">
+
+	<div class="container">
 
 		<div class="row">
 			<div class="col-md-4 mb30">
@@ -105,45 +105,60 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 							<li role="presentation" class="nav-item"><a
 								class="nav-link active" href="#t1" aria-controls="t1" role="tab"
 								data-toggle="tab">Dodaj rutine</a></li>
-								<li role="presentation" class="nav-item"><a
-								class="nav-link " href="#t4" aria-controls="t1" role="tab"
-								data-toggle="tab">Moje rutine</a></li>
+							<li role="presentation" class="nav-item"><a class="nav-link "
+								href="#t4" aria-controls="t1" role="tab" data-toggle="tab">Moje
+									rutine</a></li>
 						</ul>
-						
+
 
 						<!-- Tab panes -->
 						<div class="tab-content admin-tab-content pt30">
 							<div role="tabpanel" class="tab-pane active show" id="t1">
 									<?php  require 'novPlan.php';?>
-									<?php
 
-                                        $q = "
-select idPlan, SUBSTRING(`opisPlana`, 1, 75) as opisPlana, naziv, tipPlana, ciljPlana, datumNastanka from plan where tk_plan_uporabnik='$idu';";
-                                        
-                                        
-                                        
-                                        $r = mysqli_query($connection, $q);
-                                        while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
-                                    ?>
+								<br> <br>
+							</div>
+
+
+							<div role="tabpanel" class="tab-pane" id="t4">
+								
+								
+<?php
+
+$q = "
+select idPlan, SUBSTRING(`opisPlana`, 1, 60) as opisPlana, naziv, tipPlana, ciljPlana, datumNastanka from plan where tk_plan_uporabnik='$idu';";
+
+$r = mysqli_query($connection, $q);
+while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+    ?>
 
 
 							<div class='container'>
-									<table id='seznam' class=table table-striped border='1'>
+
+									<table id='seznam' class="table table-bordered">
 										<tr>
-											<td colspan='2' align='center'><?php echo $row['naziv'] ?>, 
+											<td colspan='2' align='center'><?php echo $row['naziv'] ?><br> 
 										<?php //echo $row['opisPlana'] ?>,<?php echo $row['ciljPlana'] ?> ,<?php echo $row['tipPlana'] ?> , Ustvarjeno: <?php echo $row['datumNastanka'] ?></a>
 											</td>
-											
-											<td><button><a href='urediPlan.php?id=<?php echo $row['idPlan'] ?>' />Uredi</button></td>
-											<td><button><a href='brisiPlan.php?id=<?php echo $row['idPlan'] ?>' />Zbrisi</button></td>
-											
+
+											<td><button type="button" class="btn btn-primary btn-md">
+													<a href='urediPlan.php?id=<?php echo $row['idPlan'] ?>'
+														style="color: #FFFFFF"> Uredi 
+												
+												</button></td>
+											<td><button type="button" class="btn btn-primary btn-md">
+													<a href='brisiPlan.php?id=<?php echo $row['idPlan'] ?>'
+														style="color: #FFFFFF"> Zbrisi </a>
+												</button></td>
+
 
 
 										</tr>
-										<tr><td colspan='4' align='center' style="table-layout: fixed; ">
-										<?php echo $row['opisPlana'] ?>
+										<tr>
+											<td colspan='4' align='center' style="table-layout: fixed;">
+										<?php echo $row['opisPlana'] ?>...
 										</td>
-										
+
 										</tr>
 									</table>
 								</div>
@@ -151,34 +166,23 @@ select idPlan, SUBSTRING(`opisPlana`, 1, 75) as opisPlana, naziv, tipPlana, cilj
 
 
 							<?php
-        }
+}
 
-        ?>
-                                
-                                
-
-								</form>
-<br>
-<br>
-</div>
+?>								
 
 
-								<div role="tabpanel" class="tab-pane" id="t4">
-								
-								
-								kjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
 								</div>
-							</div>
-
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<script
-			src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-		<script type="text/javascript">
+	<script
+		src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
 	
 
 </script>
