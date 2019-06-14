@@ -14,7 +14,7 @@ Fitness&healthy je fitnes in healthy program namenjen za vse osebe. Program je u
 
 ## Namestitev
 Za namestitev tega projekta potrebujete strežnik Xamp in Eclipse.
-Podrobna navodila najdete v [[tukaj](https://github.com/KitekMaja/PRK_2_Fitness/wiki/Namestitev-projekta)].
+Podrobna navodila najdete na WIKI strani projekta.
 
 ## Uporaba
 Namen te aplikacije je doseg Vašega cilja po zdravem načinu življenja s pomočjo objavljenih člankov in vadb.
@@ -46,6 +46,11 @@ SQL skripto pa lahko najdete v SQL mapi projekta.
 https://trello.com/b/4T8chLeV/fitness
 
 
+ ## Avtorji
+ 
+[<img alt="Kitek Maja" src="https://avatars2.githubusercontent.com/u/39327068?s=460&v=4" width="117">](https://github.com/KitekMaja)|[<img alt="Ivana Držaić" src="https://avatars2.githubusercontent.com/u/33724686?s=460&v=4" width="117">](https://github.com/ivanadrzaic)|[<img alt="Evgen Tušek" src="https://avatars2.githubusercontent.com/u/39327068?s=460&v=4" width="117">](https://github.com/JazsenEvgen)|[<img alt="Toni Žunec" src="https://avatars1.githubusercontent.com/u/33753063?s=460&v=4" width="117">](https://github.com/ZunecToni)|
+:---: |:---: |:---: |:---: |
+[Kitek Maja](https://github.com/KitekMaja) |[Ivana Držaić](https://github.com/ivanadrzaic) |[Evgen Tušek](https://github.com/JazsenEvgen) |[Toni Žunec](https://github.com/ZunecToni) |
 
 
 
