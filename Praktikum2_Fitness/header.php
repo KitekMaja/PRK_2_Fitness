@@ -95,14 +95,15 @@ session_start();
    if (isset($_SESSION['id_uporabnika']))
    {
        echo '
-        <span class="navbar-text"> 
-            <form class="modal-content animate" method="post" action="PHP_skripte/skripta_izpis.php">
-              <button class="btn link" type="submit" name="logout-submit">Izpis</button>
-            </form>
-        </span>
-        <span class="navbar-text"> 
+              <span class="navbar-text"> 
    		   <a class="nav-link" href="profil.php">Profil</a>
-        </span>';
+        </span>
+       
+       <span class="navbar-text">
+       <form class="modal-content animate" method="post" action="PHP_skripte/skripta_izpis.php">
+       <button class="btn btn-dark" type="submit" name="logout-submit">Izpis</button>
+       </form>
+       </span>';
    }
    else
    {

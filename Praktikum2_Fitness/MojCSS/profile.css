@@ -4,7 +4,7 @@
 body{
   /*  margin-top:20px; */ /* nav bar prestavlja dol*/
     background:#e7ebf2;   
-       font-family: Arial, Helvetica, sans-serif; 
+       font-family:Arial, Helvetica, sans-serif;
 }
 /*
 Profile
@@ -60,6 +60,7 @@ Profile
 
 .text-small {
     font-size: 12px !important;
+    Arial, Helvetica, sans-serif;
 }
 .admin-tab-content {
     padding: 10px 15px;

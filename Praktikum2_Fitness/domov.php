@@ -3,7 +3,7 @@
 ?>
 <div class="hero-image">
   <div class="hero-text">
-    <h1 style="font-size:50px"><i>TRENIRAJTE<br/>Z NAMI</i></h1><br/><br/>
+    <h1 style="font-size:50px"><i>ZA&#268;NITE<br/>Z NAMI</i></h1><br/><br/>
   </div>
 </div>
 <div class="row">
@@ -36,6 +36,3 @@
 <div class="hero-image-footer">
   
 </div>
-<?php 
-    require "footer.php";
-?>

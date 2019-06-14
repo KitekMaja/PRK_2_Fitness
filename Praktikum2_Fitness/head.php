@@ -63,7 +63,7 @@ session_start();
     
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#"> 
   	<img src="slike/header.png" alt="logo" style="width: 55px;">
   </a>
@@ -87,22 +87,24 @@ session_start();
       <li class="nav-item">
         <a class="nav-link" href="produkti.php">Shop</a>
       </li>
-      <li class="nav-item">
+         <li class="nav-item">
         <a class="nav-link" href="o_nas.php">O nas</a>
       </li>
+      
     </ul>
    <?php 
    if (isset($_SESSION['id_uporabnika']))
    {
        echo '
-        <span class="navbar-text"> 
-            <form class="modal-content animate" method="post" action="PHP_skripte/skripta_izpis.php">
-              <button class="btn link" type="submit" name="logout-submit">Izpis</button>
-            </form>
-        </span>
-        <span class="navbar-text"> 
+         <span class="navbar-text"> 
    		   <a class="nav-link" href="profil.php">Profil</a>
-        </span>';
+        </span>
+       
+       <span class="navbar-text">
+       <form class="modal-content animate" method="post" action="PHP_skripte/skripta_izpis.php">
+       <button class="btn btn-dark" type="submit" name="logout-submit">Izpis</button>
+       </form>
+       </span>';
    }
    else
    {
