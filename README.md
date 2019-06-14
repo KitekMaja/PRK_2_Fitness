@@ -7,6 +7,7 @@ Fitness&healthy je fitnes in healthy program namenjen za vse osebe. Program je u
 
 ## Vsebina
 
+*.[Namestitev](#namestitev)
 * [Uporaba](#uporaba)
 * [ER-Diagram](#ER-Diagram)
 * [Trello](#Trello)
