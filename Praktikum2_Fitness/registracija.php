@@ -1,5 +1,5 @@
 <?php
-require 'head.php';
+require 'header.php';
 
 ?>
 <body>
@@ -60,6 +60,4 @@ require 'head.php';
 				</form>
 			</div>
 		</div>
-
-<label  for="ime">Izberite sliko: </label>
-					<br>
+</body>

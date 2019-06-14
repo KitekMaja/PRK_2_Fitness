@@ -1,11 +1,10 @@
 @font-face {
-  font-family: naslovnica_font;
-  src: url(fonts/neuzeiz_grotesk.otf);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .h1 
 {
-	font-family: naslovnica_font;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .hero-image {
