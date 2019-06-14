@@ -23,13 +23,22 @@ if(isset($_GET['action']) && $_GET['action']=="add")
         $st ++;
  
         $sql_update = "UPDATE kosarica SET kolicina = $st WHERE artikel_id = $ida";
-
+        //echo $st;
+       // echo $sql_update;
+        mysqli_query($connection, $sql_update);
+        
+       
         
     }
     else
     {
         $sql_insert ="INSERT INTO kosarica (uporabnik_id, artikel_id, kolicina) VALUES ($idu, $ida, 1)";
-  
+        
+        
+        
+        mysqli_query($connection, $sql_insert);
+       
+                       
             
    }
         
