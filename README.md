@@ -22,7 +22,7 @@ Aplikacija omogoča:
 Program uporablja podatkovno bazo phpMyAdmin
 
 ### ER-Diagram
-![er-diagram](link!!!)
+![er_model](https://github.com/KitekMaja/PRK_2_Fitness/blob/master/ER-diagram.png)
 
 ### Trello
 https://trello.com/b/4T8chLeV/fitness
