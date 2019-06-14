@@ -63,7 +63,7 @@ session_start();
     
 </head>
 <body>
-	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#"> 
   	<img src="slike/header.png" alt="logo" style="width: 55px;">
   </a>

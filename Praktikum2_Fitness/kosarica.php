@@ -1,5 +1,6 @@
 
 <?php
+
 require 'head.php';
 include 'PHP_skripte/baza_handler.php';
 include 'PHP_skripte/baza_OOPhandler.php';
@@ -34,7 +35,25 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
     $priimek = $row['priimek'];
     $email = $row['email'];
 }
+
+
+if(isset($_GET['action']) && $_GET['action']=="remove"){
+    
+    $idk=intval($_GET['idKosarica']);
+    $query = "DELETE FROM kosarica WHERE idKosarica = $idk";
+    mysqli_query($connection, $query);
+}
+if(isset($_GET['action']) && $_GET['action']=="empty"){
+    
+    $query = "DELETE FROM kosarica WHERE uporabnik_id = $idu";
+    mysqli_query($connection, $query);
+}
+
+
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,6 +133,67 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 								class="nav-link active" href="#t1" aria-controls="t1" role="tab"
 								data-toggle="tab">Kosarica</a></li>
 						</ul>
+			 <form method ="post" action="kosarica.php">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Naziv</th>
+      <th scope="col">Cena</th>
+      <th scope="col">Kolicina</th>
+      <th scope="col">&#8364;</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <?php 
+  
+  /*$sql="SELECT * FROM artikel WHERE idArtikel IN (";
+  
+  foreach($_SESSION['kosarica'] as $id => $value) {
+      $sql.=$id.",";
+  }
+  
+  $sql=substr($sql, 0, -1).") ORDER BY idArtikel ASC";
+  //echo $sql;
+  $query=mysqli_query($connection, $sql);
+  $totalprice=0;
+  while($row=mysqli_fetch_array($query)){
+      $subtotal=$_SESSION['kosarica'][$row['idArtikel']]['kolicina']*$row['cena'];
+      $totalprice+=$subtotal;*/
+  $sql="SELECT artikel.*, kosarica.idKosarica, kosarica.kolicina FROM artikel, kosarica
+        WHERE artikel.idArtikel = kosarica.artikel_id AND kosarica.uporabnik_id=$idu";
+  $result = mysqli_query($connection, $sql);
+  $total_price =0;
+ foreach($result as $artikel)
+ { 
+      ?>
+    <tr>
+      <th>slika</th>
+      <td><?php  echo $artikel['naziv']?></td>
+      <td><?php  echo $artikel['cena']?>&#8364;</td>
+      <td><input type="text" name="kolicina"
+      size="5" value="<?php echo $artikel['kolicina']?>"/>
+      </td>
+      <td><?php echo $artikel['kolicina']*$artikel['cena']?>&#8364;</td> 
+      <td><a href="kosarica.php?action=remove&idKosarica=<?php echo $artikel['idKosarica'] ?>">Odstrani iz kosarice</a></td>
+    </tr>
+    <?php 
+    $total_price += ($artikel["cena"] * $artikel["kolicina"]);
+  }
+  
+    ?>
+    <tr>
+    	<td colspan="4">Cena: <?php echo $total_price ?>&#8364;</td> 
+    </tr> 
+  </tbody>
+ 
+</table>
+ <br/>
+  <button type="submit" name="submit">Posodobi kolicino</button><br/>
+  <a href="kosarica.php?action=empty&idUporabnika=<?php echo $_SESSION['id_uporabnika']?>">Sprazni kosarico</a> 
+</form>
 
 						<!-- Tab panes -->
 						<div class="tab-content admin-tab-content pt30">
@@ -124,9 +204,5 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 				</div>
 				</div>
 				</div>
-			
-
-			
-
 </body>
 </html>

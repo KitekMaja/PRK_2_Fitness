@@ -1,8 +1,6 @@
 <?php
 date_default_timezone_set('Europe/Ljubljana');
 
-
-
 $db_server = "localhost:3306";
 $db_username = "root";
 $db_password = "";
