@@ -4,7 +4,7 @@ require 'header.php';
 
 <html>
 <head>
-<title>ÄŒlanek</title>
+<title>Članek</title>
 <meta charset="UTF-8">
 <style>
 
