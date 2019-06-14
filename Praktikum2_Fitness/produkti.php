@@ -9,38 +9,27 @@ if(isset($_GET['action']) && $_GET['action']=="add")
     
     $ida=intval($_GET['idArtikel']);
     
+    
     $sql_select = "SELECT * FROM kosarica WHERE artikel_id=$ida";
     $stmt = mysqli_query($connection, $sql_select);
+    
     $rezultat = mysqli_num_rows($stmt);
     if ($rezultat != 0)
     {
-        $st = $rezultat['kolicina'];
+        $row= mysqli_fetch_array($stmt, MYSQLI_ASSOC);
+         
+        //print_r($row);
+        $st = $row['kolicina'];
         $st ++;
-        
+ 
         $sql_update = "UPDATE kosarica SET kolicina = $st WHERE artikel_id = $ida";
-        echo $sql_update;
-        if (mysqli_query($connection, $sql_update))
-        {
-            echo "Uspesen updejt";
-        }
-        else
-        {
-            echo "Error: " .$sql_insert."<br>".mysqli_error($connection);
-        }
+
         
     }
     else
     {
         $sql_insert ="INSERT INTO kosarica (uporabnik_id, artikel_id, kolicina) VALUES ($idu, $ida, 1)";
-        if (mysqli_query($connection, $sql_insert))
-        {
-            echo "Uspesen vnos";
-        }
-        else
-        {
-            echo "Error: " .$sql_insert."<br>".mysqli_error($connection);
-        }
-                       
+  
             
    }
         
@@ -54,6 +43,7 @@ if(isset($_GET['action']) && $_GET['action']=="add")
 </div>
     	<section class="gallery-block cards-gallery">
 	    	<div class="container">
+	    		
 	        	<div class="heading">
 	        	</div> 
 	        	<div class="row">
@@ -112,38 +102,7 @@ if(isset($_GET['action']) && $_GET['action']=="add")
 	              }
 	    
                 ?>
-                <div class="col-md-6 col-lg-4">
-                <?php 
-	    if(isset($_SESSION['kosarica'])){
-	        
-	        $sql="SELECT * FROM artikel WHERE idArtikel IN (";
-	        
-	        foreach($_SESSION['kosarica'] as $ida => $value) {
-	            $sql.=$ida.",";
-	        }
-	        
-	        $sql=substr($sql, 0, -1).") ORDER BY idArtikel ASC";
-	        $query=mysqli_query($connection,$sql);
-	        while($row=mysqli_fetch_array($query)){
-	            
-	            ?>
-            <p><?php echo $row['naziv'] ?> x <?php echo $_SESSION['kosarica'][$row['idArtikel']]['kolicina'] ?></p> 
-        <?php 
-              
-        } 
-    ?> 
-        <hr /> 
-        <a href="kosarica.php">Go to cart</a> 
-    <?php 
-          
-    }else{ 
-          
-        echo "<p>Vasa kosarica je prazna.</p>"; 
-          
-    } 
-	    
-	    ?>
-                </div>
+                
 	    		</div>
 	    	</div>
 	    </section>

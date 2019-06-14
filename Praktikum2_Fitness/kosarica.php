@@ -49,6 +49,26 @@ if(isset($_GET['action']) && $_GET['action']=="empty"){
     mysqli_query($connection, $query);
 }
 
+if(isset($_GET['action']) && $_GET['action']=="update"){
+    
+    $ida=intval($_GET['idArtikla']);
+    
+    
+    $sql_select = "SELECT * FROM kosarica WHERE artikel_id=$ida";
+    $stmt = mysqli_query($connection, $sql_select);
+    
+    $rezultat = mysqli_num_rows($stmt);
+    if ($rezultat != 0)
+    {
+        $row= mysqli_fetch_array($stmt, MYSQLI_ASSOC);
+        
+        //print_r($row);
+        $st = $_POST['kolicina'];
+        
+        $sql_update = "UPDATE kosarica SET kolicina = $st WHERE artikel_id = $ida";
+    
+    }
+}
 
 
 
@@ -170,11 +190,11 @@ if(isset($_GET['action']) && $_GET['action']=="empty"){
  { 
       ?>
     <tr>
-      <th>slika</th>
+      <th><img src="slike/trgovina/slike_produktov/<?php  echo $artikel['slika']?>" alt="Card Image" class="card-img-top img-fluid" style="width:50px;height:50px;"></th>
       <td><?php  echo $artikel['naziv']?></td>
       <td><?php  echo $artikel['cena']?>&#8364;</td>
-      <td><input type="text" name="kolicina"
-      size="5" value="<?php echo $artikel['kolicina']?>"/>
+      <td><input type="text" name="kolicina" size="5" value="<?php echo $artikel['kolicina']?>"/>
+  		<br/>
       </td>
       <td><?php echo $artikel['kolicina']*$artikel['cena']?>&#8364;</td> 
       <td><a href="kosarica.php?action=remove&idKosarica=<?php echo $artikel['idKosarica'] ?>">Odstrani iz kosarice</a></td>
@@ -182,18 +202,19 @@ if(isset($_GET['action']) && $_GET['action']=="empty"){
     <?php 
     $total_price += ($artikel["cena"] * $artikel["kolicina"]);
   }
-  
+
     ?>
     <tr>
     	<td colspan="4">Cena: <?php echo $total_price ?>&#8364;</td> 
     </tr> 
   </tbody>
- 
+ <?php $_SESSION['cena'] = $total_price ?>
 </table>
  <br/>
-  <button type="submit" name="submit">Posodobi kolicino</button><br/>
-  <a href="kosarica.php?action=empty&idUporabnika=<?php echo $_SESSION['id_uporabnika']?>">Sprazni kosarico</a> 
+  <a href="kosarica.php?action=empty&idUporabnika=<?php echo $_SESSION['id_uporabnika']?>" style="padding-left:5px;">Sprazni kosarico</a> <br/>
 </form>
+
+  <a href="checkout.php"><button class="btn-action" name="check_out" style="padding-left:5px;">Zakljuci narocilo</button></a>
 
 						<!-- Tab panes -->
 						<div class="tab-content admin-tab-content pt30">
