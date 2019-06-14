@@ -80,14 +80,14 @@ if (mysqli_num_rows($r) == 1) { // Good to go!
 						<hr>
 
 						<div class="profile-userbuttons">
-
-							<a href="profil.php" class="btn btn-light btn-block">Profil</a> <br>
+	<a href="profil.php" class="btn btn-light btn-block">Profil</a> <br>
 							<a href="planiMoji.php" class="btn btn-light btn-block">Moje
 								rutine</a> <br> <a href="bmiP.php"
 								class="btn btn-light btn-block">BMI</a> <br> <a
 								href="meritvePrikaz.php" class="btn btn-light btn-block">Meritve</a>
 							<br> <a href="cilj.php" class="btn btn-light btn-block">Cilj</a>
-							<br> <a href="kosarica.php" class="btn btn-light btn-block">Kosarica</a>
+							<br> <a href="kosarica.php" class="btn btn-light btn-block">Košarica</a>
+							<br> <a href="mojSeznamClankovT.php" class="btn btn-light btn-block">Moj seznam Člankov</a>
 							<br>
 
 						</div>
