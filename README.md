@@ -1,3 +1,4 @@
+
 ## Fitness&Healthy
 
 
@@ -12,19 +13,35 @@ Fitness&healthy je fitnes in healthy program namenjen za vse osebe. Program je u
 
 
 ## Uporaba
-Namen te aplikacije je ostvaritev cilja.
+Namen te aplikacije je doseg Vašega cilja po zdravem načinu življenja s pomočjo objavljenih člankov in vadb.
+
 Aplikacija omogoča:
-* Trenerjem, da kreirajo plane, ki jih lahko nato persionalizirajo. Omogočeno jim je dodajanje vaj in urejanje vseh podrobnosti v zvezi z njimi, tudi je omogočeno dodajanje člankov.
+* Kreiranje planov, kateri so lahko javno vidni ali pa zasebni. V plane je mogoča vključiti že objavljene vaje.
+Po kreaciji je mogoče tak plan tudi izviziti v PDF datoteko.
 * Trgovina
 * Dostop do vaja, člankov
 
 ## Podatkovna baza
-Program uporablja podatkovno bazo phpMyAdmin
+Program uporablja podatkovno bazo phpMyAdmin. Vizualno predstavitev naše baze predstavlja E-R model spodaj, dejansko
+SQL skripto pa lahko najdete v SQL mapi projekta.
 
 ### ER-Diagram
 ![er_model](https://github.com/KitekMaja/PRK_2_Fitness/blob/master/Prak2BazaER.png)
 
+## Uporabljene tehnologije 
+
+| PHP  | Xamp |FPDF |
+| ------------- | ------------- |------------- |
+| 7.3.6  | 7.3.5  |1.81  |
+
+
+
+
+
 ### Trello
 https://trello.com/b/4T8chLeV/fitness
+
+
+
 
 
