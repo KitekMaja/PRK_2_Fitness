@@ -22,33 +22,75 @@ SET time_zone = "+00:00";
 -- Database: `baza`
 --
 
--- --------------------------------------------------------
-
 --
 -- Table structure for table `artikel`
 --
 
 CREATE TABLE `artikel` (
   `idArtikel` int(11) NOT NULL,
-  `naziv` varchar(255) COLLATE utf8_slovenian_ci NOT NULL,
-  `koda` varchar(255) COLLATE utf8_slovenian_ci NOT NULL,
-  `opis` longtext COLLATE utf8_slovenian_ci NOT NULL,
-  `cena` double(10,2) NOT NULL,
+  `naziv` varchar(255) NOT NULL,
+  `cena` float(10,2) NOT NULL,
+  `opis` text NOT NULL,
+  `slika` varchar(255) NOT NULL,
+  `kolicina` int(255) DEFAULT NULL,
   `tk_kategorija` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `artikel`
 --
 
-INSERT INTO `artikel` (`idArtikel`, `naziv`, `koda`, `opis`, `cena`, `tk_kategorija`) VALUES
-(1, 'Venum Challenger MMA rokavice', 'RokaviceVenum_1', 'Roèno izdelane na Tajskem', 44.00, 4),
-(2, 'Jed North - Koko Lounge Pajkice', 'KokoPajkice_1', 'Zelena barva', 44.00, 2),
-(3, 'Jed North - Koko Lounge Pajkice', 'KokoPajkice_2', 'Siva barva', 44.00, 2),
-(4, 'Venum Challanger 2.0 rokavice', 'RokaviceVenum_2', 'Roèno izdelane na Tajskem', 47.99, 4),
-(5, 'RSN - Whey Protein Isolate 1816g', 'RSNProteini_1', 'RSN Whey Protein Isolate je izdelek najvi?je kakovosti narejen izkljuèno iz èistega sirotkinega izolata.', 49.99, 1);
+INSERT INTO `artikel` (`idArtikel`, `naziv`, `cena`, `opis`, `slika`, `kolicina`, `tk_kategorija`) VALUES
+(1, 'PROZIS - ENERGY CAKE 100 G', 2.00, 'Energijske beljakovinske plošèice', 'cokolada1.jpg', 20, 4),
+(2, 'JED NORTH - DEXTER PERFORMANCE KRATKE HLAÈE', 32.50, 'Material: 100% Performance poliester', 'hlace1.jpg', 50, 2),
+(3, 'JED NORTH - PATRIOT KRATKE HLAÈE', 33.99, 'Material: 95% bombaÅ¾, 5% elastan', 'hlace2.jpg', 5, 2),
+(4, 'OSTROVIT - MICELLAR CASEIN 700G', 14.99, 'Micelarni kazein', 'kazein.jpg', 25, 3),
+(5, 'MAGNEZIJ ZA ROKE', 4.20, 'Gimnastika', 'magnezij.jpg', 30, 8),
+(6, 'TUNTURI MINI MEDICINKA 1.5 KG', 7.50, 'Tunturi', 'medicinka.jpg', 10, 8),
+(7, 'VENUM MMA ROKAVICE', 44.99, 'Boksarske rokavice', 'mmarokavice.jpg', 45, 7),
+(9, 'OSTROVIT - WHEY PROTEIN ISOLATE 700 G', 14.99, 'Proteini', 'napitek.jpg', 19, 3),
+(10, 'OSTROVIT â€“ WHEY PROTEIN 700 G', 13.99, 'Proteini', 'napitek2.jpg', 12, 3),
+(11, 'JED NORTH - LUXE KOMPLET NAVY', 24.99, 'Pajkice', 'pajkice1.jpg', 45, 1),
+(12, 'JED NORTH - WILLOW PAJKICE- ?RNA', 30.88, 'Pajkice', 'pajkice2.jpg', 1, 1),
+(13, 'POHODNE PALICE ARDEN', 18.62, 'Pohodne palice', 'palce1.jpg', 4, 6),
+(14, 'POHODNE PALICE FOSTER', 16.91, 'Pohodne palice', 'palce2.jpg', 6, 6),
+(15, 'BOOSTER AIR - ROKAVICE ZA VRE?O', 15.67, 'Boksarske rokavice', 'rokavicezavreco.jpg', 68, 7),
+(17, 'JED NORTH - MICROFIBER DRI-FIT STRINGER', 22.00, 'Moski top', 'tanktop1.jpg', 66, 2),
+(18, 'JED NORTH - MICROFIBER DRI-FIT STRINGER', 22.00, 'Moski top', 'tanktop2.jpg', 11, 2),
+(19, 'JED NORTH - SUPPLE SEAMLESS TOP- ZELENA', 13.99, 'Zenski top', 'top1.jpg', 33, 1),
+(20, 'JED NORTH - SUPPLE SEAMLESS TOP- BORDO', 13.99, 'Zenski top', 'top3.jpg', 52, 1);
 
--- --------------------------------------------------------
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `artikel`
+--
+ALTER TABLE `artikel`
+  ADD PRIMARY KEY (`idArtikel`),
+  ADD KEY `fk_kategorija_artikel` (`tk_kategorija`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `artikel`
+--
+ALTER TABLE `artikel`
+  MODIFY `idArtikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `artikel`
+--
+ALTER TABLE `artikel`
+  ADD CONSTRAINT `fk_kategorija_artikel` FOREIGN KEY (`tk_kategorija`) REFERENCES `kategorija_artikel` (`idKategorijaArtikel`);
+COMMIT;
 
 --
 -- Table structure for table `clanek`
@@ -109,30 +151,185 @@ INSERT INTO `kategorijavaje` (`idKategorijaVaje`, `naziv`) VALUES
 (5, 'Trebuh'),
 (6, 'Noge');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `kategorije_artiklov`
---
-
-CREATE TABLE `kategorije_artiklov` (
-  `idKategorijeArtiklov` int(11) NOT NULL,
-  `naziv` varchar(255) COLLATE utf8_slovenian_ci NOT NULL
+CREATE TABLE `kategorija_artikel` (
+  `idKategorijaArtikel` int(11) NOT NULL,
+  `naziv` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 --
--- Dumping data for table `kategorije_artiklov`
+-- Dumping data for table `kategorija_artikel`
 --
 
-INSERT INTO `kategorije_artiklov` (`idKategorijeArtiklov`, `naziv`) VALUES
-(1, 'Prehrana'),
-(2, 'Oblaèila'),
-(3, 'Fitness oprema'),
-(4, 'Borilne ve?èine'),
-(5, 'Gimnastika/Aerobika'),
-(6, 'Indoor/Outdoor ?porti');
+INSERT INTO `kategorija_artikel` (`idKategorijaArtikel`, `naziv`) VALUES
+(1, 'Ženska oblaèila'),
+(2, 'Moška oblaèila'),
+(3, 'Beljakovinski napitki'),
+(4, 'Energijske èokoladice'),
+(5, 'Igre na prostem'),
+(6, 'Pohodništvo'),
+(7, 'Pripomoèki za boks'),
+(8, 'Gimnastika');
 
--- --------------------------------------------------------
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `kategorija_artikel`
+--
+ALTER TABLE `kategorija_artikel`
+  ADD PRIMARY KEY (`idKategorijaArtikel`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `kategorija_artikel`
+--
+ALTER TABLE `kategorija_artikel`
+  MODIFY `idKategorijaArtikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;
+
+CREATE TABLE `kosarica` (
+  `idKosarica` int(11) NOT NULL,
+  `uporabnik_id` int(11) NOT NULL,
+  `artikel_id` int(11) DEFAULT NULL,
+  `kolicina` int(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+
+--
+-- Dumping data for table `kosarica`
+--
+
+INSERT INTO `kosarica` (`idKosarica`, `uporabnik_id`, `artikel_id`, `kolicina`) VALUES
+(9, 1, NULL, NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `kosarica`
+--
+ALTER TABLE `kosarica`
+  ADD PRIMARY KEY (`idKosarica`),
+  ADD KEY `fk_uporabnik_id_kosarica` (`uporabnik_id`),
+  ADD KEY `fk_artikel_kosarica` (`artikel_id`) USING BTREE;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `kosarica`
+--
+ALTER TABLE `kosarica`
+  MODIFY `idKosarica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `kosarica`
+--
+ALTER TABLE `kosarica`
+  ADD CONSTRAINT `fk_uporabnik_id_kosarica` FOREIGN KEY (`uporabnik_id`) REFERENCES `uporabnik` (`idUporabnik`),
+  ADD CONSTRAINT `tk_artikel_kosarica` FOREIGN KEY (`artikel_id`) REFERENCES `artikel` (`idArtikel`);
+COMMIT;
+
+
+CREATE TABLE `narocila_artikel` (
+  `idNarocilaArtikel` int(11) NOT NULL,
+  `narocilo_id` int(11) NOT NULL,
+  `produkt_id` int(11) NOT NULL,
+  `kolicina` int(255) NOT NULL,
+  `cena` double(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `narocila_artikel`
+--
+ALTER TABLE `narocila_artikel`
+  ADD PRIMARY KEY (`idNarocilaArtikel`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `narocila_artikel`
+--
+ALTER TABLE `narocila_artikel`
+  MODIFY `idNarocilaArtikel` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+CREATE TABLE `narocila` (
+  `idNarocila` int(11) NOT NULL,
+  `cena` double(10,2) NOT NULL,
+  `imepriimek` varchar(255) NOT NULL,
+  `tel_st` varchar(255) NOT NULL,
+  `naslov` varchar(255) NOT NULL,
+  `kraj` varchar(255) NOT NULL,
+  `posta` varchar(255) NOT NULL,
+  `order_status` varchar(255) NOT NULL,
+  `naroceno_ob` date NOT NULL,
+  `uporabnik_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `narocila`
+--
+ALTER TABLE `narocila`
+  ADD PRIMARY KEY (`idNarocila`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `narocila`
+--
+ALTER TABLE `narocila`
+  MODIFY `idNarocila` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+CREATE TABLE `placila` (
+  `idPlacila` int(11) NOT NULL,
+  `narocilo_id` int(11) NOT NULL,
+  `status_placila` varchar(255) NOT NULL,
+  `kreirano` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `placila`
+--
+ALTER TABLE `placila`
+  ADD PRIMARY KEY (`idPlacila`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `placila`
+--
+ALTER TABLE `placila`
+  MODIFY `idPlacila` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
 
 --
 -- Table structure for table `meritev`
