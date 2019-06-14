@@ -213,7 +213,7 @@ body {
 		
 		Izberite sliko: </label> <input type="file"
 			name="fileToUpload" id="fileToUpload"> <br>
-			br
+			<br>
 			
 			<button class="btn btn-success" size="16px" type="submit" action="seznamClankov.php"
 			 name="dodajj">Ustvari Članek</button><br>
@@ -229,7 +229,7 @@ body {
     <h5 align="center">by
 		Ime</h5><br />
 		
-		   <h6 align="center"><img  height="350" width="680" ></h6>
+		  
 		   
 		   <br /> <h6 id="dat" align="center">Fri Jun 14 2019 08:19:41 GMT+0200 (Central European Summer Time) </h6><br/>
 		   
