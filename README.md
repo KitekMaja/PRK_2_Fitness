@@ -30,9 +30,9 @@ SQL skripto pa lahko najdete v SQL mapi projekta.
 
 ## Uporabljene tehnologije 
 
-| PHP  | Xamp |FPDF |
-| ------------- | ------------- |------------- |
-| 7.3.6  | 7.3.5  |1.81  |
+| PHP  | Xamp |Apache|FPDF |
+| ------------- | ------------- |------------- |------------- |
+| 7.3.6  | 7.3.5  |2.4.39|1.81  |
 
 
 
