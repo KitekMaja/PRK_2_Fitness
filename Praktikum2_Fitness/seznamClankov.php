@@ -19,7 +19,7 @@ require 'header.php';
 <style>
 body, html {
     height: 100%;
-    font-family: "Inconsolata", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .bgimg {
     background-position: center;
