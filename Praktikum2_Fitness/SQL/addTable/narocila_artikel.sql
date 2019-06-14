@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2019 at 12:00 PM
+-- Generation Time: Jun 14, 2019 at 11:28 AM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -25,47 +25,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `seznam`
+-- Table structure for table `narocila_artikel`
 --
 
-CREATE TABLE `seznam` (
-  `id` int(11) NOT NULL,
-  `Uporabnik_id` int(11) NOT NULL,
-  `Clanek_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `narocila_artikel` (
+  `idNarocilaArtikel` int(11) NOT NULL,
+  `narocilo_id` int(11) NOT NULL,
+  `produkt_id` int(11) NOT NULL,
+  `kolicina` int(255) NOT NULL,
+  `cena` double(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `seznam`
+-- Indexes for table `narocila_artikel`
 --
-ALTER TABLE `seznam`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Uporabnik` (`Uporabnik_id`),
-  ADD KEY `fk_Clanek` (`Clanek_id`);
+ALTER TABLE `narocila_artikel`
+  ADD PRIMARY KEY (`idNarocilaArtikel`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `seznam`
+-- AUTO_INCREMENT for table `narocila_artikel`
 --
-ALTER TABLE `seznam`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `seznam`
---
-ALTER TABLE `seznam`
-  ADD CONSTRAINT `fk_Clanek` FOREIGN KEY (`Clanek_id`) REFERENCES `clanek` (`idClanek`),
-  ADD CONSTRAINT `fk_Uporabnik` FOREIGN KEY (`Uporabnik_id`) REFERENCES `uporabnik` (`idUporabnik`);
+ALTER TABLE `narocila_artikel`
+  MODIFY `idNarocilaArtikel` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
