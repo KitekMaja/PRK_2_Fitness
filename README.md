@@ -7,14 +7,15 @@ Fitness&healthy je fitnes in healthy program namenjen za vse osebe. Program je u
 
 ## Vsebina
 
-*[Namestitev](#namestitev)
+* [Namestitev](#namestitev)
 * [Uporaba](#uporaba)
 * [ER-Diagram](#ER-Diagram)
 * [Trello](#Trello)
 
 ## Namestitev
 Za namestitev tega projekta potrebujete strežnik Xamp in Eclipse.
-Podrobna navodila najdete v WIKI-ju.
+Podrobna navodila najdete v [[tukaj](https://github.com/KitekMaja/PRK_2_Fitness/wiki/Namestitev-projekta)].
+
 ## Uporaba
 Namen te aplikacije je doseg Vašega cilja po zdravem načinu življenja s pomočjo objavljenih člankov in vadb.
 
